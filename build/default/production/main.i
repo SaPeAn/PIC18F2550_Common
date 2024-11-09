@@ -5296,7 +5296,7 @@ uint32 countTime = 0;
 uint16 countPeriod = 1000;
 uint8 countDirect = 1;
 uint8 countOn = 0;
-uint8 Array[] = "������, ���!!!! Hello, World!!!!";
+uint8 Array[] = "Привет, Мир!!!! Hello, World!!!!";
 # 30 "main.c"
 typedef struct{
   uint8 sec;
