@@ -670,7 +670,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _L `uc ~T0 @X0 1 a ]
 [e = _L -> % -> _num `i -> 10 `i `uc ]
 "42
-[; ;common.c: 42:   uint8 M = num%100/10;
+[; ;common.c: 42:   uint8 M = (num%100)/10;
 [v _M `uc ~T0 @X0 1 a ]
 [e = _M -> / % -> _num `i -> 100 `i -> 10 `i `uc ]
 "43
@@ -733,8 +733,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 348 ]
 "54
-[; ;common.c: 54:   if(num > 0 && num < 10)
-[e $ ! && > -> _num `i -> 0 `i < -> _num `i -> 10 `i 349  ]
+[; ;common.c: 54:   if(num >= 0 && num < 10)
+[e $ ! && >= -> _num `i -> 0 `i < -> _num `i -> 10 `i 349  ]
 "55
 [; ;common.c: 55:   {
 {

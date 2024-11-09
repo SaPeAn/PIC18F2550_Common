@@ -81,15 +81,15 @@
 [v _LCD_printSmb8x5 LCD_printSmb8x5 `(v  1 e 1 0 ]
 "74
 [v _LCD_printStr8x5 LCD_printStr8x5 `(uc  1 e 1 0 ]
-"88
+"93
 [v _LCD_PrintClock LCD_PrintClock `(v  1 e 1 0 ]
-"100
+"105
 [v _LCD_Erase LCD_Erase `(v  1 e 1 0 ]
-"109
+"114
 [v _LCD_SendData LCD_SendData `(v  1 e 1 0 ]
-"118
+"123
 [v _LCD_SendCommands LCD_SendCommands `(v  1 e 1 0 ]
-"133
+"138
 [v _LCD_WriteByte LCD_WriteByte `(v  1 e 1 0 ]
 "7 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\drv_led096_I2C.c
 [v _Led096Set Led096Set `(v  1 e 1 0 ]
@@ -500,9 +500,9 @@
 [v _countDirect countDirect `uc  1 e 1 0 ]
 "21
 [v _Array Array `[33]uc  1 e 33 0 ]
-[s S957 . 3 `uc 1 sec 1 0 `uc 1 min 1 1 `uc 1 hour 1 2 ]
+[s S959 . 3 `uc 1 sec 1 0 `uc 1 min 1 1 `uc 1 hour 1 2 ]
 "35
-[v _Time Time `S957  1 e 3 0 ]
+[v _Time Time `S959  1 e 3 0 ]
 "85
 [v _main main `(v  1 e 1 0 ]
 {
@@ -546,13 +546,13 @@
 "51
 [v u8_to_str@str2 str2 `[3]uc  1 a 3 39 ]
 "46
-[v u8_to_str@str1 str1 `[4]uc  1 a 4 35 ]
+[v u8_to_str@str1 str1 `[4]uc  1 a 4 34 ]
 "41
 [v u8_to_str@L L `uc  1 a 1 45 ]
 "42
 [v u8_to_str@M M `uc  1 a 1 44 ]
 "43
-[v u8_to_str@H H `uc  1 a 1 34 ]
+[v u8_to_str@H H `uc  1 a 1 38 ]
 "39
 [v u8_to_str@num num `uc  1 p 1 wreg ]
 "41
@@ -620,7 +620,7 @@
 [v _TestBtn TestBtn `(v  1 e 1 0 ]
 {
 [s S351 . 16 `*.39VEuc 1 Port 2 0 `*.39VEuc 1 Lat 2 2 `uc 1 inputmask 1 4 `uc 1 outputmask 1 5 `*.30Cul 1 timecounter 1 6 `ul 1 btnTimer 4 7 `uc 1 BtnFl 1 11 `uc 1 BtnON 1 12 `uc 1 Toggle 1 13 `uc 1 HoldON 1 14 `uc 1 StuckON 1 15 ]
-[v TestBtn@btn btn `*.39S351  1 p 2 0 ]
+[v TestBtn@btn btn `*.30S351  1 p 1 0 ]
 "74
 } 0
 "32 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\init_periph.c
@@ -633,25 +633,25 @@
 {
 "30
 } 0
-"88 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\drv_lcdST7565_SPI.c
+"93 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\drv_lcdST7565_SPI.c
 [v _LCD_PrintClock LCD_PrintClock `(v  1 e 1 0 ]
 {
 [v LCD_PrintClock@hour hour `uc  1 p 1 wreg ]
+"101
+[v LCD_PrintClock@cl_digits cl_digits `[9]uc  1 a 9 59 ]
+"97
+[v LCD_PrintClock@hourL hourL `uc  1 a 1 70 ]
 "96
-[v LCD_PrintClock@cl_digits cl_digits `[9]uc  1 a 9 0 ]
-"92
-[v LCD_PrintClock@hourL hourL `uc  1 a 1 11 ]
-"91
-[v LCD_PrintClock@minL minL `uc  1 a 1 10 ]
-"90
-[v LCD_PrintClock@secL secL `uc  1 a 1 9 ]
-"88
+[v LCD_PrintClock@minL minL `uc  1 a 1 69 ]
+"95
+[v LCD_PrintClock@secL secL `uc  1 a 1 68 ]
+"93
 [v LCD_PrintClock@hour hour `uc  1 p 1 wreg ]
-[v LCD_PrintClock@min min `uc  1 p 1 52 ]
-[v LCD_PrintClock@sec sec `uc  1 p 1 53 ]
-"90
-[v LCD_PrintClock@hour hour `uc  1 p 1 12 ]
-"98
+[v LCD_PrintClock@min min `uc  1 p 1 57 ]
+[v LCD_PrintClock@sec sec `uc  1 p 1 58 ]
+"95
+[v LCD_PrintClock@hour hour `uc  1 p 1 71 ]
+"103
 } 0
 "22 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
 [v _dig_to_smb dig_to_smb `(uc  1 e 1 0 ]
@@ -688,13 +688,17 @@
 "74 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\drv_lcdST7565_SPI.c
 [v _LCD_printStr8x5 LCD_printStr8x5 `(uc  1 e 1 0 ]
 {
-"76
-[v LCD_printStr8x5@i i `uc  1 a 1 51 ]
+"78
+[v LCD_printStr8x5@str1 str1 `[5]uc  1 a 5 51 ]
+"81
+[v LCD_printStr8x5@i i `uc  1 a 1 56 ]
 "74
 [v LCD_printStr8x5@str str `*.39uc  1 p 2 47 ]
 [v LCD_printStr8x5@page page `uc  1 p 1 49 ]
 [v LCD_printStr8x5@col col `uc  1 p 1 50 ]
-"86
+"77
+[v LCD_printStr8x5@F2917 F2917 `[5]uc  1 s 5 F2917 ]
+"91
 } 0
 "68
 [v _LCD_printSmb8x5 LCD_printSmb8x5 `(v  1 e 1 0 ]
@@ -722,15 +726,15 @@
 [v LCD_Set_PageColumn@col col `uc  1 p 1 17 ]
 "66
 } 0
-"109
+"114
 [v _LCD_SendData LCD_SendData `(v  1 e 1 0 ]
 {
-"112
+"117
 [v LCD_SendData@i i `uc  1 a 1 6 ]
-"109
+"114
 [v LCD_SendData@byte byte `*.32uc  1 p 2 1 ]
 [v LCD_SendData@N N `uc  1 p 1 3 ]
-"116
+"121
 } 0
 "31
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
@@ -751,37 +755,37 @@
 [v Delay_ms@ms ms `ul  1 p 4 0 ]
 "10
 } 0
-"100 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\drv_lcdST7565_SPI.c
+"105 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\drv_lcdST7565_SPI.c
 [v _LCD_Erase LCD_Erase `(v  1 e 1 0 ]
 {
-"105
+"110
 [v LCD_Erase@i i `uc  1 a 1 10 ]
-"102
+"107
 [v LCD_Erase@j j `uc  1 a 1 11 ]
-"108
+"113
 } 0
-"133
+"138
 [v _LCD_WriteByte LCD_WriteByte `(v  1 e 1 0 ]
 {
 [v LCD_WriteByte@byte byte `uc  1 p 1 wreg ]
 [v LCD_WriteByte@byte byte `uc  1 p 1 wreg ]
-"135
+"140
 [v LCD_WriteByte@byte byte `uc  1 p 1 1 ]
-"138
+"143
 } 0
-"118
+"123
 [v _LCD_SendCommands LCD_SendCommands `(v  1 e 1 0 ]
 {
 [v LCD_SendCommands@N N `uc  1 p 1 wreg ]
-"124
+"129
 [v LCD_SendCommands@i i `uc  1 a 1 9 ]
-"122
+"127
 [v LCD_SendCommands@arg arg `[1]*.30v  1 a 1 8 ]
-"118
+"123
 [v LCD_SendCommands@N N `uc  1 p 1 wreg ]
-"120
+"125
 [v LCD_SendCommands@N N `uc  1 p 1 7 ]
-"131
+"136
 } 0
 "24
 [v _SPI_ReadWriteByte SPI_ReadWriteByte `(uc  1 e 1 0 ]

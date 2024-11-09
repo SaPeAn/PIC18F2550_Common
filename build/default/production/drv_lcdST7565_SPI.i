@@ -5564,16 +5564,21 @@ void LCD_printSmb8x5(uint8 ch, uint8 page, uint8 col)
 
 uint8 LCD_printStr8x5(uint8 *str, uint8 page, uint8 col)
 {
+  if(str == ((void*)0))
+  {
+    uint8 str1[] = "NULL";
+    str = str1;
+  }
   uint8 i = 0;
-  while(str[i] != '\0'){
-
+  while(str[i] != '\0')
+  {
     LCD_printSmb8x5(str[i], page, col);
     col += 6;
     if(col > 122) {page++; col = 0;}
     if(page > 7) return 0;
     i++;
   }
-  return ++i;
+  return i;
 }
 
 void LCD_PrintClock(uint8 hour, uint8 min, uint8 sec)

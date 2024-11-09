@@ -1094,10 +1094,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 358 ]
 "161
-[; ;main.c: 161:     if(B7.BtnON){B7.BtnON = 0;}
+[; ;main.c: 161:     if(B7.BtnON){B7.BtnON = 0; LCD_printStr8x5(((void*)0), PG, CL);}
 [e $ ! != -> . _B7 7 `i -> 0 `i 361  ]
 {
 [e = . _B7 7 -> -> 0 `i `uc ]
+[e ( _LCD_printStr8x5 (3 , , -> -> -> 0 `i `*v `*uc _PG _CL ]
 }
 [e :U 361 ]
 "162
