@@ -39,7 +39,7 @@ uint8 dig_to_smb(uint8 dig)
 uint8* u8_to_str(uint8 num)
 {
   uint8 L = num%10;
-  uint8 M = num%100/10;
+  uint8 M = (num%100)/10;
   uint8 H = num/100;
   if(num > 99 && num < 256)
   {  
@@ -51,7 +51,7 @@ uint8* u8_to_str(uint8 num)
     uint8 str2[] = {dig_to_smb(M), dig_to_smb(L), '\0'};
     return str2;
   }
-  if(num > 0 && num < 10)
+  if(num >= 0 && num < 10)
   {
     uint8 str3[] = {dig_to_smb(L), '\0'};
     return str3;

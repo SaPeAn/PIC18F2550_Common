@@ -158,7 +158,7 @@ void main(void)
         else countDirect = 1;
     }
     
-    if(B7.BtnON){B7.BtnON = 0;}
+    if(B7.BtnON){B7.BtnON = 0; LCD_printStr8x5(NULL, PG, CL);}
     if(B8.BtnON){B8.BtnON = 0;}
     
     Counting(countPeriod, 1, countDirect, 359999);
