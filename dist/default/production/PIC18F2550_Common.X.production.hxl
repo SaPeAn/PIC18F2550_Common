@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\SaPA\AppData\Local\Temp\xcAsc3c.\driver_tmp_3.o
+ C:\Users\SaPA\AppData\Local\Temp\xcBsfu0.1\driver_tmp_3.o
  -Odist/default/production\PIC18F2550_Common.X.production.hex
  -logfile=dist/default/production\PIC18F2550_Common.X.production.hxl
  -addressing=1
@@ -9,21 +9,21 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\SaPA\AppData\Local\Temp\xcAsc3c.\driver_tmp_3.o)
-  8h - 17A4h		(C:\Users\SaPA\AppData\Local\Temp\xcAsc3c.\driver_tmp_3.o)
-  17A6h - 182Eh		(C:\Users\SaPA\AppData\Local\Temp\xcAsc3c.\driver_tmp_3.o)
-  75BEh - 7FFFh		(C:\Users\SaPA\AppData\Local\Temp\xcAsc3c.\driver_tmp_3.o)
-  300000h - 30000Dh		(C:\Users\SaPA\AppData\Local\Temp\xcAsc3c.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\SaPA\AppData\Local\Temp\xcBsfu0.1\driver_tmp_3.o)
+  8h - 176Eh		(C:\Users\SaPA\AppData\Local\Temp\xcBsfu0.1\driver_tmp_3.o)
+  1770h - 1840h		(C:\Users\SaPA\AppData\Local\Temp\xcBsfu0.1\driver_tmp_3.o)
+  75BEh - 7FFFh		(C:\Users\SaPA\AppData\Local\Temp\xcBsfu0.1\driver_tmp_3.o)
+  300000h - 30000Dh		(C:\Users\SaPA\AppData\Local\Temp\xcBsfu0.1\driver_tmp_3.o)
  Unused ranges:
   4h - 7h
-  17A5h - 17A5h
-  182Fh - 75BDh
+  176Fh - 176Fh
+  1841h - 75BDh
   8000h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\SaPA\AppData\Local\Temp\xcAsc3c.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\SaPA\AppData\Local\Temp\xcBsfu0.1\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -401,11 +401,11 @@
 00001730 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001740 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001750 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001760 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001760 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 --
 00001770 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001780 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001790 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000017A0 | H1 H1 H1 H1 H1 -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000017A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000017B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000017C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000017D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -413,7 +413,9 @@
 000017F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001800 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001810 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001820 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 --
+00001820 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001830 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001840 | H1 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 000075B0 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1
 000075C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

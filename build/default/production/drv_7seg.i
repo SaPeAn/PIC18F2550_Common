@@ -8,7 +8,13 @@
 # 2 "<built-in>" 2
 # 1 "drv_7seg.c" 2
 # 1 "./drv_7seg.h" 1
-# 14 "./drv_7seg.h"
+
+
+
+
+
+
+
 # 1 "./common.h" 1
 
 
@@ -31,7 +37,7 @@ uint8 getrand(uint8);
 void randinit(void);
 uint8 dig_to_smb(uint8);
 uint8* u8_to_str(uint8);
-# 14 "./drv_7seg.h" 2
+# 8 "./drv_7seg.h" 2
 
 
 

@@ -18,14 +18,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc\pic18f2550.h: 6351: extern volatile unsigned char TMR1H __attribute__((address(0xFCF)));
 [v _TMR1H `Vuc ~T0 @X0 0 e@4047 ]
 [p mainexit ]
-"16 ./init_periph.h
-[; ;./init_periph.h: 16: void TMR0_init(void);
+"10 ./init_periph.h
+[; ;./init_periph.h: 10: void TMR0_init(void);
 [v _TMR0_init `(v ~T0 @X0 0 ef ]
-"17
-[; ;./init_periph.h: 17: void TMR1_init(void);
+"11
+[; ;./init_periph.h: 11: void TMR1_init(void);
 [v _TMR1_init `(v ~T0 @X0 0 ef ]
-"15
-[; ;./init_periph.h: 15: void Interrupt_init(void);
+"9
+[; ;./init_periph.h: 9: void Interrupt_init(void);
 [v _Interrupt_init `(v ~T0 @X0 0 ef ]
 "19 ./common.h
 [; ;./common.h: 19: void randinit(void);
@@ -661,21 +661,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "21
-[; ;main.c: 21: uint8 Array[] = "Привет, Мир!!!! Hello, World!!!!";
-[v _Array `uc ~T0 @X0 -> 33 `i e ]
+[; ;main.c: 21: uint8 Array[] = "пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ!!!! Hello, World!!!!";
+[v _Array `uc ~T0 @X0 -> 51 `i e ]
 [i _Array
 :U ..
--> -49 `c
--> -16 `c
--> -24 `c
--> -30 `c
--> -27 `c
--> -14 `c
+-> -17 `c
+-> -65 `c
+-> -67 `c
+-> -17 `c
+-> -65 `c
+-> -67 `c
+-> -17 `c
+-> -65 `c
+-> -67 `c
+-> -17 `c
+-> -65 `c
+-> -67 `c
+-> -17 `c
+-> -65 `c
+-> -67 `c
+-> -17 `c
+-> -65 `c
+-> -67 `c
 -> 44 `c
 -> 32 `c
--> -52 `c
--> -24 `c
--> -16 `c
+-> -17 `c
+-> -65 `c
+-> -67 `c
+-> -17 `c
+-> -65 `c
+-> -67 `c
+-> -17 `c
+-> -65 `c
+-> -67 `c
 -> 33 `c
 -> 33 `c
 -> 33 `c

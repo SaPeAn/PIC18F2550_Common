@@ -5207,7 +5207,14 @@ uint8* u8_to_str(uint8);
 
 
 # 1 "./init_periph.h" 1
-# 15 "./init_periph.h"
+
+
+
+
+
+
+
+
 void Interrupt_init(void);
 void TMR0_init(void);
 void TMR1_init(void);
@@ -5289,7 +5296,7 @@ uint32 countTime = 0;
 uint16 countPeriod = 1000;
 uint8 countDirect = 1;
 uint8 countOn = 0;
-uint8 Array[] = "Привет, Мир!!!! Hello, World!!!!";
+uint8 Array[] = "пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ!!!! Hello, World!!!!";
 # 30 "main.c"
 typedef struct{
   uint8 sec;
