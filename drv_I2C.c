@@ -4,7 +4,7 @@
 
 void I2C_init(void)
 {
-   TRISB |= 0b00000011; // RB0 RB1 входы (для I2C)
+   TRISB |= 0b00000011; // RB0 RB1 Inputs (for I2C)
    SSPCON1 = 0x08;
    SSPSTAT = 0x00;
    SSPADD  =  29; // 400,000 baud ----> SSPADD = (48MHz/(4*0.4 MHz) - 1

@@ -70,7 +70,7 @@ extern "C" {
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 #include <xc.h>
-#define _XTAL_FREQ 48000000 //Тактовая частота, Гц
+#define _XTAL_FREQ 48000000 //MCU Frequency, Hz
 
 
 #ifdef	__cplusplus
