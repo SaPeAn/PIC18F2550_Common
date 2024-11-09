@@ -13,7 +13,7 @@ typedef int              int16;
 typedef unsigned long    uint32;
 typedef long             int32;  
 
-uint32 timestamp = 0; //счетчик милисекунд после включения
+uint32 timestamp = 0; //СЃС‡РµС‚С‡РёРє РјРёР»РёСЃРµРєСѓРЅРґ РїРѕСЃР»Рµ РІРєР»СЋС‡РµРЅРёСЏ
 void Delay_ms(uint32);
 uint8 getrand(uint8);
 void randinit(void);

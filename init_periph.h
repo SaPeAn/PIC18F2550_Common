@@ -1,9 +1,3 @@
-/* 
- * File:   init_periph.h
- * Author: SaPA
- *
- * Created on 14 сент€бр€ 2024 г., 10:50
- */
 
 #ifndef INIT_PERIPH_H
 #define	INIT_PERIPH_H

@@ -1,9 +1,3 @@
-/* 
- * File:   7segment.h
- * Author: SaPA
- *
- * Created on 14 сент€бр€ 2024 г., 16:55
- */
 
 #ifndef SEVEN_SEGMENT_H
 #define	SEVEN_SEGMENT_H
