@@ -447,9 +447,9 @@ void Led096Full(void)
   I2C_Stop();
 }
 
-void Led096PrintSmb8x5(uint8 smb, uint8 StartPage, uint8 StartColomn)
+void Led096PrintSmb8x5(uint8 smb, uint8 StartPage, uint8 StartColumn)
 {
-  Led096Set(6, 0x22, StartPage, StartPage, 0x21, StartColomn, (StartColomn+5));
+  Led096Set(6, 0x22, StartPage, StartPage, 0x21, StartColumn, (StartColumn+5));
   I2C_Start();
   I2C_WriteByte(0x78);
   I2C_WriteByte(0x40);
@@ -457,22 +457,22 @@ void Led096PrintSmb8x5(uint8 smb, uint8 StartPage, uint8 StartColomn)
   I2C_Stop();
 }
 
-void Led096PrintStr8x5(uint8* str, uint8 StartPage, uint8 StartColomn)
+void Led096PrintStr8x5(uint8* str, uint8 StartPage, uint8 StartColumn)
 {
   uint8 i = 0;
   while(str[i] != '\0')
   {
     if(str[i] == '\n') {
       StartPage +=1;
-      StartColomn = 0;
+      StartColumn = 0;
     }
     else {
-      Led096PrintSmb8x5(str[i], StartPage, StartColomn);
-      StartColomn += 6;
+      Led096PrintSmb8x5(str[i], StartPage, StartColumn);
+      StartColumn += 6;
     }
-    if(StartColomn > 121) {
+    if(StartColumn > 121) {
       StartPage +=1;
-      StartColomn = 0;
+      StartColumn = 0;
     }
     if(StartPage > 7) break;
     i++;

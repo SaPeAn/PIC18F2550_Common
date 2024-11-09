@@ -3359,23 +3359,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 10 ]
 }
 "39
-[; ;drv_led096_I2C.c: 39: void Led096PrintSmb8x5(uint8 smb, uint8 StartPage, uint8 StartColomn)
+[; ;drv_led096_I2C.c: 39: void Led096PrintSmb8x5(uint8 smb, uint8 StartPage, uint8 StartColumn)
 [v _Led096PrintSmb8x5 `(v ~T0 @X0 1 ef3`uc`uc`uc ]
 "40
 [; ;drv_led096_I2C.c: 40: {
 {
 [e :U _Led096PrintSmb8x5 ]
 "39
-[; ;drv_led096_I2C.c: 39: void Led096PrintSmb8x5(uint8 smb, uint8 StartPage, uint8 StartColomn)
+[; ;drv_led096_I2C.c: 39: void Led096PrintSmb8x5(uint8 smb, uint8 StartPage, uint8 StartColumn)
 [v _smb `uc ~T0 @X0 1 r1 ]
 [v _StartPage `uc ~T0 @X0 1 r2 ]
-[v _StartColomn `uc ~T0 @X0 1 r3 ]
+[v _StartColumn `uc ~T0 @X0 1 r3 ]
 "40
 [; ;drv_led096_I2C.c: 40: {
 [f ]
 "41
-[; ;drv_led096_I2C.c: 41:   Led096Set(6, 0x22, StartPage, StartPage, 0x21, StartColomn, (StartColomn+5));
-[e ( _Led096Set , , , , , , (. -> -> 6 `i `uc -> 34 `i -> _StartPage `i -> _StartPage `i -> 33 `i -> _StartColomn `i + -> _StartColomn `i -> 5 `i ]
+[; ;drv_led096_I2C.c: 41:   Led096Set(6, 0x22, StartPage, StartPage, 0x21, StartColumn, (StartColumn+5));
+[e ( _Led096Set , , , , , , (. -> -> 6 `i `uc -> 34 `i -> _StartPage `i -> _StartPage `i -> 33 `i -> _StartColumn `i + -> _StartColumn `i -> 5 `i ]
 "42
 [; ;drv_led096_I2C.c: 42:   I2C_Start();
 [e ( _I2C_Start ..  ]
@@ -3406,17 +3406,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 14 ]
 }
 "49
-[; ;drv_led096_I2C.c: 49: void Led096PrintStr8x5(uint8* str, uint8 StartPage, uint8 StartColomn)
+[; ;drv_led096_I2C.c: 49: void Led096PrintStr8x5(uint8* str, uint8 StartPage, uint8 StartColumn)
 [v _Led096PrintStr8x5 `(v ~T0 @X0 1 ef3`*uc`uc`uc ]
 "50
 [; ;drv_led096_I2C.c: 50: {
 {
 [e :U _Led096PrintStr8x5 ]
 "49
-[; ;drv_led096_I2C.c: 49: void Led096PrintStr8x5(uint8* str, uint8 StartPage, uint8 StartColomn)
+[; ;drv_led096_I2C.c: 49: void Led096PrintStr8x5(uint8* str, uint8 StartPage, uint8 StartColumn)
 [v _str `*uc ~T0 @X0 1 r1 ]
 [v _StartPage `uc ~T0 @X0 1 r2 ]
-[v _StartColomn `uc ~T0 @X0 1 r3 ]
+[v _StartColumn `uc ~T0 @X0 1 r3 ]
 "50
 [; ;drv_led096_I2C.c: 50: {
 [f ]
@@ -3439,8 +3439,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;drv_led096_I2C.c: 55:       StartPage +=1;
 [e =+ _StartPage -> -> 1 `i `uc ]
 "56
-[; ;drv_led096_I2C.c: 56:       StartColomn = 0;
-[e = _StartColomn -> -> 0 `i `uc ]
+[; ;drv_led096_I2C.c: 56:       StartColumn = 0;
+[e = _StartColumn -> -> 0 `i `uc ]
 "57
 [; ;drv_led096_I2C.c: 57:     }
 }
@@ -3450,25 +3450,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 22 ]
 {
 "59
-[; ;drv_led096_I2C.c: 59:       Led096PrintSmb8x5(str[i], StartPage, StartColomn);
-[e ( _Led096PrintSmb8x5 (3 , , *U + _str * -> _i `ux -> -> # *U _str `ui `ux _StartPage _StartColomn ]
+[; ;drv_led096_I2C.c: 59:       Led096PrintSmb8x5(str[i], StartPage, StartColumn);
+[e ( _Led096PrintSmb8x5 (3 , , *U + _str * -> _i `ux -> -> # *U _str `ui `ux _StartPage _StartColumn ]
 "60
-[; ;drv_led096_I2C.c: 60:       StartColomn += 6;
-[e =+ _StartColomn -> -> 6 `i `uc ]
+[; ;drv_led096_I2C.c: 60:       StartColumn += 6;
+[e =+ _StartColumn -> -> 6 `i `uc ]
 "61
 [; ;drv_led096_I2C.c: 61:     }
 }
 [e :U 23 ]
 "62
-[; ;drv_led096_I2C.c: 62:     if(StartColomn > 121) {
-[e $ ! > -> _StartColomn `i -> 121 `i 24  ]
+[; ;drv_led096_I2C.c: 62:     if(StartColumn > 121) {
+[e $ ! > -> _StartColumn `i -> 121 `i 24  ]
 {
 "63
 [; ;drv_led096_I2C.c: 63:       StartPage +=1;
 [e =+ _StartPage -> -> 1 `i `uc ]
 "64
-[; ;drv_led096_I2C.c: 64:       StartColomn = 0;
-[e = _StartColomn -> -> 0 `i `uc ]
+[; ;drv_led096_I2C.c: 64:       StartColumn = 0;
+[e = _StartColumn -> -> 0 `i `uc ]
 "65
 [; ;drv_led096_I2C.c: 65:     }
 }
