@@ -39,24 +39,22 @@ uint8 dig_to_smb(uint8 dig)
 uint8* u8_to_str(uint8 num)
 {
   uint8 L = num%10;
-  L = dig_to_smb(L);
-  uint8 M = (num%100)/10;
+  uint8 M = num%100/10;
   uint8 H = num/100;
-  if(H == 0) {
-    if(M == 0) {
-      uint8 str1[] = {L, '\0'};
-      return str1;
-    }
-    else {
-      M = dig_to_smb(M);
-      uint8 str2[] = {M, L, '\0'};
-      return str2;
-    }
+  if(num > 99 && num < 256)
+  {  
+    uint8 str1[] = {dig_to_smb(H), dig_to_smb(M), dig_to_smb(L), '\0'};
+    return str1;
+  }  
+  if(num > 9 && num < 100)
+  {
+    uint8 str2[] = {dig_to_smb(M), dig_to_smb(L), '\0'};
+    return str2;
   }
-  else {
-    M = dig_to_smb(M);
-    H = dig_to_smb(H);
-    uint8 str3[] = {H, M, L, '\0'};
+  if(num > 0 && num < 10)
+  {
+    uint8 str3[] = {dig_to_smb(L), '\0'};
     return str3;
-  }            
+  }
+  return NULL;
 }           
