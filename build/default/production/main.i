@@ -5289,7 +5289,6 @@ void LCD_PrintClock(uint8, uint8, uint8);
 
 
 
-
 uint32 mainTimeCounter = 0;
 uint32 dispCounter = 0;
 uint32 countTime = 0;
@@ -5297,7 +5296,7 @@ uint16 countPeriod = 1000;
 uint8 countDirect = 1;
 uint8 countOn = 0;
 uint8 Array[] = "Привет, Мир!!!! Hello, World!!!!";
-# 30 "main.c"
+# 29 "main.c"
 typedef struct{
   uint8 sec;
   uint8 min;
@@ -5340,7 +5339,7 @@ void __attribute__((picinterrupt(("")))) systemTime_int(void)
     timestamp++;
     return;
   }
-# 82 "main.c"
+# 81 "main.c"
 }
 
 

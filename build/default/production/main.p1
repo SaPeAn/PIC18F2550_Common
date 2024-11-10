@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"30 main.c
-[; ;main.c: 30: typedef struct{
+"29 main.c
+[; ;main.c: 29: typedef struct{
 [s S328 `uc 1 `uc 1 `uc 1 ]
 [n S328 . sec min hour ]
 [t ~ __interrupt . k ]
@@ -627,44 +627,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _timestamp
 -> -> -> 0 `i `l `ul
 ]
-"15 main.c
-[; ;main.c: 15: uint32 mainTimeCounter = 0;
+"14 main.c
+[; ;main.c: 14: uint32 mainTimeCounter = 0;
 [v _mainTimeCounter `ul ~T0 @X0 1 e ]
 [i _mainTimeCounter
 -> -> -> 0 `i `l `ul
 ]
-"16
-[; ;main.c: 16: uint32 dispCounter = 0;
+"15
+[; ;main.c: 15: uint32 dispCounter = 0;
 [v _dispCounter `ul ~T0 @X0 1 e ]
 [i _dispCounter
 -> -> -> 0 `i `l `ul
 ]
-"17
-[; ;main.c: 17: uint32 countTime = 0;
+"16
+[; ;main.c: 16: uint32 countTime = 0;
 [v _countTime `ul ~T0 @X0 1 e ]
 [i _countTime
 -> -> -> 0 `i `l `ul
 ]
-"18
-[; ;main.c: 18: uint16 countPeriod = 1000;
+"17
+[; ;main.c: 17: uint16 countPeriod = 1000;
 [v _countPeriod `ui ~T0 @X0 1 e ]
 [i _countPeriod
 -> -> 1000 `i `ui
 ]
-"19
-[; ;main.c: 19: uint8 countDirect = 1;
+"18
+[; ;main.c: 18: uint8 countDirect = 1;
 [v _countDirect `uc ~T0 @X0 1 e ]
 [i _countDirect
 -> -> 1 `i `uc
 ]
-"20
-[; ;main.c: 20: uint8 countOn = 0;
+"19
+[; ;main.c: 19: uint8 countOn = 0;
 [v _countOn `uc ~T0 @X0 1 e ]
 [i _countOn
 -> -> 0 `i `uc
 ]
-"21
-[; ;main.c: 21: uint8 Array[] = "Привет, Мир!!!! Hello, World!!!!";
+"20
+[; ;main.c: 20: uint8 Array[] = "Привет, Мир!!!! Hello, World!!!!";
 [v _Array `uc ~T0 @X0 -> 33 `i e ]
 [i _Array
 :U ..
@@ -703,57 +703,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"35
-[; ;main.c: 35: systime Time;
+"34
+[; ;main.c: 34: systime Time;
 [v _Time `S328 ~T0 @X0 1 e ]
-"37
-[; ;main.c: 37: uint16 GetPrd(void)
+"36
+[; ;main.c: 36: uint16 GetPrd(void)
 [v _GetPrd `(ui ~T0 @X0 1 ef ]
-"38
-[; ;main.c: 38: {
+"37
+[; ;main.c: 37: {
 {
 [e :U _GetPrd ]
 [f ]
-"39
-[; ;main.c: 39:   static int i = 1;
+"38
+[; ;main.c: 38:   static int i = 1;
 [v F2931 `i ~T0 @X0 1 s i ]
 [i F2931
 -> 1 `i
 ]
-"40
-[; ;main.c: 40:   uint16 prd;
+"39
+[; ;main.c: 39:   uint16 prd;
 [v _prd `ui ~T0 @X0 1 a ]
-"41
-[; ;main.c: 41:   if(i == 4) i = 0;
+"40
+[; ;main.c: 40:   if(i == 4) i = 0;
 [e $ ! == F2931 -> 4 `i 330  ]
 [e = F2931 -> 0 `i ]
 [e :U 330 ]
-"42
-[; ;main.c: 42:   switch (i) {
+"41
+[; ;main.c: 41:   switch (i) {
 [e $U 332  ]
 {
-"43
-[; ;main.c: 43:     case 0: prd = 1000; break;
+"42
+[; ;main.c: 42:     case 0: prd = 1000; break;
 [e :U 333 ]
 [e = _prd -> -> 1000 `i `ui ]
 [e $U 331  ]
-"44
-[; ;main.c: 44:     case 1: prd = 100; break;
+"43
+[; ;main.c: 43:     case 1: prd = 100; break;
 [e :U 334 ]
 [e = _prd -> -> 100 `i `ui ]
 [e $U 331  ]
-"45
-[; ;main.c: 45:     case 2: prd = 10; break;
+"44
+[; ;main.c: 44:     case 2: prd = 10; break;
 [e :U 335 ]
 [e = _prd -> -> 10 `i `ui ]
 [e $U 331  ]
-"46
-[; ;main.c: 46:     case 3: prd = 1; break;
+"45
+[; ;main.c: 45:     case 3: prd = 1; break;
 [e :U 336 ]
 [e = _prd -> -> 1 `i `ui ]
 [e $U 331  ]
-"47
-[; ;main.c: 47:   }
+"46
+[; ;main.c: 46:   }
 }
 [e $U 331  ]
 [e :U 332 ]
@@ -763,19 +763,19 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 336
  331 ]
 [e :U 331 ]
-"48
-[; ;main.c: 48:   i++;
+"47
+[; ;main.c: 47:   i++;
 [e ++ F2931 -> 1 `i ]
-"49
-[; ;main.c: 49:   return prd;
+"48
+[; ;main.c: 48:   return prd;
 [e ) _prd ]
 [e $UE 329  ]
-"50
-[; ;main.c: 50: }
+"49
+[; ;main.c: 49: }
 [e :UE 329 ]
 }
-"51
-[; ;main.c: 51: void Counting(uint16 cPrd, uint8 cOn, uint8 cDirect, uint32 counterMax){
+"50
+[; ;main.c: 50: void Counting(uint16 cPrd, uint8 cOn, uint8 cDirect, uint32 counterMax){
 [v _Counting `(v ~T0 @X0 1 ef4`ui`uc`uc`ul ]
 {
 [e :U _Counting ]
@@ -784,366 +784,366 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _cDirect `uc ~T0 @X0 1 r3 ]
 [v _counterMax `ul ~T0 @X0 1 r4 ]
 [f ]
-"52
-[; ;main.c: 52:   static uint32 cTime = 0;
+"51
+[; ;main.c: 51:   static uint32 cTime = 0;
 [v F2938 `ul ~T0 @X0 1 s cTime ]
 [i F2938
 -> -> -> 0 `i `l `ul
 ]
-"53
-[; ;main.c: 53:   if(((timestamp - cTime) >= cPrd) && (cOn)) {
+"52
+[; ;main.c: 52:   if(((timestamp - cTime) >= cPrd) && (cOn)) {
 [e $ ! && >= - _timestamp F2938 -> _cPrd `ul != -> _cOn `i -> 0 `i 338  ]
 {
-"54
-[; ;main.c: 54:     cTime = timestamp;
+"53
+[; ;main.c: 53:     cTime = timestamp;
 [e = F2938 _timestamp ]
-"55
-[; ;main.c: 55:     if(cDirect) mainTimeCounter++;
+"54
+[; ;main.c: 54:     if(cDirect) mainTimeCounter++;
 [e $ ! != -> _cDirect `i -> 0 `i 339  ]
 [e ++ _mainTimeCounter -> -> -> 1 `i `l `ul ]
 [e :U 339 ]
-"56
-[; ;main.c: 56:     if(!cDirect) mainTimeCounter--;
+"55
+[; ;main.c: 55:     if(!cDirect) mainTimeCounter--;
 [e $ ! ! != -> _cDirect `i -> 0 `i 340  ]
 [e -- _mainTimeCounter -> -> -> 1 `i `l `ul ]
 [e :U 340 ]
-"57
-[; ;main.c: 57:       }
+"56
+[; ;main.c: 56:       }
 }
 [e :U 338 ]
-"58
-[; ;main.c: 58:     if(mainTimeCounter > counterMax && countDirect) mainTimeCounter = 0;
+"57
+[; ;main.c: 57:     if(mainTimeCounter > counterMax && countDirect) mainTimeCounter = 0;
 [e $ ! && > _mainTimeCounter _counterMax != -> _countDirect `i -> 0 `i 341  ]
 [e = _mainTimeCounter -> -> -> 0 `i `l `ul ]
 [e :U 341 ]
-"59
-[; ;main.c: 59:     if(mainTimeCounter > counterMax && !countDirect) mainTimeCounter = counterMax;
+"58
+[; ;main.c: 58:     if(mainTimeCounter > counterMax && !countDirect) mainTimeCounter = counterMax;
 [e $ ! && > _mainTimeCounter _counterMax ! != -> _countDirect `i -> 0 `i 342  ]
 [e = _mainTimeCounter _counterMax ]
 [e :U 342 ]
-"60
-[; ;main.c: 60:     }
+"59
+[; ;main.c: 59:     }
 [e :UE 337 ]
 }
 [v $root$_systemTime_int `(v ~T0 @X0 0 e ]
-"62
-[; ;main.c: 62: void __attribute__((picinterrupt(("")))) systemTime_int(void)
+"61
+[; ;main.c: 61: void __attribute__((picinterrupt(("")))) systemTime_int(void)
 [v _systemTime_int `(v ~T21 @X0 1 ef ]
-"63
-[; ;main.c: 63: {
+"62
+[; ;main.c: 62: {
 {
 [e :U _systemTime_int ]
 [f ]
-"64
-[; ;main.c: 64:   if (TMR1IE && TMR1IF)
+"63
+[; ;main.c: 63:   if (TMR1IE && TMR1IF)
 [e $ ! && _TMR1IE _TMR1IF 344  ]
-"65
-[; ;main.c: 65:   {
+"64
+[; ;main.c: 64:   {
 {
-"66
-[; ;main.c: 66:     TMR1L += 32;
+"65
+[; ;main.c: 65:     TMR1L += 32;
 [e =+ _TMR1L -> -> 32 `i `Vuc ]
-"67
-[; ;main.c: 67:     TMR1H = 209;
+"66
+[; ;main.c: 66:     TMR1H = 209;
 [e = _TMR1H -> -> 209 `i `uc ]
-"68
-[; ;main.c: 68:     TMR1IF = 0;
+"67
+[; ;main.c: 67:     TMR1IF = 0;
 [e = _TMR1IF -> -> 0 `i `b ]
-"69
-[; ;main.c: 69:     timestamp++;
+"68
+[; ;main.c: 68:     timestamp++;
 [e ++ _timestamp -> -> -> 1 `i `l `ul ]
-"70
-[; ;main.c: 70:     return;
+"69
+[; ;main.c: 69:     return;
 [e $UE 343  ]
-"71
-[; ;main.c: 71:   }
+"70
+[; ;main.c: 70:   }
 }
 [e :U 344 ]
-"82
-[; ;main.c: 82: }
+"81
+[; ;main.c: 81: }
 [e :UE 343 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"85
-[; ;main.c: 85: void main(void)
+"84
+[; ;main.c: 84: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"86
-[; ;main.c: 86: {
+"85
+[; ;main.c: 85: {
 {
 [e :U _main ]
 [f ]
-"88
-[; ;main.c: 88:   TMR0_init();
+"87
+[; ;main.c: 87:   TMR0_init();
 [e ( _TMR0_init ..  ]
-"89
-[; ;main.c: 89:   TMR1_init();
+"88
+[; ;main.c: 88:   TMR1_init();
 [e ( _TMR1_init ..  ]
-"90
-[; ;main.c: 90:   Interrupt_init();
+"89
+[; ;main.c: 89:   Interrupt_init();
 [e ( _Interrupt_init ..  ]
-"91
-[; ;main.c: 91:   randinit();
+"90
+[; ;main.c: 90:   randinit();
 [e ( _randinit ..  ]
-"94
-[; ;main.c: 94:   btn_t B1 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 5, &timestamp);
+"93
+[; ;main.c: 93:   btn_t B1 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 5, &timestamp);
 [v _B1 `S327 ~T0 @X0 1 a ]
 [e = _B1 ( _CreateBtn (4 , , , , , &U _TRISB &U _PORTB &U _LATB -> -> 2 `i `uc -> -> 5 `i `uc -> &U _timestamp `*Cul ]
-"95
-[; ;main.c: 95:   btn_t B2 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 5, &timestamp);
+"94
+[; ;main.c: 94:   btn_t B2 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 5, &timestamp);
 [v _B2 `S327 ~T0 @X0 1 a ]
 [e = _B2 ( _CreateBtn (4 , , , , , &U _TRISB &U _PORTB &U _LATB -> -> 3 `i `uc -> -> 5 `i `uc -> &U _timestamp `*Cul ]
-"96
-[; ;main.c: 96:   btn_t B3 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 5, &timestamp);
+"95
+[; ;main.c: 95:   btn_t B3 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 5, &timestamp);
 [v _B3 `S327 ~T0 @X0 1 a ]
 [e = _B3 ( _CreateBtn (4 , , , , , &U _TRISB &U _PORTB &U _LATB -> -> 4 `i `uc -> -> 5 `i `uc -> &U _timestamp `*Cul ]
-"97
-[; ;main.c: 97:   btn_t B4 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 6, &timestamp);
+"96
+[; ;main.c: 96:   btn_t B4 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 6, &timestamp);
 [v _B4 `S327 ~T0 @X0 1 a ]
 [e = _B4 ( _CreateBtn (4 , , , , , &U _TRISB &U _PORTB &U _LATB -> -> 2 `i `uc -> -> 6 `i `uc -> &U _timestamp `*Cul ]
-"98
-[; ;main.c: 98:   btn_t B5 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 6, &timestamp);
+"97
+[; ;main.c: 97:   btn_t B5 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 6, &timestamp);
 [v _B5 `S327 ~T0 @X0 1 a ]
 [e = _B5 ( _CreateBtn (4 , , , , , &U _TRISB &U _PORTB &U _LATB -> -> 3 `i `uc -> -> 6 `i `uc -> &U _timestamp `*Cul ]
-"99
-[; ;main.c: 99:   btn_t B6 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 6, &timestamp);
+"98
+[; ;main.c: 98:   btn_t B6 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 6, &timestamp);
 [v _B6 `S327 ~T0 @X0 1 a ]
 [e = _B6 ( _CreateBtn (4 , , , , , &U _TRISB &U _PORTB &U _LATB -> -> 4 `i `uc -> -> 6 `i `uc -> &U _timestamp `*Cul ]
-"100
-[; ;main.c: 100:   btn_t B7 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 7, &timestamp);
+"99
+[; ;main.c: 99:   btn_t B7 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 7, &timestamp);
 [v _B7 `S327 ~T0 @X0 1 a ]
 [e = _B7 ( _CreateBtn (4 , , , , , &U _TRISB &U _PORTB &U _LATB -> -> 2 `i `uc -> -> 7 `i `uc -> &U _timestamp `*Cul ]
-"101
-[; ;main.c: 101:   btn_t B8 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 7, &timestamp);
+"100
+[; ;main.c: 100:   btn_t B8 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 7, &timestamp);
 [v _B8 `S327 ~T0 @X0 1 a ]
 [e = _B8 ( _CreateBtn (4 , , , , , &U _TRISB &U _PORTB &U _LATB -> -> 3 `i `uc -> -> 7 `i `uc -> &U _timestamp `*Cul ]
-"102
-[; ;main.c: 102:   btn_t B9 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 7, &timestamp);
+"101
+[; ;main.c: 101:   btn_t B9 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 7, &timestamp);
 [v _B9 `S327 ~T0 @X0 1 a ]
 [e = _B9 ( _CreateBtn (4 , , , , , &U _TRISB &U _PORTB &U _LATB -> -> 4 `i `uc -> -> 7 `i `uc -> &U _timestamp `*Cul ]
-"105
-[; ;main.c: 105:   uint8 prntClk = 1;
+"104
+[; ;main.c: 104:   uint8 prntClk = 1;
 [v _prntClk `uc ~T0 @X0 1 a ]
 [e = _prntClk -> -> 1 `i `uc ]
-"106
-[; ;main.c: 106:   uint8 T = 0;
+"105
+[; ;main.c: 105:   uint8 T = 0;
 [v _T `uc ~T0 @X0 1 a ]
 [e = _T -> -> 0 `i `uc ]
-"107
-[; ;main.c: 107:   uint8 PG = 0;
+"106
+[; ;main.c: 106:   uint8 PG = 0;
 [v _PG `uc ~T0 @X0 1 a ]
 [e = _PG -> -> 0 `i `uc ]
-"108
-[; ;main.c: 108:   uint8 CL = 0;
+"107
+[; ;main.c: 107:   uint8 CL = 0;
 [v _CL `uc ~T0 @X0 1 a ]
 [e = _CL -> -> 0 `i `uc ]
-"109
-[; ;main.c: 109:   uint8 i = 0;
+"108
+[; ;main.c: 108:   uint8 i = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"112
-[; ;main.c: 112:   Delay_ms(100);
+"111
+[; ;main.c: 111:   Delay_ms(100);
 [e ( _Delay_ms (1 -> -> -> 100 `i `l `ul ]
-"113
-[; ;main.c: 113:   LCD_Init();
+"112
+[; ;main.c: 112:   LCD_Init();
 [e ( _LCD_Init ..  ]
-"118
-[; ;main.c: 118:   while(1)
+"117
+[; ;main.c: 117:   while(1)
 [e :U 347 ]
-"119
-[; ;main.c: 119:   {
+"118
+[; ;main.c: 118:   {
 {
-"120
-[; ;main.c: 120:     TestBtn(&B1); TestBtn(&B2); TestBtn(&B3); TestBtn(&B4); TestBtn(&B5);
+"119
+[; ;main.c: 119:     TestBtn(&B1); TestBtn(&B2); TestBtn(&B3); TestBtn(&B4); TestBtn(&B5);
 [e ( _TestBtn (1 &U _B1 ]
 [e ( _TestBtn (1 &U _B2 ]
 [e ( _TestBtn (1 &U _B3 ]
 [e ( _TestBtn (1 &U _B4 ]
 [e ( _TestBtn (1 &U _B5 ]
-"121
-[; ;main.c: 121:     TestBtn(&B6); TestBtn(&B7); TestBtn(&B8); TestBtn(&B9);
+"120
+[; ;main.c: 120:     TestBtn(&B6); TestBtn(&B7); TestBtn(&B8); TestBtn(&B9);
 [e ( _TestBtn (1 &U _B6 ]
 [e ( _TestBtn (1 &U _B7 ]
 [e ( _TestBtn (1 &U _B8 ]
 [e ( _TestBtn (1 &U _B9 ]
-"123
-[; ;main.c: 123:     if(B1.BtnON || B1.HoldON || B1.StuckON){
+"122
+[; ;main.c: 122:     if(B1.BtnON || B1.HoldON || B1.StuckON){
 [e $ ! || || != -> . _B1 7 `i -> 0 `i != -> . _B1 9 `i -> 0 `i != -> . _B1 10 `i -> 0 `i 349  ]
 {
-"124
-[; ;main.c: 124:       B1.BtnON = 0;
+"123
+[; ;main.c: 123:       B1.BtnON = 0;
 [e = . _B1 7 -> -> 0 `i `uc ]
-"125
-[; ;main.c: 125:       uint8 Number = getrand(255);
+"124
+[; ;main.c: 124:       uint8 Number = getrand(255);
 [v _Number `uc ~T0 @X0 1 a ]
 [e = _Number ( _getrand (1 -> -> 255 `i `uc ]
-"126
-[; ;main.c: 126:       uint8 Nsmb = LCD_printStr8x5(u8_to_str(Number), PG, CL);
+"125
+[; ;main.c: 125:       uint8 Nsmb = LCD_printStr8x5(u8_to_str(Number), PG, CL);
 [v _Nsmb `uc ~T0 @X0 1 a ]
 [e = _Nsmb ( _LCD_printStr8x5 (3 , , ( _u8_to_str (1 _Number _PG _CL ]
-"127
-[; ;main.c: 127:       CL += 6*Nsmb;
+"126
+[; ;main.c: 126:       CL += 6*Nsmb;
 [e =+ _CL -> * -> 6 `i -> _Nsmb `i `uc ]
-"128
-[; ;main.c: 128:       LCD_printSmb8x5(' ', PG, CL);
+"127
+[; ;main.c: 127:       LCD_printSmb8x5(' ', PG, CL);
 [e ( _LCD_printSmb8x5 (3 , , -> -> 32 `ui `uc _PG _CL ]
-"129
-[; ;main.c: 129:       CL += 6;
+"128
+[; ;main.c: 128:       CL += 6;
 [e =+ _CL -> -> 6 `i `uc ]
-"130
-[; ;main.c: 130:       if(CL > 108) {PG++; CL = 0;}
+"129
+[; ;main.c: 129:       if(CL > 108) {PG++; CL = 0;}
 [e $ ! > -> _CL `i -> 108 `i 350  ]
 {
 [e ++ _PG -> -> 1 `i `uc ]
 [e = _CL -> -> 0 `i `uc ]
 }
 [e :U 350 ]
-"131
-[; ;main.c: 131:       if(PG > 7) {PG = 0; LCD_Erase();}
+"130
+[; ;main.c: 130:       if(PG > 7) {PG = 0; LCD_Erase();}
 [e $ ! > -> _PG `i -> 7 `i 351  ]
 {
 [e = _PG -> -> 0 `i `uc ]
 [e ( _LCD_Erase ..  ]
 }
 [e :U 351 ]
-"132
-[; ;main.c: 132:     }
+"131
+[; ;main.c: 131:     }
 }
 [e :U 349 ]
-"134
-[; ;main.c: 134:     if(B2.BtnON){
+"133
+[; ;main.c: 133:     if(B2.BtnON){
 [e $ ! != -> . _B2 7 `i -> 0 `i 352  ]
 {
-"135
-[; ;main.c: 135:       B2.BtnON = 0;
+"134
+[; ;main.c: 134:       B2.BtnON = 0;
 [e = . _B2 7 -> -> 0 `i `uc ]
-"136
-[; ;main.c: 136:       LCD_Erase();
+"135
+[; ;main.c: 135:       LCD_Erase();
 [e ( _LCD_Erase ..  ]
-"137
-[; ;main.c: 137:       PG = 0;
+"136
+[; ;main.c: 136:       PG = 0;
 [e = _PG -> -> 0 `i `uc ]
-"138
-[; ;main.c: 138:       CL = 0;
+"137
+[; ;main.c: 137:       CL = 0;
 [e = _CL -> -> 0 `i `uc ]
-"139
-[; ;main.c: 139:       randinit();
+"138
+[; ;main.c: 138:       randinit();
 [e ( _randinit ..  ]
-"140
-[; ;main.c: 140:     }
+"139
+[; ;main.c: 139:     }
 }
 [e :U 352 ]
-"142
-[; ;main.c: 142:     if(B3.BtnON){
+"141
+[; ;main.c: 141:     if(B3.BtnON){
 [e $ ! != -> . _B3 7 `i -> 0 `i 353  ]
 {
-"143
-[; ;main.c: 143:       B3.BtnON = 0;
+"142
+[; ;main.c: 142:       B3.BtnON = 0;
 [e = . _B3 7 -> -> 0 `i `uc ]
-"144
-[; ;main.c: 144:       LCD_printStr8x5(Array, 0, 0);
+"143
+[; ;main.c: 143:       LCD_printStr8x5(Array, 0, 0);
 [e ( _LCD_printStr8x5 (3 , , &U _Array -> -> 0 `i `uc -> -> 0 `i `uc ]
-"145
-[; ;main.c: 145:     }
+"144
+[; ;main.c: 144:     }
 }
 [e :U 353 ]
-"147
-[; ;main.c: 147:     if(B4.BtnON) {
+"146
+[; ;main.c: 146:     if(B4.BtnON) {
 [e $ ! != -> . _B4 7 `i -> 0 `i 354  ]
 {
-"148
-[; ;main.c: 148:         B4.BtnON = 0;
+"147
+[; ;main.c: 147:         B4.BtnON = 0;
 [e = . _B4 7 -> -> 0 `i `uc ]
-"149
-[; ;main.c: 149:         if(B4.Toggle) prntClk = 0;
+"148
+[; ;main.c: 148:         if(B4.Toggle) prntClk = 0;
 [e $ ! != -> . _B4 8 `i -> 0 `i 355  ]
 [e = _prntClk -> -> 0 `i `uc ]
 [e $U 356  ]
-"150
-[; ;main.c: 150:         else prntClk = 1;
+"149
+[; ;main.c: 149:         else prntClk = 1;
 [e :U 355 ]
 [e = _prntClk -> -> 1 `i `uc ]
 [e :U 356 ]
-"151
-[; ;main.c: 151:     }
+"150
+[; ;main.c: 150:     }
 }
 [e :U 354 ]
-"153
-[; ;main.c: 153:     if(B5.BtnON) {
+"152
+[; ;main.c: 152:     if(B5.BtnON) {
 [e $ ! != -> . _B5 7 `i -> 0 `i 357  ]
 {
-"154
-[; ;main.c: 154:         B5.BtnON = 0;
+"153
+[; ;main.c: 153:         B5.BtnON = 0;
 [e = . _B5 7 -> -> 0 `i `uc ]
-"155
-[; ;main.c: 155:         countPeriod = GetPrd();
+"154
+[; ;main.c: 154:         countPeriod = GetPrd();
 [e = _countPeriod ( _GetPrd ..  ]
-"156
-[; ;main.c: 156:     }
+"155
+[; ;main.c: 155:     }
 }
 [e :U 357 ]
-"157
-[; ;main.c: 157:     if(B6.BtnON) {
+"156
+[; ;main.c: 156:     if(B6.BtnON) {
 [e $ ! != -> . _B6 7 `i -> 0 `i 358  ]
 {
-"158
-[; ;main.c: 158:         B6.BtnON = 0;
+"157
+[; ;main.c: 157:         B6.BtnON = 0;
 [e = . _B6 7 -> -> 0 `i `uc ]
-"159
-[; ;main.c: 159:         if(B6.Toggle)countDirect = 0;
+"158
+[; ;main.c: 158:         if(B6.Toggle)countDirect = 0;
 [e $ ! != -> . _B6 8 `i -> 0 `i 359  ]
 [e = _countDirect -> -> 0 `i `uc ]
 [e $U 360  ]
-"160
-[; ;main.c: 160:         else countDirect = 1;
+"159
+[; ;main.c: 159:         else countDirect = 1;
 [e :U 359 ]
 [e = _countDirect -> -> 1 `i `uc ]
 [e :U 360 ]
-"161
-[; ;main.c: 161:     }
+"160
+[; ;main.c: 160:     }
 }
 [e :U 358 ]
-"163
-[; ;main.c: 163:     if(B7.BtnON){B7.BtnON = 0; LCD_printStr8x5(((void*)0), PG, CL);}
+"162
+[; ;main.c: 162:     if(B7.BtnON){B7.BtnON = 0; LCD_printStr8x5(((void*)0), PG, CL);}
 [e $ ! != -> . _B7 7 `i -> 0 `i 361  ]
 {
 [e = . _B7 7 -> -> 0 `i `uc ]
 [e ( _LCD_printStr8x5 (3 , , -> -> -> 0 `i `*v `*uc _PG _CL ]
 }
 [e :U 361 ]
-"164
-[; ;main.c: 164:     if(B8.BtnON){B8.BtnON = 0;}
+"163
+[; ;main.c: 163:     if(B8.BtnON){B8.BtnON = 0;}
 [e $ ! != -> . _B8 7 `i -> 0 `i 362  ]
 {
 [e = . _B8 7 -> -> 0 `i `uc ]
 }
 [e :U 362 ]
-"166
-[; ;main.c: 166:     Counting(countPeriod, 1, countDirect, 359999);
+"165
+[; ;main.c: 165:     Counting(countPeriod, 1, countDirect, 359999);
 [e ( _Counting (4 , , , _countPeriod -> -> 1 `i `uc _countDirect -> -> 359999 `l `ul ]
-"167
-[; ;main.c: 167:     Time.hour = mainTimeCounter/3600;
+"166
+[; ;main.c: 166:     Time.hour = mainTimeCounter/3600;
 [e = . _Time 2 -> / _mainTimeCounter -> -> -> 3600 `i `l `ul `uc ]
-"168
-[; ;main.c: 168:     Time.min = (mainTimeCounter%3600)/60;
+"167
+[; ;main.c: 167:     Time.min = (mainTimeCounter%3600)/60;
 [e = . _Time 1 -> / % _mainTimeCounter -> -> -> 3600 `i `l `ul -> -> -> 60 `i `l `ul `uc ]
-"169
-[; ;main.c: 169:     Time.sec = mainTimeCounter%60;
+"168
+[; ;main.c: 168:     Time.sec = mainTimeCounter%60;
 [e = . _Time 0 -> % _mainTimeCounter -> -> -> 60 `i `l `ul `uc ]
-"170
-[; ;main.c: 170:     if(prntClk) LCD_PrintClock(Time.hour, Time.min, Time.sec);
+"169
+[; ;main.c: 169:     if(prntClk) LCD_PrintClock(Time.hour, Time.min, Time.sec);
 [e $ ! != -> _prntClk `i -> 0 `i 363  ]
 [e ( _LCD_PrintClock (3 , , . _Time 2 . _Time 1 . _Time 0 ]
 [e :U 363 ]
-"171
-[; ;main.c: 171:   }
+"170
+[; ;main.c: 170:   }
 }
 [e :U 346 ]
 [e $U 347  ]
 [e :U 348 ]
-"173
-[; ;main.c: 173:   return;
+"172
+[; ;main.c: 172:   return;
 [e $UE 345  ]
-"174
-[; ;main.c: 174: }
+"173
+[; ;main.c: 173: }
 [e :UE 345 ]
 }

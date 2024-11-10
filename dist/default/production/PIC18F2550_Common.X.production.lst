@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.50 build 20240725155939 
-                                                                                               Sun Nov 10 11:22:07 2024
+                                                                                               Sun Nov 10 15:00:09 2024
 
 Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1 
      1                           	processor	18F2550
@@ -4615,7 +4615,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4601 ;;
   4602 ;; *************** function _main *****************
   4603 ;; Defined at:
-  4604 ;;		line 85 in file "main.c"
+  4604 ;;		line 84 in file "main.c"
   4605 ;; Parameters:    Size  Location     Type
   4606 ;;		None
   4607 ;; Auto vars:     Size  Location     Type
@@ -4680,19 +4680,19 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4666   00053C                     _main:
   4667                           	callstack 24
   4668   00053C                     
-  4669                           ;main.c: 88:   TMR0_init();
+  4669                           ;main.c: 87:   TMR0_init();
   4670   00053C  ECFB  F00B         	call	_TMR0_init	;wreg free
   4671                           
-  4672                           ;main.c: 89:   TMR1_init();
+  4672                           ;main.c: 88:   TMR1_init();
   4673   000540  ECF4  F00B         	call	_TMR1_init	;wreg free
   4674   000544                     
-  4675                           ;main.c: 90:   Interrupt_init();
+  4675                           ;main.c: 89:   Interrupt_init();
   4676   000544  ECBC  F00A         	call	_Interrupt_init	;wreg free
   4677   000548                     
-  4678                           ;main.c: 91:   randinit();
+  4678                           ;main.c: 90:   randinit();
   4679   000548  ECE0  F00B         	call	_randinit	;wreg free
   4680   00054C                     
-  4681                           ;main.c: 94:   btn_t B1 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 5, &timestamp);
+  4681                           ;main.c: 93:   btn_t B1 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 5, &timestamp);
   4682   00054C  0E93               	movlw	147
   4683   00054E  6E01               	movwf	CreateBtn@Tris^0,c
   4684   000550  0E0F               	movlw	15
@@ -4719,7 +4719,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4705   00057E  06E8               	decf	wreg,f,c
   4706   000580  E2FC               	bc	u2301
   4707   000582                     
-  4708                           ;main.c: 95:   btn_t B2 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 5, &timestamp);
+  4708                           ;main.c: 94:   btn_t B2 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 5, &timestamp);
   4709   000582  0E93               	movlw	147
   4710   000584  6E01               	movwf	CreateBtn@Tris^0,c
   4711   000586  0E0F               	movlw	15
@@ -4746,7 +4746,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4732   0005B4  06E8               	decf	wreg,f,c
   4733   0005B6  E2FC               	bc	u2311
   4734   0005B8                     
-  4735                           ;main.c: 96:   btn_t B3 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 5, &timestamp);
+  4735                           ;main.c: 95:   btn_t B3 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 5, &timestamp);
   4736   0005B8  0E93               	movlw	147
   4737   0005BA  6E01               	movwf	CreateBtn@Tris^0,c
   4738   0005BC  0E0F               	movlw	15
@@ -4773,7 +4773,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4759   0005EA  06E8               	decf	wreg,f,c
   4760   0005EC  E2FC               	bc	u2321
   4761   0005EE                     
-  4762                           ;main.c: 97:   btn_t B4 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 6, &timestamp);
+  4762                           ;main.c: 96:   btn_t B4 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 6, &timestamp);
   4763   0005EE  0E93               	movlw	147
   4764   0005F0  6E01               	movwf	CreateBtn@Tris^0,c
   4765   0005F2  0E0F               	movlw	15
@@ -4800,7 +4800,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4786   000620  06E8               	decf	wreg,f,c
   4787   000622  E2FC               	bc	u2331
   4788   000624                     
-  4789                           ;main.c: 98:   btn_t B5 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 6, &timestamp);
+  4789                           ;main.c: 97:   btn_t B5 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 6, &timestamp);
   4790   000624  0E93               	movlw	147
   4791   000626  6E01               	movwf	CreateBtn@Tris^0,c
   4792   000628  0E0F               	movlw	15
@@ -4827,7 +4827,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4813   000656  06E8               	decf	wreg,f,c
   4814   000658  E2FC               	bc	u2341
   4815   00065A                     
-  4816                           ;main.c: 99:   btn_t B6 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 6, &timestamp);
+  4816                           ;main.c: 98:   btn_t B6 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 6, &timestamp);
   4817   00065A  0E93               	movlw	147
   4818   00065C  6E01               	movwf	CreateBtn@Tris^0,c
   4819   00065E  0E0F               	movlw	15
@@ -4854,7 +4854,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4840   00068C  06E8               	decf	wreg,f,c
   4841   00068E  E2FC               	bc	u2351
   4842   000690                     
-  4843                           ;main.c: 100:   btn_t B7 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 7, &timestamp);
+  4843                           ;main.c: 99:   btn_t B7 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 7, &timestamp);
   4844   000690  0E93               	movlw	147
   4845   000692  6E01               	movwf	CreateBtn@Tris^0,c
   4846   000694  0E0F               	movlw	15
@@ -4881,7 +4881,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4867   0006C2  06E8               	decf	wreg,f,c
   4868   0006C4  E2FC               	bc	u2361
   4869   0006C6                     
-  4870                           ;main.c: 101:   btn_t B8 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 7, &timestamp);
+  4870                           ;main.c: 100:   btn_t B8 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 7, &timestamp);
   4871   0006C6  0E93               	movlw	147
   4872   0006C8  6E01               	movwf	CreateBtn@Tris^0,c
   4873   0006CA  0E0F               	movlw	15
@@ -4908,7 +4908,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4894   0006F8  06E8               	decf	wreg,f,c
   4895   0006FA  E2FC               	bc	u2371
   4896   0006FC                     
-  4897                           ;main.c: 102:   btn_t B9 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 7, &timestamp);
+  4897                           ;main.c: 101:   btn_t B9 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 7, &timestamp);
   4898   0006FC  0E93               	movlw	147
   4899   0006FE  6E01               	movwf	CreateBtn@Tris^0,c
   4900   000700  0E0F               	movlw	15
@@ -4935,21 +4935,21 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4921   00072E  06E8               	decf	wreg,f,c
   4922   000730  E2FC               	bc	u2381
   4923   000732                     
-  4924                           ;main.c: 105:   uint8 prntClk = 1;
+  4924                           ;main.c: 104:   uint8 prntClk = 1;
   4925   000732  0E01               	movlw	1
   4926   000734  0100               	movlb	0	; () banked
   4927   000736  6F62               	movwf	main@prntClk& (0+255),b
   4928   000738                     
   4929                           ; BSR set to: 0
-  4930                           ;main.c: 107:   uint8 PG = 0;
+  4930                           ;main.c: 106:   uint8 PG = 0;
   4931   000738  6B63               	clrf	main@PG& (0+255),b
   4932   00073A                     
   4933                           ; BSR set to: 0
-  4934                           ;main.c: 108:   uint8 CL = 0;
+  4934                           ;main.c: 107:   uint8 CL = 0;
   4935   00073A  6B64               	clrf	main@CL& (0+255),b
   4936   00073C                     
   4937                           ; BSR set to: 0
-  4938                           ;main.c: 112:   Delay_ms(100);
+  4938                           ;main.c: 111:   Delay_ms(100);
   4939   00073C  0E64               	movlw	100
   4940   00073E  6E01               	movwf	Delay_ms@ms^0,c
   4941   000740  0E00               	movlw	0
@@ -4960,11 +4960,11 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4946   00074A  6E04               	movwf	(Delay_ms@ms+3)^0,c
   4947   00074C  ECEC  F00A         	call	_Delay_ms	;wreg free
   4948   000750                     
-  4949                           ;main.c: 113:   LCD_Init();
+  4949                           ;main.c: 112:   LCD_Init();
   4950   000750  EC41  F009         	call	_LCD_Init	;wreg free
   4951   000754                     l3446:
   4952                           
-  4953                           ;main.c: 119:   {;main.c: 120:     TestBtn(&B1); TestBtn(&B2); TestBtn(&B3); TestBtn(&B4
+  4953                           ;main.c: 118:   {;main.c: 119:     TestBtn(&B1); TestBtn(&B2); TestBtn(&B3); TestBtn(&B4
       +                          ); TestBtn(&B5);
   4954   000754  0EE5               	movlw	low main@B1
   4955   000756  6E01               	movwf	TestBtn@btn^0,c
@@ -4982,7 +4982,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4967   000776  6E01               	movwf	TestBtn@btn^0,c
   4968   000778  EC09  F000         	call	_TestBtn	;wreg free
   4969   00077C                     
-  4970                           ;main.c: 121:     TestBtn(&B6); TestBtn(&B7); TestBtn(&B8); TestBtn(&B9);
+  4970                           ;main.c: 120:     TestBtn(&B6); TestBtn(&B7); TestBtn(&B8); TestBtn(&B9);
   4971   00077C  0ED5               	movlw	low main@B6
   4972   00077E  6E01               	movwf	TestBtn@btn^0,c
   4973   000780  EC09  F000         	call	_TestBtn	;wreg free
@@ -4996,7 +4996,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   4981   000796  6E01               	movwf	TestBtn@btn^0,c
   4982   000798  EC09  F000         	call	_TestBtn	;wreg free
   4983   00079C                     
-  4984                           ;main.c: 123:     if(B1.BtnON || B1.HoldON || B1.StuckON){
+  4984                           ;main.c: 122:     if(B1.BtnON || B1.HoldON || B1.StuckON){
   4985   00079C  0100               	movlb	0	; () banked
   4986   00079E  51F1               	movf	(main@B1+12)& (0+255),w,b
   4987   0007A0  A4D8               	btfss	status,2,c
@@ -5026,18 +5026,18 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5011   0007CE                     l667:
   5012                           
   5013                           ; BSR set to: 0
-  5014                           ;main.c: 124:       B1.BtnON = 0;
+  5014                           ;main.c: 123:       B1.BtnON = 0;
   5015   0007CE  6BF1               	clrf	(main@B1+12)& (0+255),b
   5016   0007D0                     
   5017                           ; BSR set to: 0
-  5018                           ;main.c: 125:       uint8 Number = getrand(255);
+  5018                           ;main.c: 124:       uint8 Number = getrand(255);
   5019   0007D0  0EFF               	movlw	255
   5020   0007D2  ECB6  F00B         	call	_getrand
   5021   0007D6  0100               	movlb	0	; () banked
   5022   0007D8  6F60               	movwf	main@Number& (0+255),b
   5023   0007DA                     
   5024                           ; BSR set to: 0
-  5025                           ;main.c: 126:       uint8 Nsmb = LCD_printStr8x5(u8_to_str(Number), PG, CL);
+  5025                           ;main.c: 125:       uint8 Nsmb = LCD_printStr8x5(u8_to_str(Number), PG, CL);
   5026   0007DA  5160               	movf	main@Number& (0+255),w,b
   5027   0007DC  EC5C  F006         	call	_u8_to_str
   5028   0007E0  6E49               	movwf	??_main^0,c
@@ -5050,26 +5050,26 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5035   0007F6  6F61               	movwf	main@Nsmb& (0+255),b
   5036   0007F8                     
   5037                           ; BSR set to: 0
-  5038                           ;main.c: 127:       CL += 6*Nsmb;
+  5038                           ;main.c: 126:       CL += 6*Nsmb;
   5039   0007F8  5161               	movf	main@Nsmb& (0+255),w,b
   5040   0007FA  0D06               	mullw	6
   5041   0007FC  50F3               	movf	243,w,c
   5042   0007FE  2764               	addwf	main@CL& (0+255),f,b
   5043   000800                     
   5044                           ; BSR set to: 0
-  5045                           ;main.c: 128:       LCD_printSmb8x5(' ', PG, CL);
+  5045                           ;main.c: 127:       LCD_printSmb8x5(' ', PG, CL);
   5046   000800  C063  F013         	movff	main@PG,LCD_printSmb8x5@page
   5047   000804  C064  F014         	movff	main@CL,LCD_printSmb8x5@col
   5048   000808  0E20               	movlw	32
   5049   00080A  EC87  F00B         	call	_LCD_printSmb8x5
   5050   00080E                     
-  5051                           ;main.c: 129:       CL += 6;
+  5051                           ;main.c: 128:       CL += 6;
   5052   00080E  0E06               	movlw	6
   5053   000810  0100               	movlb	0	; () banked
   5054   000812  2764               	addwf	main@CL& (0+255),f,b
   5055   000814                     
   5056                           ; BSR set to: 0
-  5057                           ;main.c: 130:       if(CL > 108) {PG++; CL = 0;}
+  5057                           ;main.c: 129:       if(CL > 108) {PG++; CL = 0;}
   5058   000814  0E6C               	movlw	108
   5059   000816  6564               	cpfsgt	main@CL& (0+255),b
   5060   000818  EF10  F004         	goto	u2421
@@ -5086,7 +5086,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5071   000828                     l3486:
   5072                           
   5073                           ; BSR set to: 0
-  5074                           ;main.c: 131:       if(PG > 7) {PG = 0; LCD_Erase();}
+  5074                           ;main.c: 130:       if(PG > 7) {PG = 0; LCD_Erase();}
   5075   000828  0E07               	movlw	7
   5076   00082A  6563               	cpfsgt	main@PG& (0+255),b
   5077   00082C  EF1A  F004         	goto	u2431
@@ -5102,7 +5102,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5087   00083A  EC10  F00A         	call	_LCD_Erase	;wreg free
   5088   00083E                     l3492:
   5089                           
-  5090                           ;main.c: 134:     if(B2.BtnON){
+  5090                           ;main.c: 133:     if(B2.BtnON){
   5091   00083E  0100               	movlb	0	; () banked
   5092   000840  5181               	movf	(main@B2+12)& (0+255),w,b
   5093   000842  B4D8               	btfsc	status,2,c
@@ -5113,27 +5113,27 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5098   000850                     u2440:
   5099   000850                     
   5100                           ; BSR set to: 0
-  5101                           ;main.c: 135:       B2.BtnON = 0;
+  5101                           ;main.c: 134:       B2.BtnON = 0;
   5102   000850  6B81               	clrf	(main@B2+12)& (0+255),b
   5103   000852                     
   5104                           ; BSR set to: 0
-  5105                           ;main.c: 136:       LCD_Erase();
+  5105                           ;main.c: 135:       LCD_Erase();
   5106   000852  EC10  F00A         	call	_LCD_Erase	;wreg free
   5107   000856                     
-  5108                           ;main.c: 137:       PG = 0;
+  5108                           ;main.c: 136:       PG = 0;
   5109   000856  0100               	movlb	0	; () banked
   5110   000858  6B63               	clrf	main@PG& (0+255),b
   5111   00085A                     
   5112                           ; BSR set to: 0
-  5113                           ;main.c: 138:       CL = 0;
+  5113                           ;main.c: 137:       CL = 0;
   5114   00085A  6B64               	clrf	main@CL& (0+255),b
   5115   00085C                     
   5116                           ; BSR set to: 0
-  5117                           ;main.c: 139:       randinit();
+  5117                           ;main.c: 138:       randinit();
   5118   00085C  ECE0  F00B         	call	_randinit	;wreg free
   5119   000860                     l3504:
   5120                           
-  5121                           ;main.c: 142:     if(B3.BtnON){
+  5121                           ;main.c: 141:     if(B3.BtnON){
   5122   000860  0100               	movlb	0	; () banked
   5123   000862  5191               	movf	(main@B3+12)& (0+255),w,b
   5124   000864  B4D8               	btfsc	status,2,c
@@ -5144,11 +5144,11 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5129   000872                     u2450:
   5130   000872                     
   5131                           ; BSR set to: 0
-  5132                           ;main.c: 143:       B3.BtnON = 0;
+  5132                           ;main.c: 142:       B3.BtnON = 0;
   5133   000872  6B91               	clrf	(main@B3+12)& (0+255),b
   5134   000874                     
   5135                           ; BSR set to: 0
-  5136                           ;main.c: 144:       LCD_printStr8x5(Array, 0, 0);
+  5136                           ;main.c: 143:       LCD_printStr8x5(Array, 0, 0);
   5137   000874  0E05               	movlw	low _Array
   5138   000876  6E30               	movwf	LCD_printStr8x5@str^0,c
   5139   000878  0E01               	movlw	high _Array
@@ -5160,7 +5160,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5145   000884  ECA7  F008         	call	_LCD_printStr8x5	;wreg free
   5146   000888                     l3510:
   5147                           
-  5148                           ;main.c: 147:     if(B4.BtnON) {
+  5148                           ;main.c: 146:     if(B4.BtnON) {
   5149   000888  0100               	movlb	0	; () banked
   5150   00088A  51D1               	movf	(main@B4+12)& (0+255),w,b
   5151   00088C  B4D8               	btfsc	status,2,c
@@ -5171,11 +5171,11 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5156   00089A                     u2460:
   5157   00089A                     
   5158                           ; BSR set to: 0
-  5159                           ;main.c: 148:         B4.BtnON = 0;
+  5159                           ;main.c: 147:         B4.BtnON = 0;
   5160   00089A  6BD1               	clrf	(main@B4+12)& (0+255),b
   5161   00089C                     
   5162                           ; BSR set to: 0
-  5163                           ;main.c: 149:         if(B4.Toggle) prntClk = 0;
+  5163                           ;main.c: 148:         if(B4.Toggle) prntClk = 0;
   5164   00089C  51D2               	movf	(main@B4+13)& (0+255),w,b
   5165   00089E  B4D8               	btfsc	status,2,c
   5166   0008A0  EF54  F004         	goto	u2471
@@ -5195,7 +5195,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5180   0008B6                     l672:
   5181                           
   5182                           ; BSR set to: 0
-  5183                           ;main.c: 153:     if(B5.BtnON) {
+  5183                           ;main.c: 152:     if(B5.BtnON) {
   5184   0008B6  51A1               	movf	(main@B5+12)& (0+255),w,b
   5185   0008B8  B4D8               	btfsc	status,2,c
   5186   0008BA  EF61  F004         	goto	u2481
@@ -5205,17 +5205,17 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5190   0008C6                     u2480:
   5191   0008C6                     
   5192                           ; BSR set to: 0
-  5193                           ;main.c: 154:         B5.BtnON = 0;
+  5193                           ;main.c: 153:         B5.BtnON = 0;
   5194   0008C6  6BA1               	clrf	(main@B5+12)& (0+255),b
   5195   0008C8                     
   5196                           ; BSR set to: 0
-  5197                           ;main.c: 155:         countPeriod = GetPrd();
+  5197                           ;main.c: 154:         countPeriod = GetPrd();
   5198   0008C8  ECF4  F008         	call	_GetPrd	;wreg free
   5199   0008CC  C001  F0FD         	movff	?_GetPrd,_countPeriod
   5200   0008D0  C002  F0FE         	movff	?_GetPrd+1,_countPeriod+1
   5201   0008D4                     l3524:
   5202                           
-  5203                           ;main.c: 157:     if(B6.BtnON) {
+  5203                           ;main.c: 156:     if(B6.BtnON) {
   5204   0008D4  0100               	movlb	0	; () banked
   5205   0008D6  51E1               	movf	(main@B6+12)& (0+255),w,b
   5206   0008D8  B4D8               	btfsc	status,2,c
@@ -5226,11 +5226,11 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5211   0008E6                     u2490:
   5212   0008E6                     
   5213                           ; BSR set to: 0
-  5214                           ;main.c: 158:         B6.BtnON = 0;
+  5214                           ;main.c: 157:         B6.BtnON = 0;
   5215   0008E6  6BE1               	clrf	(main@B6+12)& (0+255),b
   5216   0008E8                     
   5217                           ; BSR set to: 0
-  5218                           ;main.c: 159:         if(B6.Toggle)countDirect = 0;
+  5218                           ;main.c: 158:         if(B6.Toggle)countDirect = 0;
   5219   0008E8  51E2               	movf	(main@B6+13)& (0+255),w,b
   5220   0008EA  B4D8               	btfsc	status,2,c
   5221   0008EC  EF7A  F004         	goto	u2501
@@ -5250,7 +5250,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5235   000902                     l676:
   5236                           
   5237                           ; BSR set to: 0
-  5238                           ;main.c: 163:     if(B7.BtnON){B7.BtnON = 0; LCD_printStr8x5(((void*)0), PG, CL);}
+  5238                           ;main.c: 162:     if(B7.BtnON){B7.BtnON = 0; LCD_printStr8x5(((void*)0), PG, CL);}
   5239   000902  51B1               	movf	(main@B7+12)& (0+255),w,b
   5240   000904  B4D8               	btfsc	status,2,c
   5241   000906  EF87  F004         	goto	u2511
@@ -5272,7 +5272,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5257   000924  ECA7  F008         	call	_LCD_printStr8x5	;wreg free
   5258   000928                     l3538:
   5259                           
-  5260                           ;main.c: 164:     if(B8.BtnON){B8.BtnON = 0;}
+  5260                           ;main.c: 163:     if(B8.BtnON){B8.BtnON = 0;}
   5261   000928  0100               	movlb	0	; () banked
   5262   00092A  51C1               	movf	(main@B8+12)& (0+255),w,b
   5263   00092C  B4D8               	btfsc	status,2,c
@@ -5287,7 +5287,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5272   00093C                     l3542:
   5273                           
   5274                           ; BSR set to: 0
-  5275                           ;main.c: 166:     Counting(countPeriod, 1, countDirect, 359999);
+  5275                           ;main.c: 165:     Counting(countPeriod, 1, countDirect, 359999);
   5276   00093C  C0FD  F001         	movff	_countPeriod,Counting@cPrd
   5277   000940  C0FE  F002         	movff	_countPeriod+1,Counting@cPrd+1
   5278   000944  0E01               	movlw	1
@@ -5303,7 +5303,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5288   00095A  6E08               	movwf	(Counting@counterMax+3)^0,c
   5289   00095C  ECD0  F005         	call	_Counting	;wreg free
   5290                           
-  5291                           ;main.c: 167:     Time.hour = mainTimeCounter/3600;
+  5291                           ;main.c: 166:     Time.hour = mainTimeCounter/3600;
   5292   000960  C0F5  F00A         	movff	_mainTimeCounter,___lldiv@dividend
   5293   000964  C0F6  F00B         	movff	_mainTimeCounter+1,___lldiv@dividend+1
   5294   000968  C0F7  F00C         	movff	_mainTimeCounter+2,___lldiv@dividend+2
@@ -5320,7 +5320,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5305   000984  500A               	movf	?___lldiv^0,w,c
   5306   000986  6E54               	movwf	(_Time+2)^0,c
   5307                           
-  5308                           ;main.c: 168:     Time.min = (mainTimeCounter%3600)/60;
+  5308                           ;main.c: 167:     Time.min = (mainTimeCounter%3600)/60;
   5309   000988  0E10               	movlw	16
   5310   00098A  6E05               	movwf	___llmod@divisor^0,c
   5311   00098C  0E0E               	movlw	14
@@ -5350,7 +5350,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5335   0009D0  500A               	movf	?___lldiv^0,w,c
   5336   0009D2  6E53               	movwf	(_Time+1)^0,c
   5337                           
-  5338                           ;main.c: 169:     Time.sec = mainTimeCounter%60;
+  5338                           ;main.c: 168:     Time.sec = mainTimeCounter%60;
   5339   0009D4  C0F5  F001         	movff	_mainTimeCounter,___llmod@dividend
   5340   0009D8  C0F6  F002         	movff	_mainTimeCounter+1,___llmod@dividend+1
   5341   0009DC  C0F7  F003         	movff	_mainTimeCounter+2,___llmod@dividend+2
@@ -5367,7 +5367,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5352   0009F8  5001               	movf	?___llmod^0,w,c
   5353   0009FA  6E52               	movwf	_Time^0,c
   5354   0009FC                     
-  5355                           ;main.c: 170:     if(prntClk) LCD_PrintClock(Time.hour, Time.min, Time.sec);
+  5355                           ;main.c: 169:     if(prntClk) LCD_PrintClock(Time.hour, Time.min, Time.sec);
   5356   0009FC  0100               	movlb	0	; () banked
   5357   0009FE  5162               	movf	main@prntClk& (0+255),w,b
   5358   000A00  B4D8               	btfsc	status,2,c
@@ -8216,7 +8216,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8183                           
   8184 ;; *************** function _LCD_WriteByte *****************
   8185 ;; Defined at:
-  8186 ;;		line 140 in file "drv_lcdST7565_SPI.c"
+  8186 ;;		line 139 in file "drv_lcdST7565_SPI.c"
   8187 ;; Parameters:    Size  Location     Type
   8188 ;;  byte            1    wreg     unsigned char 
   8189 ;; Auto vars:     Size  Location     Type
@@ -8256,15 +8256,15 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8223                           ;LCD_WriteByte@byte stored from wreg
   8224   001804  6E02               	movwf	LCD_WriteByte@byte^0,c
   8225   001806                     
-  8226                           ;drv_lcdST7565_SPI.c: 140: void LCD_WriteByte(uint8 byte);drv_lcdST7565_SPI.c: 141: {;dr
-      +                          v_lcdST7565_SPI.c: 142:   PORTCbits.RC6 = 0;
+  8226                           ;drv_lcdST7565_SPI.c: 139: void LCD_WriteByte(uint8 byte);drv_lcdST7565_SPI.c: 140: {;dr
+      +                          v_lcdST7565_SPI.c: 141:   PORTCbits.RC6 = 0;
   8227   001806  9C82               	bcf	130,6,c	;volatile
   8228   001808                     
-  8229                           ;drv_lcdST7565_SPI.c: 143:   SPI_ReadWriteByte(byte);
+  8229                           ;drv_lcdST7565_SPI.c: 142:   SPI_ReadWriteByte(byte);
   8230   001808  5002               	movf	LCD_WriteByte@byte^0,w,c
   8231   00180A  ECD4  F00B         	call	_SPI_ReadWriteByte
   8232   00180E                     
-  8233                           ;drv_lcdST7565_SPI.c: 144:   PORTCbits.RC6 = 1;
+  8233                           ;drv_lcdST7565_SPI.c: 143:   PORTCbits.RC6 = 1;
   8234   00180E  8C82               	bsf	130,6,c	;volatile
   8235   001810  0012               	return		;funcret
   8236   001812                     __end_of_LCD_WriteByte:
@@ -8531,7 +8531,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8487                           
   8488 ;; *************** function _GetPrd *****************
   8489 ;; Defined at:
-  8490 ;;		line 37 in file "main.c"
+  8490 ;;		line 36 in file "main.c"
   8491 ;; Parameters:    Size  Location     Type
   8492 ;;		None
   8493 ;; Auto vars:     Size  Location     Type
@@ -8565,7 +8565,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8521   0011E8                     _GetPrd:
   8522                           	callstack 29
   8523   0011E8                     
-  8524                           ;main.c: 39:   static int i = 1;;main.c: 40:   uint16 prd;;main.c: 41:   if(i == 4) i = 
+  8524                           ;main.c: 38:   static int i = 1;;main.c: 39:   uint16 prd;;main.c: 40:   if(i == 4) i = 
       +                          0;
   8525   0011E8  0E04               	movlw	4
   8526   0011EA  185D               	xorwf	GetPrd@i^0,w,c
@@ -8646,11 +8646,11 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8600   001270  EF3A  F009         	goto	l3150
   8601   001274                     l3150:
   8602                           
-  8603                           ;main.c: 48:   i++;
+  8603                           ;main.c: 47:   i++;
   8604   001274  4A5D               	infsnz	GetPrd@i^0,f,c
   8605   001276  2A5E               	incf	(GetPrd@i+1)^0,f,c
   8606   001278                     
-  8607                           ;main.c: 49:   return prd;
+  8607                           ;main.c: 48:   return prd;
   8608   001278  C005  F001         	movff	GetPrd@prd,?_GetPrd
   8609   00127C  C006  F002         	movff	GetPrd@prd+1,?_GetPrd+1
   8610   001280  0012               	return		;funcret
@@ -8911,7 +8911,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8863                           
   8864 ;; *************** function _Counting *****************
   8865 ;; Defined at:
-  8866 ;;		line 51 in file "main.c"
+  8866 ;;		line 50 in file "main.c"
   8867 ;; Parameters:    Size  Location     Type
   8868 ;;  cPrd            2    0[COMRAM] unsigned int 
   8869 ;;  cOn             1    2[COMRAM] unsigned char 
@@ -8948,7 +8948,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8900   000BA0                     _Counting:
   8901                           	callstack 29
   8902   000BA0                     
-  8903                           ;main.c: 52:   static uint32 cTime = 0;;main.c: 53:   if(((timestamp - cTime) >= cPrd) &
+  8903                           ;main.c: 51:   static uint32 cTime = 0;;main.c: 52:   if(((timestamp - cTime) >= cPrd) &
       +                          & (cOn)) {
   8904   000BA0  5001               	movf	Counting@cPrd^0,w,c
   8905   000BA2  6E09               	movwf	??_Counting^0,c
@@ -8994,14 +8994,14 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8945   000BF4                     u2030:
   8946   000BF4                     
   8947                           ; BSR set to: 0
-  8948                           ;main.c: 54:     cTime = timestamp;
+  8948                           ;main.c: 53:     cTime = timestamp;
   8949   000BF4  C0F9  F04A         	movff	_timestamp,Counting@cTime
   8950   000BF8  C0FA  F04B         	movff	_timestamp+1,Counting@cTime+1
   8951   000BFC  C0FB  F04C         	movff	_timestamp+2,Counting@cTime+2
   8952   000C00  C0FC  F04D         	movff	_timestamp+3,Counting@cTime+3
   8953   000C04                     
   8954                           ; BSR set to: 0
-  8955                           ;main.c: 55:     if(cDirect) mainTimeCounter++;
+  8955                           ;main.c: 54:     if(cDirect) mainTimeCounter++;
   8956   000C04  5004               	movf	Counting@cDirect^0,w,c
   8957   000C06  B4D8               	btfsc	status,2,c
   8958   000C08  EF08  F006         	goto	u2041
@@ -9020,7 +9020,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8971   000C20                     l3170:
   8972                           
   8973                           ; BSR set to: 0
-  8974                           ;main.c: 56:     if(!cDirect) mainTimeCounter--;
+  8974                           ;main.c: 55:     if(!cDirect) mainTimeCounter--;
   8975   000C20  5004               	movf	Counting@cDirect^0,w,c
   8976   000C22  A4D8               	btfss	status,2,c
   8977   000C24  EF16  F006         	goto	u2051
@@ -9038,7 +9038,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8989   000C3A                     l648:
   8990                           
   8991                           ; BSR set to: 0
-  8992                           ;main.c: 58:     if(mainTimeCounter > counterMax && countDirect) mainTimeCounter = 0;
+  8992                           ;main.c: 57:     if(mainTimeCounter > counterMax && countDirect) mainTimeCounter = 0;
   8993   000C3A  51F5               	movf	_mainTimeCounter& (0+255),w,b
   8994   000C3C  5C05               	subwf	Counting@counterMax^0,w,c
   8995   000C3E  51F6               	movf	(_mainTimeCounter+1)& (0+255),w,b
@@ -9075,7 +9075,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   9026   000C78                     l3178:
   9027                           
   9028                           ; BSR set to: 0
-  9029                           ;main.c: 59:     if(mainTimeCounter > counterMax && !countDirect) mainTimeCounter = coun
+  9029                           ;main.c: 58:     if(mainTimeCounter > counterMax && !countDirect) mainTimeCounter = coun
       +                          terMax;
   9030   000C78  51F5               	movf	_mainTimeCounter& (0+255),w,b
   9031   000C7A  5C05               	subwf	Counting@counterMax^0,w,c
@@ -9115,7 +9115,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   9065                           
   9066 ;; *************** function _systemTime_int *****************
   9067 ;; Defined at:
-  9068 ;;		line 62 in file "main.c"
+  9068 ;;		line 61 in file "main.c"
   9069 ;; Parameters:    Size  Location     Type
   9070 ;;		None
   9071 ;; Auto vars:     Size  Location     Type
@@ -9160,7 +9160,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   9110                           	callstack 24
   9111   0016D4  0006               	pop		; remove dummy address from shadow register refresh
   9112   0016D6                     
-  9113                           ;main.c: 64:   if (TMR1IE && TMR1IF)
+  9113                           ;main.c: 63:   if (TMR1IE && TMR1IF)
   9114   0016D6  A09D               	btfss	3997,0,c	;volatile
   9115   0016D8  EF70  F00B         	goto	i2u228_41
   9116   0016DC  EF72  F00B         	goto	i2u228_40
@@ -9174,18 +9174,18 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   9124   0016EE  EF85  F00B         	goto	i2l659
   9125   0016F2                     i2u229_40:
   9126   0016F2                     
-  9127                           ;main.c: 65:   {;main.c: 66:     TMR1L += 32;
+  9127                           ;main.c: 64:   {;main.c: 65:     TMR1L += 32;
   9128   0016F2  0E20               	movlw	32
   9129   0016F4  26CE               	addwf	206,f,c	;volatile
   9130   0016F6                     
-  9131                           ;main.c: 67:     TMR1H = 209;
+  9131                           ;main.c: 66:     TMR1H = 209;
   9132   0016F6  0ED1               	movlw	209
   9133   0016F8  6ECF               	movwf	207,c	;volatile
   9134   0016FA                     
-  9135                           ;main.c: 68:     TMR1IF = 0;
+  9135                           ;main.c: 67:     TMR1IF = 0;
   9136   0016FA  909E               	bcf	3998,0,c	;volatile
   9137   0016FC                     
-  9138                           ;main.c: 69:     timestamp++;
+  9138                           ;main.c: 68:     timestamp++;
   9139   0016FC  0E01               	movlw	1
   9140   0016FE  0100               	movlb	0	; () banked
   9141   001700  27F9               	addwf	_timestamp& (0+255),f,b
@@ -9881,7 +9881,7 @@ DATA                 0      0     322      0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.50 build 20240725155939 
-Symbol Table                                                                                   Sun Nov 10 11:22:07 2024
+Symbol Table                                                                                   Sun Nov 10 15:00:09 2024
 
           ??_Interrupt_init 0001          LCD_PrintClock@minL 0046          LCD_PrintClock@secL 0045  
                _SSPSTATbits 0FC7          LCD_PrintClock@hour 0048                          l20 178C  

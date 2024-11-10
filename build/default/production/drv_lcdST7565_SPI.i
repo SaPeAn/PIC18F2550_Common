@@ -5625,7 +5625,6 @@ void LCD_SendCommands(uint8 N, ...)
   ((void)0);
   PORTAbits.RA3 = 1;
   PORTCbits.RC6 = 1;
-
 }
 
 void LCD_WriteByte(uint8 byte)

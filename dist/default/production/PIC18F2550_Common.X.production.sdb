@@ -89,7 +89,7 @@
 [v _LCD_SendData LCD_SendData `(v  1 e 1 0 ]
 "125
 [v _LCD_SendCommands LCD_SendCommands `(v  1 e 1 0 ]
-"140
+"139
 [v _LCD_WriteByte LCD_WriteByte `(v  1 e 1 0 ]
 "7 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\drv_led096_I2C.c
 [v _Led096Set Led096Set `(v  1 e 1 0 ]
@@ -101,13 +101,13 @@
 [v _TMR0_init TMR0_init `(v  1 e 1 0 ]
 "32
 [v _TMR1_init TMR1_init `(v  1 e 1 0 ]
-"37 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\main.c
+"36 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\main.c
 [v _GetPrd GetPrd `(ui  1 e 2 0 ]
-"51
+"50
 [v _Counting Counting `(v  1 e 1 0 ]
-"62
+"61
 [v _systemTime_int systemTime_int `IIH(v  1 e 1 0 ]
-"85
+"84
 [v _main main `(v  1 e 1 0 ]
 "16 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X/common.h
 [v _timestamp timestamp `ul  1 e 4 0 ]
@@ -492,50 +492,50 @@
 [v _seed seed `ul  1 s 4 seed ]
 "5 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\drv_7seg.c
 [v _n_count n_count `uc  1 e 1 0 ]
-"15 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\main.c
+"14 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\main.c
 [v _mainTimeCounter mainTimeCounter `ul  1 e 4 0 ]
-"18
+"17
 [v _countPeriod countPeriod `ui  1 e 2 0 ]
-"19
+"18
 [v _countDirect countDirect `uc  1 e 1 0 ]
-"21
+"20
 [v _Array Array `[33]uc  1 e 33 0 ]
 [s S959 . 3 `uc 1 sec 1 0 `uc 1 min 1 1 `uc 1 hour 1 2 ]
-"35
+"34
 [v _Time Time `S959  1 e 3 0 ]
-"85
+"84
 [v _main main `(v  1 e 1 0 ]
 {
-"126
-[v main@Nsmb Nsmb `uc  1 a 1 1 ]
 "125
+[v main@Nsmb Nsmb `uc  1 a 1 1 ]
+"124
 [v main@Number Number `uc  1 a 1 0 ]
 [s S351 . 16 `*.39VEuc 1 Port 2 0 `*.39VEuc 1 Lat 2 2 `uc 1 inputmask 1 4 `uc 1 outputmask 1 5 `*.30Cul 1 timecounter 1 6 `ul 1 btnTimer 4 7 `uc 1 BtnFl 1 11 `uc 1 BtnON 1 12 `uc 1 Toggle 1 13 `uc 1 HoldON 1 14 `uc 1 StuckON 1 15 ]
-"94
+"93
 [v main@B1 B1 `S351  1 a 16 133 ]
-"99
-[v main@B6 B6 `S351  1 a 16 117 ]
-"97
-[v main@B4 B4 `S351  1 a 16 101 ]
-"101
-[v main@B8 B8 `S351  1 a 16 85 ]
-"100
-[v main@B7 B7 `S351  1 a 16 69 ]
 "98
-[v main@B5 B5 `S351  1 a 16 53 ]
+[v main@B6 B6 `S351  1 a 16 117 ]
 "96
-[v main@B3 B3 `S351  1 a 16 37 ]
+[v main@B4 B4 `S351  1 a 16 101 ]
+"100
+[v main@B8 B8 `S351  1 a 16 85 ]
+"99
+[v main@B7 B7 `S351  1 a 16 69 ]
+"97
+[v main@B5 B5 `S351  1 a 16 53 ]
 "95
+[v main@B3 B3 `S351  1 a 16 37 ]
+"94
 [v main@B2 B2 `S351  1 a 16 21 ]
-"102
+"101
 [v main@B9 B9 `S351  1 a 16 5 ]
-"108
-[v main@CL CL `uc  1 a 1 4 ]
 "107
+[v main@CL CL `uc  1 a 1 4 ]
+"106
 [v main@PG PG `uc  1 a 1 3 ]
-"105
+"104
 [v main@prntClk prntClk `uc  1 a 1 2 ]
-"174
+"173
 } 0
 "38 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
 [v _u8_to_str u8_to_str `(*.30uc  1 e 2 0 ]
@@ -764,14 +764,14 @@
 [v LCD_Erase@j j `uc  1 a 1 11 ]
 "115
 } 0
-"140
+"139
 [v _LCD_WriteByte LCD_WriteByte `(v  1 e 1 0 ]
 {
 [v LCD_WriteByte@byte byte `uc  1 p 1 wreg ]
 [v LCD_WriteByte@byte byte `uc  1 p 1 wreg ]
-"142
+"141
 [v LCD_WriteByte@byte byte `uc  1 p 1 1 ]
-"145
+"144
 } 0
 "125
 [v _LCD_SendCommands LCD_SendCommands `(v  1 e 1 0 ]
@@ -785,7 +785,7 @@
 [v LCD_SendCommands@N N `uc  1 p 1 wreg ]
 "127
 [v LCD_SendCommands@N N `uc  1 p 1 7 ]
-"138
+"137
 } 0
 "24
 [v _SPI_ReadWriteByte SPI_ReadWriteByte `(uc  1 e 1 0 ]
@@ -801,14 +801,14 @@
 {
 "23
 } 0
-"37 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\main.c
+"36 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\main.c
 [v _GetPrd GetPrd `(ui  1 e 2 0 ]
 {
-"40
-[v GetPrd@prd prd `ui  1 a 2 4 ]
 "39
+[v GetPrd@prd prd `ui  1 a 2 4 ]
+"38
 [v GetPrd@i i `i  1 s 2 i ]
-"50
+"49
 } 0
 "11 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X/drv_buttons.h
 [s S351 . 16 `*.39VEuc 1 Port 2 0 `*.39VEuc 1 Lat 2 2 `uc 1 inputmask 1 4 `uc 1 outputmask 1 5 `*.30Cul 1 timecounter 1 6 `ul 1 btnTimer 4 7 `uc 1 BtnFl 1 11 `uc 1 BtnON 1 12 `uc 1 Toggle 1 13 `uc 1 HoldON 1 14 `uc 1 StuckON 1 15 ]
@@ -826,19 +826,19 @@
 [v CreateBtn@timecounter timecounter `*.30Cul  1 p 1 8 ]
 "42
 } 0
-"51 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\main.c
+"50 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\main.c
 [v _Counting Counting `(v  1 e 1 0 ]
 {
 [v Counting@cPrd cPrd `ui  1 p 2 0 ]
 [v Counting@cOn cOn `uc  1 p 1 2 ]
 [v Counting@cDirect cDirect `uc  1 p 1 3 ]
 [v Counting@counterMax counterMax `ul  1 p 4 4 ]
-"52
+"51
 [v Counting@cTime cTime `ul  1 s 4 cTime ]
-"60
+"59
 } 0
-"62
+"61
 [v _systemTime_int systemTime_int `IIH(v  1 e 1 0 ]
 {
-"82
+"81
 } 0

@@ -4387,33 +4387,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "136
 [; ;drv_lcdST7565_SPI.c: 136:   PORTCbits.RC6 = 1;
 [e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-"138
-[; ;drv_lcdST7565_SPI.c: 138: }
+"137
+[; ;drv_lcdST7565_SPI.c: 137: }
 [e :UE 356 ]
 }
-"140
-[; ;drv_lcdST7565_SPI.c: 140: void LCD_WriteByte(uint8 byte)
+"139
+[; ;drv_lcdST7565_SPI.c: 139: void LCD_WriteByte(uint8 byte)
 [v _LCD_WriteByte `(v ~T0 @X0 1 ef1`uc ]
-"141
-[; ;drv_lcdST7565_SPI.c: 141: {
+"140
+[; ;drv_lcdST7565_SPI.c: 140: {
 {
 [e :U _LCD_WriteByte ]
-"140
-[; ;drv_lcdST7565_SPI.c: 140: void LCD_WriteByte(uint8 byte)
+"139
+[; ;drv_lcdST7565_SPI.c: 139: void LCD_WriteByte(uint8 byte)
 [v _byte `uc ~T0 @X0 1 r1 ]
-"141
-[; ;drv_lcdST7565_SPI.c: 141: {
+"140
+[; ;drv_lcdST7565_SPI.c: 140: {
 [f ]
-"142
-[; ;drv_lcdST7565_SPI.c: 142:   PORTCbits.RC6 = 0;
+"141
+[; ;drv_lcdST7565_SPI.c: 141:   PORTCbits.RC6 = 0;
 [e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-"143
-[; ;drv_lcdST7565_SPI.c: 143:   SPI_ReadWriteByte(byte);
+"142
+[; ;drv_lcdST7565_SPI.c: 142:   SPI_ReadWriteByte(byte);
 [e ( _SPI_ReadWriteByte (1 _byte ]
-"144
-[; ;drv_lcdST7565_SPI.c: 144:   PORTCbits.RC6 = 1;
+"143
+[; ;drv_lcdST7565_SPI.c: 143:   PORTCbits.RC6 = 1;
 [e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-"145
-[; ;drv_lcdST7565_SPI.c: 145: }
+"144
+[; ;drv_lcdST7565_SPI.c: 144: }
 [e :UE 361 ]
 }
