@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.50 build 20240725155939 
-                                                                                               Sun Nov 10 15:00:09 2024
+                                                                                               Sun Nov 10 21:26:25 2024
 
 Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1 
      1                           	processor	18F2550
@@ -5389,7 +5389,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5374                           
   5375 ;; *************** function _u8_to_str *****************
   5376 ;; Defined at:
-  5377 ;;		line 38 in file "common.c"
+  5377 ;;		line 39 in file "common.c"
   5378 ;; Parameters:    Size  Location     Type
   5379 ;;  num             1    wreg     unsigned char 
   5380 ;; Auto vars:     Size  Location     Type
@@ -5435,7 +5435,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5420                           ;u8_to_str@num stored from wreg
   5421   000CB8  6E2F               	movwf	u8_to_str@num^0,c
   5422   000CBA                     
-  5423                           ;common.c: 38: uint8* u8_to_str(uint8 num);common.c: 39: {;common.c: 40:   uint8 L = num
+  5423                           ;common.c: 39: uint8* u8_to_str(uint8 num);common.c: 40: {;common.c: 41:   uint8 L = num
       +                          %10;
   5424   000CBA  C02F  F013         	movff	u8_to_str@num,___awmod@dividend
   5425   000CBE  6A14               	clrf	(___awmod@dividend+1)^0,c
@@ -5447,7 +5447,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5431   000CCC  5013               	movf	?___awmod^0,w,c
   5432   000CCE  6E2E               	movwf	u8_to_str@L^0,c
   5433                           
-  5434                           ;common.c: 41:   uint8 M = (num%100)/10;
+  5434                           ;common.c: 42:   uint8 M = (num%100)/10;
   5435   000CD0  0E00               	movlw	0
   5436   000CD2  6E16               	movwf	(___awmod@divisor+1)^0,c
   5437   000CD4  0E64               	movlw	100
@@ -5465,7 +5465,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5449   000CF6  5019               	movf	?___awdiv^0,w,c
   5450   000CF8  6E2D               	movwf	u8_to_str@M^0,c
   5451                           
-  5452                           ;common.c: 42:   uint8 H = num/100;
+  5452                           ;common.c: 43:   uint8 H = num/100;
   5453   000CFA  C02F  F019         	movff	u8_to_str@num,___awdiv@dividend
   5454   000CFE  6A1A               	clrf	(___awdiv@dividend+1)^0,c
   5455   000D00  0E00               	movlw	0
@@ -5476,7 +5476,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5460   000D0C  5019               	movf	?___awdiv^0,w,c
   5461   000D0E  6E27               	movwf	u8_to_str@H^0,c
   5462   000D10                     
-  5463                           ;common.c: 43:   if(num > 99 && num < 256)
+  5463                           ;common.c: 44:   if(num > 99 && num < 256)
   5464   000D10  0E63               	movlw	99
   5465   000D12  642F               	cpfsgt	u8_to_str@num^0,c
   5466   000D14  EF8E  F006         	goto	u1741
@@ -5485,7 +5485,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5469   000D1C  EFA8  F006         	goto	l2868
   5470   000D20                     u1740:
   5471   000D20                     
-  5472                           ;common.c: 44:   {;common.c: 45:     uint8 str1[] = {dig_to_smb(H), dig_to_smb(M), dig_t
+  5472                           ;common.c: 45:   {;common.c: 46:     uint8 str1[] = {dig_to_smb(H), dig_to_smb(M), dig_t
       +                          o_smb(L), '\0'};
   5473   000D20  0E00               	movlw	0
   5474   000D22  6E23               	movwf	u8_to_str@str1^0,c
@@ -5506,12 +5506,12 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5489   000D46  6E25               	movwf	(u8_to_str@str1+2)^0,c
   5490   000D48  6A26               	clrf	(u8_to_str@str1+3)^0,c
   5491   000D4A                     
-  5492                           ;common.c: 46:     return str1;
+  5492                           ;common.c: 47:     return str1;
   5493   000D4A  0E23               	movlw	u8_to_str@str1& (0+255)
   5494   000D4C  EFDF  F006         	goto	l41
   5495   000D50                     l2868:
   5496                           
-  5497                           ;common.c: 48:   if(num > 9 && num < 100)
+  5497                           ;common.c: 49:   if(num > 9 && num < 100)
   5498   000D50  0E09               	movlw	9
   5499   000D52  642F               	cpfsgt	u8_to_str@num^0,c
   5500   000D54  EFAE  F006         	goto	u1751
@@ -5527,7 +5527,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5510   000D6C  EFCA  F006         	goto	l2884
   5511   000D70                     u1760:
   5512   000D70                     
-  5513                           ;common.c: 49:   {;common.c: 50:     uint8 str2[] = {dig_to_smb(M), dig_to_smb(L), '\0'}
+  5513                           ;common.c: 50:   {;common.c: 51:     uint8 str2[] = {dig_to_smb(M), dig_to_smb(L), '\0'}
       +                          ;
   5514   000D70  0E00               	movlw	0
   5515   000D72  6E28               	movwf	u8_to_str@str2^0,c
@@ -5543,12 +5543,12 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5525   000D8A  6E29               	movwf	(u8_to_str@str2+1)^0,c
   5526   000D8C  6A2A               	clrf	(u8_to_str@str2+2)^0,c
   5527   000D8E                     
-  5528                           ;common.c: 51:     return str2;
+  5528                           ;common.c: 52:     return str2;
   5529   000D8E  0E28               	movlw	u8_to_str@str2& (0+255)
   5530   000D90  EFDF  F006         	goto	l41
   5531   000D94                     l2884:
   5532                           
-  5533                           ;common.c: 53:   if(num >= 0 && num < 10)
+  5533                           ;common.c: 54:   if(num >= 0 && num < 10)
   5534   000D94  0E0A               	movlw	10
   5535   000D96  602F               	cpfslt	u8_to_str@num^0,c
   5536   000D98  EFD0  F006         	goto	u1771
@@ -5557,7 +5557,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5539   000DA0  EFDE  F006         	goto	l2896
   5540   000DA4                     u1770:
   5541   000DA4                     
-  5542                           ;common.c: 54:   {;common.c: 55:     uint8 str3[] = {dig_to_smb(L), '\0'};
+  5542                           ;common.c: 55:   {;common.c: 56:     uint8 str3[] = {dig_to_smb(L), '\0'};
   5543   000DA4  0E00               	movlw	0
   5544   000DA6  6E2C               	movwf	(u8_to_str@str3+1)^0,c
   5545   000DA8  0E00               	movlw	0
@@ -5567,12 +5567,12 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5549   000DB2  6E2B               	movwf	u8_to_str@str3^0,c
   5550   000DB4  6A2C               	clrf	(u8_to_str@str3+1)^0,c
   5551   000DB6                     
-  5552                           ;common.c: 56:     return str3;
+  5552                           ;common.c: 57:     return str3;
   5553   000DB6  0E2B               	movlw	u8_to_str@str3& (0+255)
   5554   000DB8  EFDF  F006         	goto	l41
   5555   000DBC                     l2896:
   5556                           
-  5557                           ;common.c: 58:   return ((void*)0);
+  5557                           ;common.c: 59:   return ((void*)0);
   5558   000DBC  0E00               	movlw	0
   5559   000DBE                     l41:
   5560   000DBE  0012               	return		;funcret
@@ -5581,7 +5581,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5563                           
   5564 ;; *************** function _randinit *****************
   5565 ;; Defined at:
-  5566 ;;		line 11 in file "common.c"
+  5566 ;;		line 12 in file "common.c"
   5567 ;; Parameters:    Size  Location     Type
   5568 ;;		None
   5569 ;; Auto vars:     Size  Location     Type
@@ -5615,7 +5615,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5597   0017C0                     _randinit:
   5598                           	callstack 28
   5599   0017C0                     
-  5600                           ;common.c: 13:   srand(timestamp + TMR1H);
+  5600                           ;common.c: 14:   srand(timestamp + TMR1H);
   5601   0017C0  50CF               	movf	207,w,c	;volatile
   5602   0017C2  0100               	movlb	0	; () banked
   5603   0017C4  25F9               	addwf	_timestamp& (0+255),w,b
@@ -5679,7 +5679,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5661                           
   5662 ;; *************** function _getrand *****************
   5663 ;; Defined at:
-  5664 ;;		line 16 in file "common.c"
+  5664 ;;		line 17 in file "common.c"
   5665 ;; Parameters:    Size  Location     Type
   5666 ;;  N               1    wreg     unsigned char 
   5667 ;; Auto vars:     Size  Location     Type
@@ -5718,7 +5718,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   5700                           ;getrand@N stored from wreg
   5701   00176C  6E19               	movwf	getrand@N^0,c
   5702   00176E                     
-  5703                           ;common.c: 16: uint8 getrand(uint8 N);common.c: 17: {;common.c: 18:   return (rand() % (
+  5703                           ;common.c: 17: uint8 getrand(uint8 N);common.c: 18: {;common.c: 19:   return (rand() % (
       +                          N + 1));
   5704   00176E  EC51  F00A         	call	_rand	;wreg free
   5705   001772  C00D  F013         	movff	?_rand,___awmod@dividend
@@ -7052,7 +7052,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   7026                           
   7027 ;; *************** function _dig_to_smb *****************
   7028 ;; Defined at:
-  7029 ;;		line 21 in file "common.c"
+  7029 ;;		line 22 in file "common.c"
   7030 ;; Parameters:    Size  Location     Type
   7031 ;;  dig             1    wreg     unsigned char 
   7032 ;; Auto vars:     Size  Location     Type
@@ -7091,7 +7091,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   7065                           ;dig_to_smb@dig stored from wreg
   7066   0010B4  6E01               	movwf	dig_to_smb@dig^0,c
   7067   0010B6                     
-  7068                           ;common.c: 21: uint8 dig_to_smb(uint8 dig);common.c: 22: {;common.c: 23:   switch (dig)
+  7068                           ;common.c: 22: uint8 dig_to_smb(uint8 dig);common.c: 23: {;common.c: 24:   switch (dig)
   7069   0010B6  EF7B  F008         	goto	l2682
   7070   0010BA                     l2620:
   7071   0010BA  0E30               	movlw	48
@@ -8025,7 +8025,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   7993                           
   7994 ;; *************** function _Delay_ms *****************
   7995 ;; Defined at:
-  7996 ;;		line 5 in file "common.c"
+  7996 ;;		line 6 in file "common.c"
   7997 ;; Parameters:    Size  Location     Type
   7998 ;;  ms              4    0[COMRAM] unsigned long 
   7999 ;; Auto vars:     Size  Location     Type
@@ -8060,7 +8060,7 @@ Microchip MPLAB XC8 C Compiler v2.50 (Free license) build 20240725155939 Og1
   8028   0015D8                     _Delay_ms:
   8029                           	callstack 28
   8030   0015D8                     
-  8031                           ;common.c: 5: void Delay_ms(uint32 ms);common.c: 6: {;common.c: 7:   uint32 temp = times
+  8031                           ;common.c: 6: void Delay_ms(uint32 ms);common.c: 7: {;common.c: 8:   uint32 temp = times
       +                          tamp;
   8032   0015D8  C0F9  F009         	movff	_timestamp,Delay_ms@temp
   8033   0015DC  C0FA  F00A         	movff	_timestamp+1,Delay_ms@temp+1
@@ -9881,7 +9881,7 @@ DATA                 0      0     322      0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.50 build 20240725155939 
-Symbol Table                                                                                   Sun Nov 10 15:00:09 2024
+Symbol Table                                                                                   Sun Nov 10 21:26:25 2024
 
           ??_Interrupt_init 0001          LCD_PrintClock@minL 0046          LCD_PrintClock@secL 0045  
                _SSPSTATbits 0FC7          LCD_PrintClock@hour 0048                          l20 178C  

@@ -488,151 +488,151 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _timestamp
 -> -> -> 0 `i `l `ul
 ]
-"5 common.c
-[; ;common.c: 5: void Delay_ms(uint32 ms)
+"6 common.c
+[; ;common.c: 6: void Delay_ms(uint32 ms)
 [v _Delay_ms `(v ~T0 @X0 1 ef1`ul ]
-"6
-[; ;common.c: 6: {
+"7
+[; ;common.c: 7: {
 {
 [e :U _Delay_ms ]
-"5
-[; ;common.c: 5: void Delay_ms(uint32 ms)
-[v _ms `ul ~T0 @X0 1 r1 ]
 "6
-[; ;common.c: 6: {
-[f ]
+[; ;common.c: 6: void Delay_ms(uint32 ms)
+[v _ms `ul ~T0 @X0 1 r1 ]
 "7
-[; ;common.c: 7:   uint32 temp = timestamp;
+[; ;common.c: 7: {
+[f ]
+"8
+[; ;common.c: 8:   uint32 temp = timestamp;
 [v _temp `ul ~T0 @X0 1 a ]
 [e = _temp _timestamp ]
-"8
-[; ;common.c: 8:   while((timestamp - temp) < ms);
+"9
+[; ;common.c: 9:   while((timestamp - temp) < ms);
 [e $U 328  ]
 [e :U 329 ]
 [e :U 328 ]
 [e $ < - _timestamp _temp _ms 329  ]
 [e :U 330 ]
-"9
-[; ;common.c: 9: }
+"10
+[; ;common.c: 10: }
 [e :UE 327 ]
 }
-"11
-[; ;common.c: 11: void randinit(void)
-[v _randinit `(v ~T0 @X0 1 ef ]
 "12
-[; ;common.c: 12: {
+[; ;common.c: 12: void randinit(void)
+[v _randinit `(v ~T0 @X0 1 ef ]
+"13
+[; ;common.c: 13: {
 {
 [e :U _randinit ]
 [f ]
-"13
-[; ;common.c: 13:   srand(timestamp + TMR1H);
-[e ( _srand (1 -> + _timestamp -> _TMR1H `ul `ui ]
 "14
-[; ;common.c: 14: }
+[; ;common.c: 14:   srand(timestamp + TMR1H);
+[e ( _srand (1 -> + _timestamp -> _TMR1H `ul `ui ]
+"15
+[; ;common.c: 15: }
 [e :UE 331 ]
 }
-"16
-[; ;common.c: 16: uint8 getrand(uint8 N)
-[v _getrand `(uc ~T0 @X0 1 ef1`uc ]
 "17
-[; ;common.c: 17: {
+[; ;common.c: 17: uint8 getrand(uint8 N)
+[v _getrand `(uc ~T0 @X0 1 ef1`uc ]
+"18
+[; ;common.c: 18: {
 {
 [e :U _getrand ]
-"16
-[; ;common.c: 16: uint8 getrand(uint8 N)
-[v _N `uc ~T0 @X0 1 r1 ]
 "17
-[; ;common.c: 17: {
-[f ]
+[; ;common.c: 17: uint8 getrand(uint8 N)
+[v _N `uc ~T0 @X0 1 r1 ]
 "18
-[; ;common.c: 18:   return (rand() % (N + 1));
+[; ;common.c: 18: {
+[f ]
+"19
+[; ;common.c: 19:   return (rand() % (N + 1));
 [e ) -> % ( _rand ..  + -> _N `i -> 1 `i `uc ]
 [e $UE 332  ]
-"19
-[; ;common.c: 19: }
+"20
+[; ;common.c: 20: }
 [e :UE 332 ]
 }
-"21
-[; ;common.c: 21: uint8 dig_to_smb(uint8 dig)
-[v _dig_to_smb `(uc ~T0 @X0 1 ef1`uc ]
 "22
-[; ;common.c: 22: {
+[; ;common.c: 22: uint8 dig_to_smb(uint8 dig)
+[v _dig_to_smb `(uc ~T0 @X0 1 ef1`uc ]
+"23
+[; ;common.c: 23: {
 {
 [e :U _dig_to_smb ]
-"21
-[; ;common.c: 21: uint8 dig_to_smb(uint8 dig)
-[v _dig `uc ~T0 @X0 1 r1 ]
 "22
-[; ;common.c: 22: {
-[f ]
+[; ;common.c: 22: uint8 dig_to_smb(uint8 dig)
+[v _dig `uc ~T0 @X0 1 r1 ]
 "23
-[; ;common.c: 23:   switch (dig)
-[e $U 335  ]
+[; ;common.c: 23: {
+[f ]
 "24
-[; ;common.c: 24:   {
-{
+[; ;common.c: 24:   switch (dig)
+[e $U 335  ]
 "25
-[; ;common.c: 25:     case 0: return 48; break;
+[; ;common.c: 25:   {
+{
+"26
+[; ;common.c: 26:     case 0: return 48; break;
 [e :U 336 ]
 [e ) -> -> 48 `i `uc ]
 [e $UE 333  ]
 [e $U 334  ]
-"26
-[; ;common.c: 26:     case 1: return 49; break;
+"27
+[; ;common.c: 27:     case 1: return 49; break;
 [e :U 337 ]
 [e ) -> -> 49 `i `uc ]
 [e $UE 333  ]
 [e $U 334  ]
-"27
-[; ;common.c: 27:     case 2: return 50; break;
+"28
+[; ;common.c: 28:     case 2: return 50; break;
 [e :U 338 ]
 [e ) -> -> 50 `i `uc ]
 [e $UE 333  ]
 [e $U 334  ]
-"28
-[; ;common.c: 28:     case 3: return 51; break;
+"29
+[; ;common.c: 29:     case 3: return 51; break;
 [e :U 339 ]
 [e ) -> -> 51 `i `uc ]
 [e $UE 333  ]
 [e $U 334  ]
-"29
-[; ;common.c: 29:     case 4: return 52; break;
+"30
+[; ;common.c: 30:     case 4: return 52; break;
 [e :U 340 ]
 [e ) -> -> 52 `i `uc ]
 [e $UE 333  ]
 [e $U 334  ]
-"30
-[; ;common.c: 30:     case 5: return 53; break;
+"31
+[; ;common.c: 31:     case 5: return 53; break;
 [e :U 341 ]
 [e ) -> -> 53 `i `uc ]
 [e $UE 333  ]
 [e $U 334  ]
-"31
-[; ;common.c: 31:     case 6: return 54; break;
+"32
+[; ;common.c: 32:     case 6: return 54; break;
 [e :U 342 ]
 [e ) -> -> 54 `i `uc ]
 [e $UE 333  ]
 [e $U 334  ]
-"32
-[; ;common.c: 32:     case 7: return 55; break;
+"33
+[; ;common.c: 33:     case 7: return 55; break;
 [e :U 343 ]
 [e ) -> -> 55 `i `uc ]
 [e $UE 333  ]
 [e $U 334  ]
-"33
-[; ;common.c: 33:     case 8: return 56; break;
+"34
+[; ;common.c: 34:     case 8: return 56; break;
 [e :U 344 ]
 [e ) -> -> 56 `i `uc ]
 [e $UE 333  ]
 [e $U 334  ]
-"34
-[; ;common.c: 34:     case 9: return 57; break;
+"35
+[; ;common.c: 35:     case 9: return 57; break;
 [e :U 345 ]
 [e ) -> -> 57 `i `uc ]
 [e $UE 333  ]
 [e $U 334  ]
-"35
-[; ;common.c: 35:   }
+"36
+[; ;common.c: 36:   }
 }
 [e $U 334  ]
 [e :U 335 ]
@@ -648,46 +648,46 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 9 `i 345
  334 ]
 [e :U 334 ]
-"36
-[; ;common.c: 36: }
+"37
+[; ;common.c: 37: }
 [e :UE 333 ]
 }
-"38
-[; ;common.c: 38: uint8* u8_to_str(uint8 num)
-[v _u8_to_str `(*uc ~T0 @X0 1 ef1`uc ]
 "39
-[; ;common.c: 39: {
+[; ;common.c: 39: uint8* u8_to_str(uint8 num)
+[v _u8_to_str `(*uc ~T0 @X0 1 ef1`uc ]
+"40
+[; ;common.c: 40: {
 {
 [e :U _u8_to_str ]
-"38
-[; ;common.c: 38: uint8* u8_to_str(uint8 num)
-[v _num `uc ~T0 @X0 1 r1 ]
 "39
-[; ;common.c: 39: {
-[f ]
+[; ;common.c: 39: uint8* u8_to_str(uint8 num)
+[v _num `uc ~T0 @X0 1 r1 ]
 "40
-[; ;common.c: 40:   uint8 L = num%10;
+[; ;common.c: 40: {
+[f ]
+"41
+[; ;common.c: 41:   uint8 L = num%10;
 [v _L `uc ~T0 @X0 1 a ]
 [e = _L -> % -> _num `i -> 10 `i `uc ]
-"41
-[; ;common.c: 41:   uint8 M = (num%100)/10;
+"42
+[; ;common.c: 42:   uint8 M = (num%100)/10;
 [v _M `uc ~T0 @X0 1 a ]
 [e = _M -> / % -> _num `i -> 100 `i -> 10 `i `uc ]
-"42
-[; ;common.c: 42:   uint8 H = num/100;
+"43
+[; ;common.c: 43:   uint8 H = num/100;
 [v _H `uc ~T0 @X0 1 a ]
 [e = _H -> / -> _num `i -> 100 `i `uc ]
-"43
-[; ;common.c: 43:   if(num > 99 && num < 256)
-[e $ ! && > -> _num `i -> 99 `i < -> _num `i -> 256 `i 347  ]
 "44
-[; ;common.c: 44:   {
+[; ;common.c: 44:   if(num > 99 && num < 256)
+[e $ ! && > -> _num `i -> 99 `i < -> _num `i -> 256 `i 347  ]
+"45
+[; ;common.c: 45:   {
 {
 [v F2874 `uc ~T0 @X0 -> 4 `i s ]
 [i F2874
 :U ..
-"45
-[; ;common.c: 45:     uint8 str1[] = {dig_to_smb(H), dig_to_smb(M), dig_to_smb(L), '\0'};
+"46
+[; ;common.c: 46:     uint8 str1[] = {dig_to_smb(H), dig_to_smb(M), dig_to_smb(L), '\0'};
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -697,25 +697,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _str1 `uc ~T0 @X0 -> 4 `i a ]
 [e = _str1 F2874 ]
 [e ; = *U + &U _str1 * -> -> -> 0 `i `ui `ux -> -> # *U &U _str1 `ui `ux ( _dig_to_smb (1 _H ; = *U + &U _str1 * -> -> -> 1 `i `ui `ux -> -> # *U &U _str1 `ui `ux ( _dig_to_smb (1 _M ; = *U + &U _str1 * -> -> -> 2 `i `ui `ux -> -> # *U &U _str1 `ui `ux ( _dig_to_smb (1 _L = *U + &U _str1 * -> -> -> 3 `i `ui `ux -> -> # *U &U _str1 `ui `ux -> -> 0 `ui `uc ]
-"46
-[; ;common.c: 46:     return str1;
+"47
+[; ;common.c: 47:     return str1;
 [e ) &U _str1 ]
 [e $UE 346  ]
-"47
-[; ;common.c: 47:   }
+"48
+[; ;common.c: 48:   }
 }
 [e :U 347 ]
-"48
-[; ;common.c: 48:   if(num > 9 && num < 100)
-[e $ ! && > -> _num `i -> 9 `i < -> _num `i -> 100 `i 348  ]
 "49
-[; ;common.c: 49:   {
+[; ;common.c: 49:   if(num > 9 && num < 100)
+[e $ ! && > -> _num `i -> 9 `i < -> _num `i -> 100 `i 348  ]
+"50
+[; ;common.c: 50:   {
 {
 [v F2876 `uc ~T0 @X0 -> 3 `i s ]
 [i F2876
 :U ..
-"50
-[; ;common.c: 50:     uint8 str2[] = {dig_to_smb(M), dig_to_smb(L), '\0'};
+"51
+[; ;common.c: 51:     uint8 str2[] = {dig_to_smb(M), dig_to_smb(L), '\0'};
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -724,25 +724,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _str2 `uc ~T0 @X0 -> 3 `i a ]
 [e = _str2 F2876 ]
 [e ; = *U + &U _str2 * -> -> -> 0 `i `ui `ux -> -> # *U &U _str2 `ui `ux ( _dig_to_smb (1 _M ; = *U + &U _str2 * -> -> -> 1 `i `ui `ux -> -> # *U &U _str2 `ui `ux ( _dig_to_smb (1 _L = *U + &U _str2 * -> -> -> 2 `i `ui `ux -> -> # *U &U _str2 `ui `ux -> -> 0 `ui `uc ]
-"51
-[; ;common.c: 51:     return str2;
+"52
+[; ;common.c: 52:     return str2;
 [e ) &U _str2 ]
 [e $UE 346  ]
-"52
-[; ;common.c: 52:   }
+"53
+[; ;common.c: 53:   }
 }
 [e :U 348 ]
-"53
-[; ;common.c: 53:   if(num >= 0 && num < 10)
-[e $ ! && >= -> _num `i -> 0 `i < -> _num `i -> 10 `i 349  ]
 "54
-[; ;common.c: 54:   {
+[; ;common.c: 54:   if(num >= 0 && num < 10)
+[e $ ! && >= -> _num `i -> 0 `i < -> _num `i -> 10 `i 349  ]
+"55
+[; ;common.c: 55:   {
 {
 [v F2878 `uc ~T0 @X0 -> 2 `i s ]
 [i F2878
 :U ..
-"55
-[; ;common.c: 55:     uint8 str3[] = {dig_to_smb(L), '\0'};
+"56
+[; ;common.c: 56:     uint8 str3[] = {dig_to_smb(L), '\0'};
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 ..
@@ -750,19 +750,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _str3 `uc ~T0 @X0 -> 2 `i a ]
 [e = _str3 F2878 ]
 [e ; = *U + &U _str3 * -> -> -> 0 `i `ui `ux -> -> # *U &U _str3 `ui `ux ( _dig_to_smb (1 _L = *U + &U _str3 * -> -> -> 1 `i `ui `ux -> -> # *U &U _str3 `ui `ux -> -> 0 `ui `uc ]
-"56
-[; ;common.c: 56:     return str3;
+"57
+[; ;common.c: 57:     return str3;
 [e ) &U _str3 ]
 [e $UE 346  ]
-"57
-[; ;common.c: 57:   }
+"58
+[; ;common.c: 58:   }
 }
 [e :U 349 ]
-"58
-[; ;common.c: 58:   return ((void*)0);
+"59
+[; ;common.c: 59:   return ((void*)0);
 [e ) -> -> -> 0 `i `*v `*uc ]
 [e $UE 346  ]
-"59
-[; ;common.c: 59: }
+"60
+[; ;common.c: 60: }
 [e :UE 346 ]
 }

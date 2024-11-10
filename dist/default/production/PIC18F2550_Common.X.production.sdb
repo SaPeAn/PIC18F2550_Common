@@ -43,15 +43,15 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"5 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
+"6 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
 [v _Delay_ms Delay_ms `(v  1 e 1 0 ]
-"11
+"12
 [v _randinit randinit `(v  1 e 1 0 ]
-"16
+"17
 [v _getrand getrand `(uc  1 e 1 0 ]
-"21
+"22
 [v _dig_to_smb dig_to_smb `(uc  1 e 1 0 ]
-"38
+"39
 [v _u8_to_str u8_to_str `(*.30uc  1 e 2 0 ]
 "15 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\drv_7seg.c
 [v _DigToSeg DigToSeg `(v  1 e 1 0 ]
@@ -537,32 +537,32 @@
 [v main@prntClk prntClk `uc  1 a 1 2 ]
 "173
 } 0
-"38 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
+"39 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
 [v _u8_to_str u8_to_str `(*.30uc  1 e 2 0 ]
 {
 [v u8_to_str@num num `uc  1 p 1 wreg ]
-"55
+"56
 [v u8_to_str@str3 str3 `[2]uc  1 a 2 42 ]
-"50
+"51
 [v u8_to_str@str2 str2 `[3]uc  1 a 3 39 ]
-"45
+"46
 [v u8_to_str@str1 str1 `[4]uc  1 a 4 34 ]
-"40
-[v u8_to_str@L L `uc  1 a 1 45 ]
 "41
-[v u8_to_str@M M `uc  1 a 1 44 ]
+[v u8_to_str@L L `uc  1 a 1 45 ]
 "42
+[v u8_to_str@M M `uc  1 a 1 44 ]
+"43
 [v u8_to_str@H H `uc  1 a 1 38 ]
-"38
+"39
 [v u8_to_str@num num `uc  1 p 1 wreg ]
-"40
+"41
 [v u8_to_str@num num `uc  1 p 1 46 ]
-"59
+"60
 } 0
-"11
+"12
 [v _randinit randinit `(v  1 e 1 0 ]
 {
-"14
+"15
 } 0
 "6 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\rand.c
 [v _srand srand `(v  1 e 1 0 ]
@@ -570,14 +570,14 @@
 [v srand@s s `ui  1 p 2 0 ]
 "9
 } 0
-"16 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
+"17 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
 [v _getrand getrand `(uc  1 e 1 0 ]
 {
 [v getrand@N N `uc  1 p 1 wreg ]
 [v getrand@N N `uc  1 p 1 wreg ]
-"18
-[v getrand@N N `uc  1 p 1 24 ]
 "19
+[v getrand@N N `uc  1 p 1 24 ]
+"20
 } 0
 "11 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\rand.c
 [v _rand rand `(i  1 e 2 0 ]
@@ -653,13 +653,13 @@
 [v LCD_PrintClock@hour hour `uc  1 p 1 71 ]
 "105
 } 0
-"21 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
+"22 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
 [v _dig_to_smb dig_to_smb `(uc  1 e 1 0 ]
 {
 [v dig_to_smb@dig dig `uc  1 p 1 wreg ]
 [v dig_to_smb@dig dig `uc  1 p 1 wreg ]
 [v dig_to_smb@dig dig `uc  1 p 1 0 ]
-"36
+"37
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -746,14 +746,14 @@
 {
 "22
 } 0
-"5 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
+"6 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\common.c
 [v _Delay_ms Delay_ms `(v  1 e 1 0 ]
 {
-"7
+"8
 [v Delay_ms@temp temp `ul  1 a 4 8 ]
-"5
+"6
 [v Delay_ms@ms ms `ul  1 p 4 0 ]
-"9
+"10
 } 0
 "107 C:\Users\SaPA\MPLABXProjects\PIC18F2550_Common.X\drv_lcdST7565_SPI.c
 [v _LCD_Erase LCD_Erase `(v  1 e 1 0 ]
