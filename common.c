@@ -1,6 +1,5 @@
 #include <xc.h>
 #include "common.h"
-#include <stdlib.h>
 
 
 void Delay_ms(uint32 ms)

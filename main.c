@@ -125,6 +125,8 @@ void main(void)
       uint8 Number = getrand(255);
       uint8 Nsmb = LCD_printStr8x5(u8_to_str(Number), PG, CL);
       CL += 6*Nsmb;
+      LCD_printSmb8x5(' ', PG, CL);
+      CL += 6;
       if(CL > 108) {PG++; CL = 0;}
       if(PG > 7) {PG = 0; LCD_Erase();}
     }

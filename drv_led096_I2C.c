@@ -49,7 +49,7 @@ void Led096PrintSmb8x5(uint8 smb, uint8 StartPage, uint8 StartColumn)
 void Led096PrintStr8x5(uint8* str, uint8 StartPage, uint8 StartColumn)
 {
   uint8 i = 0;
-  while(str[i] != '\0')
+  while(str[i])
   {
     if(str[i] == '\n') {
       StartPage +=1; 

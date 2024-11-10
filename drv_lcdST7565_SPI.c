@@ -58,7 +58,7 @@ void LCD_Init(void)
   RS = 1;
 }
 
-void LCD_Set_PageColumn(uint8 col, uint8 page)
+void LCD_Set_PageColumn(uint8 page, uint8 col)
 {
   uint8 colL = col & 0x0F;
   uint8 colH = col >> 4;
@@ -67,8 +67,10 @@ void LCD_Set_PageColumn(uint8 col, uint8 page)
 
 void LCD_printSmb8x5(uint8 ch, uint8 page, uint8 col)
 {
-  LCD_Set_PageColumn(col, page);
+  LCD_Set_PageColumn(page, col);
   LCD_SendData(char_8x5[ch], 5);
+  LCD_Set_PageColumn(page, col+5);
+  LCD_WriteByte(0x00);
 }
 
 uint8 LCD_printStr8x5(uint8 *str, uint8 page, uint8 col)
@@ -79,7 +81,7 @@ uint8 LCD_printStr8x5(uint8 *str, uint8 page, uint8 col)
     str = str1;
   }
   uint8 i = 0;
-  while(str[i] != '\0')
+  while(str[i])
   {
     LCD_printSmb8x5(str[i], page, col);
     col += 6;
@@ -132,7 +134,6 @@ void LCD_SendCommands(uint8 N, ...)
   va_end(arg);
   RS = 1;
   CS = 1;
-  
 }
 
 void LCD_WriteByte(uint8 byte)
