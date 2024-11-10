@@ -3425,7 +3425,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
 "52
-[; ;drv_led096_I2C.c: 52:   while(str[i] != '\0')
+[; ;drv_led096_I2C.c: 52:   while(str[i])
 [e $U 19  ]
 [e :U 20 ]
 "53
@@ -3486,8 +3486,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 19 ]
 "52
-[; ;drv_led096_I2C.c: 52:   while(str[i] != '\0')
-[e $ != -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `ui -> 0 `ui 20  ]
+[; ;drv_led096_I2C.c: 52:   while(str[i])
+[e $ != -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `i -> 0 `i 20  ]
 [e :U 21 ]
 "69
 [; ;drv_led096_I2C.c: 69: }

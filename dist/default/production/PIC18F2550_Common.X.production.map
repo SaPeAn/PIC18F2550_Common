@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.50\pic\dat\20240725155939_en.msgs \
   -cn -h+dist/default/production\PIC18F2550_Common.X.production.sym \
   --cmf=dist/default/production\PIC18F2550_Common.X.production.cmf -z \
-  -Q18F2550 -oC:\Users\SaPA\AppData\Local\Temp\xcAsam0.\driver_tmp_3.o \
+  -Q18F2550 -oC:\Users\SaPA\AppData\Local\Temp\xcAsbe0.\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/PIC18F2550_Common.X.production.map \
-  --md=C:\Users\SaPA\AppData\Local\Temp\xcAsam0.\driver_tmp_0.dat -E1 \
+  --md=C:\Users\SaPA\AppData\Local\Temp\xcAsbe0.\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0800h-08FFhx120 -AMEDIUMCONST=0800h-07FFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-07FFh -ABIGRAM=01h-07FFh -ARAM=060h-0FFh,0100h-01FFhx7 \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\SaPA\AppData\Local\Temp\xcAsam0.\driver_tmp_9.o \
+  C:\Users\SaPA\AppData\Local\Temp\xcAsbe0.\driver_tmp_9.o \
   dist/default/production\PIC18F2550_Common.X.production.o 
 
 Object code version is 3.11
@@ -35,7 +35,7 @@ Machine type is 18F2550
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\SaPA\AppData\Local\Temp\xcAsam0.\driver_tmp_9.o
+C:\Users\SaPA\AppData\Local\Temp\xcAsbe0.\driver_tmp_9.o
                 config                           300000   300000        E        0       4
                 init                                  E        E        4        4       0
                 reset_vec                             0        0        4        0       0
@@ -44,38 +44,38 @@ dist/default/production\PIC18F2550_Common.X.production.o
                 config                           300000   300000        E        0       4
                 temp                                 5F       5F        1        1       1
                 mediumconst                        75BE     75BE      A42     3ADF       0
-                intcode_body                       16C0     16C0       3A        4       0
-                text30                              B8C      B8C      118        4       0
-                text29                              A10      A10      17C        4       0
-                text28                             11D4     11D4       9A        4       0
-                text27                             1564     1564       60        4       0
-                text26                             1782     1782       18        4       0
-                text25                             1686     1686       3A        4       0
-                text24                             17DE     17DE        E        4       0
-                text23                             140C     140C       82        4       0
-                text22                             15C4     15C4       4A        4       0
-                text21                             17AE     17AE       14        4       0
-                text20                             126E     126E       8E        4       0
-                text19                             164A     164A       3C        4       0
-                text18                             160E     160E       3C        4       0
-                text17                             1720     1720       26        4       0
-                text16                             113A     113A       9A        4       0
-                text15                              E8C      E8C       C2        4       0
-                text14                              F4E      F4E       AE        4       0
-                text13                             10A0     10A0       9A        4       0
-                text12                              DAC      DAC       E0        4       0
-                text11                             17D0     17D0        E        4       0
-                text10                             17C2     17C2        E        4       0
+                intcode_body                       16D4     16D4       3A        4       0
+                text30                              BA0      BA0      118        4       0
+                text29                              A24      A24      17C        4       0
+                text28                             11E8     11E8       9A        4       0
+                text27                             1578     1578       60        4       0
+                text26                             17A8     17A8       18        4       0
+                text25                             169A     169A       3A        4       0
+                text24                             1804     1804        E        4       0
+                text23                             1420     1420       82        4       0
+                text22                             15D8     15D8       4A        4       0
+                text21                             17D4     17D4       14        4       0
+                text20                             1282     1282       8E        4       0
+                text19                             165E     165E       3C        4       0
+                text18                             1622     1622       3C        4       0
+                text17                             170E     170E       38        4       0
+                text16                             114E     114E       9A        4       0
+                text15                              EA0      EA0       C2        4       0
+                text14                              F62      F62       AE        4       0
+                text13                             10B4     10B4       9A        4       0
+                text12                              DC0      DC0       E0        4       0
+                text11                             17F6     17F6        E        4       0
+                text10                             17E8     17E8        E        4       0
                 text9                                12       12      52A        4       0
-                text8                               FFC      FFC       A4        4       0
-                text7                              1384     1384       88        4       0
-                text6                              14FA     14FA       6A        4       0
-                text5                              148E     148E       6C        4       0
-                text4                              1746     1746       22        4       0
-                text3                              1768     1768       1A        4       0
-                text2                              179A     179A       14        4       0
-                text1                               CA4      CA4      108        4       0
-                text0                               53C      53C      4D4        4       0
+                text8                              1010     1010       A4        4       0
+                text7                              1398     1398       88        4       0
+                text6                              150E     150E       6A        4       0
+                text5                              14A2     14A2       6C        4       0
+                text4                              176C     176C       22        4       0
+                text3                              178E     178E       1A        4       0
+                text2                              17C0     17C0       14        4       0
+                text1                               CB8      CB8      108        4       0
+                text0                               53C      53C      4E8        4       0
                 cstackCOMRAM                          1        1       49        1       1
                 cstackBANK0                          60       60       95       60       1
                 dataBANK1                           100      100       26      100       1
@@ -84,53 +84,53 @@ dist/default/production\PIC18F2550_Common.X.production.o
                 bssBANK0                             F5       F5        8       60       1
                 dataCOMRAM                           5D       5D        2        1       1
                 bssCOMRAM                            4A       4A        F        1       1
-                cinit                              12FC     12FC       88        4       0
+                cinit                              1310     1310       88        4       0
                 nvCOMRAM                             59       59        4        1       1
-                idataBANK1                         16FA     16FA       26        4       0
-                idataBANK0                         17EC     17EC        3        4       0
-                idataCOMRAM                        17EF     17EF        2        4       0
+                idataBANK1                         1746     1746       26        4       0
+                idataBANK0                         1812     1812        3        4       0
+                idataCOMRAM                        1815     1815        2        4       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
                 intcode                               8        8        6         0
                 init                                  E        E        4         0
                 reset_vec                             0        0        4         0
-                intcode_body                       16C0     16C0       3A         0
-                text30                              B8C      B8C      118         0
-                text29                              A10      A10      17C         0
-                text28                             11D4     11D4       9A         0
-                text27                             1564     1564       60         0
-                text26                             1782     1782       18         0
-                text25                             1686     1686       3A         0
-                text24                             17DE     17DE        E         0
-                text23                             140C     140C       82         0
-                text22                             15C4     15C4       4A         0
-                text21                             17AE     17AE       14         0
-                text20                             126E     126E       8E         0
-                text19                             164A     164A       3C         0
-                text18                             160E     160E       3C         0
-                text17                             1720     1720       26         0
-                text16                             113A     113A       9A         0
-                text15                              E8C      E8C       C2         0
-                text14                              F4E      F4E       AE         0
-                text13                             10A0     10A0       9A         0
-                text12                              DAC      DAC       E0         0
-                text11                             17D0     17D0        E         0
-                text10                             17C2     17C2        E         0
+                intcode_body                       16D4     16D4       3A         0
+                text30                              BA0      BA0      118         0
+                text29                              A24      A24      17C         0
+                text28                             11E8     11E8       9A         0
+                text27                             1578     1578       60         0
+                text26                             17A8     17A8       18         0
+                text25                             169A     169A       3A         0
+                text24                             1804     1804        E         0
+                text23                             1420     1420       82         0
+                text22                             15D8     15D8       4A         0
+                text21                             17D4     17D4       14         0
+                text20                             1282     1282       8E         0
+                text19                             165E     165E       3C         0
+                text18                             1622     1622       3C         0
+                text17                             170E     170E       38         0
+                text16                             114E     114E       9A         0
+                text15                              EA0      EA0       C2         0
+                text14                              F62      F62       AE         0
+                text13                             10B4     10B4       9A         0
+                text12                              DC0      DC0       E0         0
+                text11                             17F6     17F6        E         0
+                text10                             17E8     17E8        E         0
                 text9                                12       12      52A         0
-                text8                               FFC      FFC       A4         0
-                text7                              1384     1384       88         0
-                text6                              14FA     14FA       6A         0
-                text5                              148E     148E       6C         0
-                text4                              1746     1746       22         0
-                text3                              1768     1768       1A         0
-                text2                              179A     179A       14         0
-                text1                               CA4      CA4      108         0
-                text0                               53C      53C      4D4         0
-                cinit                              12FC     12FC       88         0
-                idataBANK1                         16FA     16FA       26         0
-                idataBANK0                         17EC     17EC        3         0
-                idataCOMRAM                        17EF     17EF        2         0
+                text8                              1010     1010       A4         0
+                text7                              1398     1398       88         0
+                text6                              150E     150E       6A         0
+                text5                              14A2     14A2       6C         0
+                text4                              176C     176C       22         0
+                text3                              178E     178E       1A         0
+                text2                              17C0     17C0       14         0
+                text1                               CB8      CB8      108         0
+                text0                               53C      53C      4E8         0
+                cinit                              1310     1310       88         0
+                idataBANK1                         1746     1746       26         0
+                idataBANK0                         1812     1812        3         0
+                idataCOMRAM                        1815     1815        2         0
 
         CLASS   CONST          
 
@@ -196,7 +196,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  00005F  000060         1       1  COMRAM  
-                intcode                        000008  0017E9  0017F1         4       0  CODE    
+                intcode                        000008  00180F  001817         4       0  CODE    
                 cstackBANK0                    000060  0000A0  000100        60       1  BANK0   
                 dataBANK1                      000100  000046  000146       100       1  BANK1   
                 mediumconst                    0075BE  000A42  008000      3ADF       0  MEDIUMCO
@@ -215,15 +215,15 @@ UNUSED ADDRESS RANGES
         BIGRAM           000146-0007FF              6BA
         BIGSFR           000F60-000FFF               A0
         CODE             000004-000007                4
-                         0017F1-0075BD             5DCD
+                         001817-0075BD             5DA7
         CONST            000004-000007                4
-                         0017F1-0075BD             5DCD
+                         001817-0075BD             5DA7
         EEDATA           F00000-F000FF              100
         IDLOC            200000-200007                8
-        MEDIUMCONST      0017F1-0075BD             5DCD
+        MEDIUMCONST      001817-0075BD             5DA7
         RAM              000146-0007FF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       0017F1-0075BD              100
+        SMALLCONST       001817-0075BD              100
 
                                   Symbol Table
 
@@ -267,10 +267,10 @@ LCD_SendCommands@i          cstackCOMRAM 00000A
 LCD_SendData@N              cstackCOMRAM 000004
 LCD_SendData@byte           cstackCOMRAM 000002
 LCD_SendData@i              cstackCOMRAM 000007
-LCD_Set_PageColumn@col      cstackCOMRAM 000012
-LCD_Set_PageColumn@colH     cstackCOMRAM 000011
-LCD_Set_PageColumn@colL     cstackCOMRAM 000010
-LCD_Set_PageColumn@page     cstackCOMRAM 00000B
+LCD_Set_PageColumn@col      cstackCOMRAM 00000B
+LCD_Set_PageColumn@colH     cstackCOMRAM 000012
+LCD_Set_PageColumn@colL     cstackCOMRAM 000011
+LCD_Set_PageColumn@page     cstackCOMRAM 000010
 LCD_WriteByte@byte          cstackCOMRAM 000002
 LCD_printSmb8x5@ch          cstackCOMRAM 000015
 LCD_printSmb8x5@col         cstackCOMRAM 000014
@@ -297,13 +297,13 @@ _CCP2IP                     (abs)        007D10
 _CMIE                       (abs)        007D06
 _CMIP                       (abs)        007D16
 _CREN                       (abs)        007D5C
-_Counting                   text30       000B8C
-_CreateBtn                  text29       000A10
-_Delay_ms                   text22       0015C4
+_Counting                   text30       000BA0
+_CreateBtn                  text29       000A24
+_Delay_ms                   text22       0015D8
 _EEIE                       (abs)        007D04
 _EEIP                       (abs)        007D14
 _GIE_GIEH                   (abs)        007F97
-_GetPrd                     text28       0011D4
+_GetPrd                     text28       0011E8
 _HLVDIE                     (abs)        007D02
 _HLVDIP                     (abs)        007D12
 _INT0IE                     (abs)        007F94
@@ -315,17 +315,17 @@ _INTEDG0                    (abs)        007F8E
 _INTEDG1                    (abs)        007F8D
 _INTEDG2                    (abs)        007F8C
 _IPEN                       (abs)        007E87
-_Interrupt_init             text27       001564
+_Interrupt_init             text27       001578
 _LATB                       (abs)        000F8A
-_LCD_Erase                  text23       00140C
-_LCD_Init                   text20       00126E
-_LCD_PrintClock             text12       000DAC
-_LCD_SendCommands           text25       001686
-_LCD_SendData               text19       00164A
-_LCD_Set_PageColumn         text18       00160E
-_LCD_WriteByte              text24       0017DE
-_LCD_printSmb8x5            text17       001720
-_LCD_printStr8x5            text16       00113A
+_LCD_Erase                  text23       001420
+_LCD_Init                   text20       001282
+_LCD_PrintClock             text12       000DC0
+_LCD_SendCommands           text25       00169A
+_LCD_SendData               text19       00165E
+_LCD_Set_PageColumn         text18       001622
+_LCD_WriteByte              text24       001804
+_LCD_printSmb8x5            text17       00170E
+_LCD_printStr8x5            text16       00114E
 _OSCFIE                     (abs)        007D07
 _OSCFIP                     (abs)        007D17
 _PEIE_GIEL                  (abs)        007F96
@@ -343,8 +343,8 @@ _RX9D                       (abs)        007D58
 _SBOREN                     (abs)        007E86
 _SPBRG                      (abs)        000FAF
 _SPEN                       (abs)        007D5F
-_SPI_ReadWriteByte          text26       001782
-_SPI_init                   text21       0017AE
+_SPI_ReadWriteByte          text26       0017A8
+_SPI_init                   text21       0017D4
 _SSPADD                     (abs)        000FC8
 _SSPBUF                     (abs)        000FC9
 _SSPCON1                    (abs)        000FC6
@@ -362,13 +362,13 @@ _TMR0H                      (abs)        000FD7
 _TMR0IE                     (abs)        007F95
 _TMR0IP                     (abs)        007F8A
 _TMR0L                      (abs)        000FD6
-_TMR0_init                  text11       0017D0
+_TMR0_init                  text11       0017F6
 _TMR1H                      (abs)        000FCF
 _TMR1IE                     (abs)        007CE8
 _TMR1IF                     (abs)        007CF0
 _TMR1IP                     (abs)        007CF8
 _TMR1L                      (abs)        000FCE
-_TMR1_init                  text10       0017C2
+_TMR1_init                  text10       0017E8
 _TMR2IE                     (abs)        007CE9
 _TMR2IP                     (abs)        007CF9
 _TMR3IE                     (abs)        007D01
@@ -604,13 +604,13 @@ __S0                        (abs)        008000
 __S1                        (abs)        000146
 __S4                        (abs)        000000
 __S5                        (abs)        000000
-___awdiv                    text15       000E8C
+___awdiv                    text15       000EA0
 ___awdiv@counter            cstackCOMRAM 00001D
 ___awdiv@dividend           cstackCOMRAM 000019
 ___awdiv@divisor            cstackCOMRAM 00001B
 ___awdiv@quotient           cstackCOMRAM 00001F
 ___awdiv@sign               cstackCOMRAM 00001E
-___awmod                    text14       000F4E
+___awmod                    text14       000F62
 ___awmod@counter            cstackCOMRAM 000017
 ___awmod@dividend           cstackCOMRAM 000013
 ___awmod@divisor            cstackCOMRAM 000015
@@ -623,16 +623,16 @@ ___inthi_stack_lo           stack        000000
 ___intlo_sp                 stack        000000
 ___intlo_stack_hi           stack        000000
 ___intlo_stack_lo           stack        000000
-___lldiv                    text8        000FFC
+___lldiv                    text8        001010
 ___lldiv@counter            cstackCOMRAM 000016
 ___lldiv@dividend           cstackCOMRAM 00000A
 ___lldiv@divisor            cstackCOMRAM 00000E
 ___lldiv@quotient           cstackCOMRAM 000012
-___llmod                    text7        001384
+___llmod                    text7        001398
 ___llmod@counter            cstackCOMRAM 000009
 ___llmod@dividend           cstackCOMRAM 000001
 ___llmod@divisor            cstackCOMRAM 000005
-___lmul                     text6        0014FA
+___lmul                     text6        00150E
 ___lmul@multiplicand        cstackCOMRAM 000005
 ___lmul@multiplier          cstackCOMRAM 000001
 ___lmul@product             cstackCOMRAM 000009
@@ -643,91 +643,91 @@ ___stack_hi                 stack        000000
 ___stack_lo                 stack        000000
 __accesstop                 (abs)        000060
 __activetblptr              (abs)        000002
-__end_of_Counting           text30       000CA4
-__end_of_CreateBtn          text29       000B8C
-__end_of_Delay_ms           text22       00160E
-__end_of_GetPrd             text28       00126E
-__end_of_Interrupt_init     text27       0015C4
-__end_of_LCD_Erase          text23       00148E
-__end_of_LCD_Init           text20       0012FC
-__end_of_LCD_PrintClock     text12       000E8C
-__end_of_LCD_SendCommands   text25       0016C0
-__end_of_LCD_SendData       text19       001686
-__end_of_LCD_Set_PageColumn text18       00164A
-__end_of_LCD_WriteByte      text24       0017EC
+__end_of_Counting           text30       000CB8
+__end_of_CreateBtn          text29       000BA0
+__end_of_Delay_ms           text22       001622
+__end_of_GetPrd             text28       001282
+__end_of_Interrupt_init     text27       0015D8
+__end_of_LCD_Erase          text23       0014A2
+__end_of_LCD_Init           text20       001310
+__end_of_LCD_PrintClock     text12       000EA0
+__end_of_LCD_SendCommands   text25       0016D4
+__end_of_LCD_SendData       text19       00169A
+__end_of_LCD_Set_PageColumn text18       00165E
+__end_of_LCD_WriteByte      text24       001812
 __end_of_LCD_printSmb8x5    text17       001746
-__end_of_LCD_printStr8x5    text16       0011D4
-__end_of_SPI_ReadWriteByte  text26       00179A
-__end_of_SPI_init           text21       0017C2
-__end_of_TMR0_init          text11       0017DE
-__end_of_TMR1_init          text10       0017D0
+__end_of_LCD_printStr8x5    text16       0011E8
+__end_of_SPI_ReadWriteByte  text26       0017C0
+__end_of_SPI_init           text21       0017E8
+__end_of_TMR0_init          text11       001804
+__end_of_TMR1_init          text10       0017F6
 __end_of_TestBtn            text9        00053C
-__end_of___awdiv            text15       000F4E
-__end_of___awmod            text14       000FFC
-__end_of___lldiv            text8        0010A0
-__end_of___llmod            text7        00140C
-__end_of___lmul             text6        001564
-__end_of__initialization    cinit        001376
+__end_of___awdiv            text15       000F62
+__end_of___awmod            text14       001010
+__end_of___lldiv            text8        0010B4
+__end_of___llmod            text7        001420
+__end_of___lmul             text6        001578
+__end_of__initialization    cinit        00138A
 __end_of_battary            mediumconst  0077FF
 __end_of_bender             mediumconst  0079F7
 __end_of_char_8x5           mediumconst  007FFF
 __end_of_clock_dig          mediumconst  007AFF
-__end_of_dig_to_smb         text13       00113A
-__end_of_getrand            text4        001768
-__end_of_main               text0        000A10
-__end_of_rand               text5        0014FA
-__end_of_randinit           text2        0017AE
-__end_of_srand              text3        001782
-__end_of_systemTime_int     intcode_body 0016FA
-__end_of_u8_to_str          text1        000DAC
-__initialization            cinit        0012FC
+__end_of_dig_to_smb         text13       00114E
+__end_of_getrand            text4        00178E
+__end_of_main               text0        000A24
+__end_of_rand               text5        00150E
+__end_of_randinit           text2        0017D4
+__end_of_srand              text3        0017A8
+__end_of_systemTime_int     intcode_body 00170E
+__end_of_u8_to_str          text1        000DC0
+__initialization            cinit        001310
 __mediumconst               mediumconst  0075BE
 __pbssBANK0                 bssBANK0     0000F5
 __pbssBANK1                 bssBANK1     000126
 __pbssCOMRAM                bssCOMRAM    00004A
-__pcinit                    cinit        0012FC
+__pcinit                    cinit        001310
 __pcstackBANK0              cstackBANK0  000060
 __pcstackCOMRAM             cstackCOMRAM 000001
 __pdataBANK0                dataBANK0    0000FD
 __pdataBANK1                dataBANK1    000100
 __pdataCOMRAM               dataCOMRAM   00005D
-__pidataBANK0               idataBANK0   0017EC
-__pidataBANK1               idataBANK1   0016FA
-__pidataCOMRAM              idataCOMRAM  0017EF
+__pidataBANK0               idataBANK0   001812
+__pidataBANK1               idataBANK1   001746
+__pidataCOMRAM              idataCOMRAM  001815
 __pintcode                  intcode      000008
-__pintcode_body             intcode_body 0016C0
+__pintcode_body             intcode_body 0016D4
 __pmediumconst              mediumconst  0075BE
 __pnvCOMRAM                 nvCOMRAM     000059
 __ptext0                    text0        00053C
-__ptext1                    text1        000CA4
-__ptext10                   text10       0017C2
-__ptext11                   text11       0017D0
-__ptext12                   text12       000DAC
-__ptext13                   text13       0010A0
-__ptext14                   text14       000F4E
-__ptext15                   text15       000E8C
-__ptext16                   text16       00113A
-__ptext17                   text17       001720
-__ptext18                   text18       00160E
-__ptext19                   text19       00164A
-__ptext2                    text2        00179A
-__ptext20                   text20       00126E
-__ptext21                   text21       0017AE
-__ptext22                   text22       0015C4
-__ptext23                   text23       00140C
-__ptext24                   text24       0017DE
-__ptext25                   text25       001686
-__ptext26                   text26       001782
-__ptext27                   text27       001564
-__ptext28                   text28       0011D4
-__ptext29                   text29       000A10
-__ptext3                    text3        001768
-__ptext30                   text30       000B8C
-__ptext4                    text4        001746
-__ptext5                    text5        00148E
-__ptext6                    text6        0014FA
-__ptext7                    text7        001384
-__ptext8                    text8        000FFC
+__ptext1                    text1        000CB8
+__ptext10                   text10       0017E8
+__ptext11                   text11       0017F6
+__ptext12                   text12       000DC0
+__ptext13                   text13       0010B4
+__ptext14                   text14       000F62
+__ptext15                   text15       000EA0
+__ptext16                   text16       00114E
+__ptext17                   text17       00170E
+__ptext18                   text18       001622
+__ptext19                   text19       00165E
+__ptext2                    text2        0017C0
+__ptext20                   text20       001282
+__ptext21                   text21       0017D4
+__ptext22                   text22       0015D8
+__ptext23                   text23       001420
+__ptext24                   text24       001804
+__ptext25                   text25       00169A
+__ptext26                   text26       0017A8
+__ptext27                   text27       001578
+__ptext28                   text28       0011E8
+__ptext29                   text29       000A24
+__ptext3                    text3        00178E
+__ptext30                   text30       000BA0
+__ptext4                    text4        00176C
+__ptext5                    text5        0014A2
+__ptext6                    text6        00150E
+__ptext7                    text7        001398
+__ptext8                    text8        001010
 __ptext9                    text9        000012
 __ramtop                    ramtop       000800
 __smallconst                smallconst   000000
@@ -739,25 +739,25 @@ _countDirect                dataBANK0    0000FF
 _countOn                    bssCOMRAM    000057
 _countPeriod                dataBANK0    0000FD
 _countTime                  bssBANK1     000137
-_dig_to_smb                 text13       0010A0
+_dig_to_smb                 text13       0010B4
 _dispCounter                bssBANK1     00013B
-_getrand                    text4        001746
+_getrand                    text4        00176C
 _main                       text0        00053C
 _mainTimeCounter            bssBANK0     0000F5
 _n_count                    bssCOMRAM    000058
-_rand                       text5        00148E
-_randinit                   text2        00179A
+_rand                       text5        0014A2
+_randinit                   text2        0017C0
 _seed                       nvCOMRAM     000059
-_srand                      text3        001768
+_srand                      text3        00178E
 _systemTime_int             intcode      000008
 _timestamp                  bssBANK0     0000F9
-_u8_to_str                  text1        000CA4
+_u8_to_str                  text1        000CB8
 btemp                       temp         00005F
 dig_to_smb@dig              cstackCOMRAM 000001
-end_of_initialization       cinit        001376
+end_of_initialization       cinit        00138A
 getrand@N                   cstackCOMRAM 000019
 int$flags                   temp         00005F
-int_func                    intcode_body 0016C0
+int_func                    intcode_body 0016D4
 intlevel0                   text         000000
 intlevel1                   text         000000
 intlevel2                   text         000000
@@ -782,7 +782,7 @@ srand@s                     cstackCOMRAM 000001
 stackhi                     (abs)        000000
 stacklo                     (abs)        000000
 start                       init         00000E
-start_initialization        cinit        0012FC
+start_initialization        cinit        001310
 testSendUSART@testUSARTtime bssCOMRAM    00004E
 ttemp5                      temp         000060
 ttemp6                      temp         000063
@@ -801,87 +801,87 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 init_periph.c
-		_TMR0_init     		CODE           	17D0	0000	14
-		_Interrupt_init		CODE           	1564	0000	96
-		_TMR1_init     		CODE           	17C2	0000	14
+		_TMR0_init     		CODE           	17F6	0000	14
+		_Interrupt_init		CODE           	1578	0000	96
+		_TMR1_init     		CODE           	17E8	0000	14
 
 init_periph.c estimated size: 124
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\rand.c
-		_srand         		CODE           	1768	0000	26
-		_rand          		CODE           	148E	0000	108
+		_srand         		CODE           	178E	0000	26
+		_rand          		CODE           	14A2	0000	108
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\rand.c estimated size: 134
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c
-		___awmod       		CODE           	0F4E	0000	174
+		___awmod       		CODE           	0F62	0000	174
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awmod.c estimated size: 174
 
 drv_buttons.c
-		_CreateBtn     		CODE           	0A10	0000	380
+		_CreateBtn     		CODE           	0A24	0000	380
 		_TestBtn       		CODE           	0012	0000	1322
 
 drv_buttons.c estimated size: 1702
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul32.c
-		___lmul        		CODE           	14FA	0000	106
+		___lmul        		CODE           	150E	0000	106
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\Umul32.c estimated size: 106
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\llmod.c
-		___llmod       		CODE           	1384	0000	136
+		___llmod       		CODE           	1398	0000	136
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\llmod.c estimated size: 136
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\__lldiv.c
-		___lldiv       		CODE           	0FFC	0000	164
+		___lldiv       		CODE           	1010	0000	164
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\__lldiv.c estimated size: 164
 
 shared
 		_bender        		MEDIUMCONST    	77FF	0000	504
 		_battary       		MEDIUMCONST    	75BF	0000	576
-		__initialization		CODE           	12FC	0000	122
+		__initialization		CODE           	1310	0000	122
 		_char_8x5      		MEDIUMCONST    	7AFF	0000	1280
 		_clock_dig     		MEDIUMCONST    	79F7	0000	264
 
 shared estimated size: 2746
 
 drv_lcdST7565_SPI.c
-		_LCD_Init      		CODE           	126E	0000	142
-		_SPI_init      		CODE           	17AE	0000	20
-		_LCD_SendData  		CODE           	164A	0000	60
-		_LCD_Erase     		CODE           	140C	0000	130
-		_LCD_SendCommands		CODE           	1686	0000	58
-		_LCD_printSmb8x5		CODE           	1720	0000	38
-		_LCD_printStr8x5		CODE           	113A	0000	154
-		_SPI_ReadWriteByte		CODE           	1782	0000	24
-		_LCD_PrintClock		CODE           	0DAC	0000	224
-		_LCD_Set_PageColumn		CODE           	160E	0000	60
-		_LCD_WriteByte 		CODE           	17DE	0000	14
+		_LCD_Init      		CODE           	1282	0000	142
+		_SPI_init      		CODE           	17D4	0000	20
+		_LCD_SendData  		CODE           	165E	0000	60
+		_LCD_Erase     		CODE           	1420	0000	130
+		_LCD_SendCommands		CODE           	169A	0000	58
+		_LCD_printSmb8x5		CODE           	170E	0000	56
+		_LCD_printStr8x5		CODE           	114E	0000	154
+		_SPI_ReadWriteByte		CODE           	17A8	0000	24
+		_LCD_PrintClock		CODE           	0DC0	0000	224
+		_LCD_Set_PageColumn		CODE           	1622	0000	60
+		_LCD_WriteByte 		CODE           	1804	0000	14
 
-drv_lcdST7565_SPI.c estimated size: 924
+drv_lcdST7565_SPI.c estimated size: 942
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awdiv.c
-		___awdiv       		CODE           	0E8C	0000	194
+		___awdiv       		CODE           	0EA0	0000	194
 
 C:\Program Files\Microchip\xc8\v2.50\pic\sources\c99\common\awdiv.c estimated size: 194
 
 common.c
-		_Delay_ms      		CODE           	15C4	0000	74
-		_getrand       		CODE           	1746	0000	34
-		_u8_to_str     		CODE           	0CA4	0000	264
-		_dig_to_smb    		CODE           	10A0	0000	154
-		_randinit      		CODE           	179A	0000	20
+		_Delay_ms      		CODE           	15D8	0000	74
+		_getrand       		CODE           	176C	0000	34
+		_u8_to_str     		CODE           	0CB8	0000	264
+		_dig_to_smb    		CODE           	10B4	0000	154
+		_randinit      		CODE           	17C0	0000	20
 
 common.c estimated size: 546
 
 main.c
-		_main          		CODE           	053C	0000	1236
-		_Counting      		CODE           	0B8C	0000	280
+		_main          		CODE           	053C	0000	1256
+		_Counting      		CODE           	0BA0	0000	280
 		_systemTime_int		CODE           	0008	0000	64
-		_GetPrd        		CODE           	11D4	0000	154
+		_GetPrd        		CODE           	11E8	0000	154
 
-main.c estimated size: 1734
+main.c estimated size: 1754
 

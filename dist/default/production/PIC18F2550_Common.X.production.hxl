@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\SaPA\AppData\Local\Temp\xcAsam0.\driver_tmp_3.o
+ C:\Users\SaPA\AppData\Local\Temp\xcAsbe0.\driver_tmp_3.o
  -Odist/default/production\PIC18F2550_Common.X.production.hex
  -logfile=dist/default/production\PIC18F2550_Common.X.production.hxl
  -addressing=1
@@ -9,19 +9,19 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\SaPA\AppData\Local\Temp\xcAsam0.\driver_tmp_3.o)
-  8h - 17F0h		(C:\Users\SaPA\AppData\Local\Temp\xcAsam0.\driver_tmp_3.o)
-  75BEh - 7FFFh		(C:\Users\SaPA\AppData\Local\Temp\xcAsam0.\driver_tmp_3.o)
-  300000h - 30000Dh		(C:\Users\SaPA\AppData\Local\Temp\xcAsam0.\driver_tmp_3.o)
+  0h - 3h		(C:\Users\SaPA\AppData\Local\Temp\xcAsbe0.\driver_tmp_3.o)
+  8h - 1816h		(C:\Users\SaPA\AppData\Local\Temp\xcAsbe0.\driver_tmp_3.o)
+  75BEh - 7FFFh		(C:\Users\SaPA\AppData\Local\Temp\xcAsbe0.\driver_tmp_3.o)
+  300000h - 30000Dh		(C:\Users\SaPA\AppData\Local\Temp\xcAsbe0.\driver_tmp_3.o)
  Unused ranges:
   4h - 7h
-  17F1h - 75BDh
+  1817h - 75BDh
   8000h - 2FFFFFh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\SaPA\AppData\Local\Temp\xcAsam0.\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\SaPA\AppData\Local\Temp\xcAsbe0.\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -408,7 +408,9 @@
 000017C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000017D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000017E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000017F0 | H1 -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+000017F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001800 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00001810 | H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 000075B0 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1
 000075C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
