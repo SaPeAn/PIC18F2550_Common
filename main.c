@@ -1,7 +1,7 @@
-#include "config.h"
-#include "common.h"
 
 /*------------------------œŒƒ Àﬁ◊¿≈Ã€≈ ‘¿…À€----------------------------------*/
+#include "config.h"
+#include "common.h"
 #include "init_periph.h"
 //#include "drv_7seg.h"
 #include "drv_buttons.h"
@@ -10,6 +10,7 @@
 #include "drv_lcdST7565_SPI.h"
 //#include "drv_usart.h"
 /*----------------------------------------------------------------------------*/
+
 /*-----------------------√ÀŒ¡¿À‹Õ€≈ œ≈–≈Ã≈ÕÕ€≈--------------------------------*/
 uint32 mainTimeCounter = 0;
 uint32 dispCounter = 0;
@@ -33,6 +34,8 @@ typedef struct{
 } systime;
 systime Time;
 /*----------------------------------------------------------------------------*/   
+
+/*----------------------------ƒŒœ. ‘”Õ ÷»» ƒÀﬂ MAIN---------------------------*/
 uint16 GetPrd(void)
 {
   static int i = 1;
@@ -57,6 +60,8 @@ void Counting(uint16 cPrd, uint8 cOn, uint8 cDirect, uint32 counterMax){
     if(mainTimeCounter > counterMax && countDirect) mainTimeCounter = 0;
     if(mainTimeCounter > counterMax && !countDirect) mainTimeCounter = counterMax;
     }
+/*----------------------------------------------------------------------------*/
+
 /*-----------------------------Œ¡–¿¡Œ“ ¿ œ–≈–€¬¿Õ»…---------------------------*/
 void __interrupt() systemTime_int(void)
 {
@@ -80,6 +85,7 @@ void __interrupt() systemTime_int(void)
   }*/
 }
 /*----------------------------------------------------------------------------*/
+
 /*-----------------------------------MAIN-------------------------------------*/
 void main(void) 
 {
@@ -105,13 +111,13 @@ void main(void)
   btn_t B8 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 7, &timestamp);
   btn_t B9 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 7, &timestamp);
 /*----------------------------------------------------------------------------*/
+  
 /*--------------------------------œÂÂÏÂÌÌ˚Â----------------------------------*/
   uint8 prntClk = 1;
   uint8 T = 0;
   uint8 PG = 0;
   uint8 CL = 0;
   uint8 i = 0;
-
 /*----------------------------------------------------------------------------*/
   
 /*-----------------------------Œ—ÕŒ¬ÕŒ… ÷» À----------------------------------*/
