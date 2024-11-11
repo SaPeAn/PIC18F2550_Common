@@ -90,6 +90,11 @@ void main(void)
   randinit();
   //I2C_init();
   //USART_init();
+  Delay_ms(100);           // Задержка после включения (для led096))
+  LCD_Init();
+  /*//Инициализация led096
+  Led096Set(8, 0xD5, 0xF0, 0x8D, 0x14, 0xAF, 0xA4, 0x20, 0x01);
+  Led096Clear();*/
   btn_t B1 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 5, &timestamp);
   btn_t B2 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 5, &timestamp);
   btn_t B3 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 5, &timestamp);
@@ -108,11 +113,7 @@ void main(void)
   uint8 i = 0;
 
 /*----------------------------------------------------------------------------*/
-  Delay_ms(100);           // Задержка после включения (для led096))
-  LCD_Init();
-  /*//Инициализация led096
-  Led096Set(8, 0xD5, 0xF0, 0x8D, 0x14, 0xAF, 0xA4, 0x20, 0x01);
-  Led096Clear();*/
+  
 /*-----------------------------ОСНОВНОЙ ЦИКЛ----------------------------------*/
   while(1)
   {
