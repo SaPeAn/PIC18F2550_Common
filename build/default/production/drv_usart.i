@@ -5112,8 +5112,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 1 "drv_usart.c" 2
-
+# 2 "drv_usart.c" 2
 # 1 "./drv_usart.h" 1
 
 
@@ -5143,13 +5142,11 @@ uint8 getrand(uint8);
 void randinit(void);
 uint8 dig_to_smb(uint8);
 uint8* u8_to_str(uint8);
-# 7 "./drv_usart.h" 2
-
+# 8 "./drv_usart.h" 2
 
 void USART_init(void);
 void testSendUSART(uint32,uint8);
-# 2 "drv_usart.c" 2
-
+# 3 "drv_usart.c" 2
 
 
 void USART_init()

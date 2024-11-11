@@ -37,8 +37,7 @@ uint8 getrand(uint8);
 void randinit(void);
 uint8 dig_to_smb(uint8);
 uint8* u8_to_str(uint8);
-# 8 "./drv_lcdST7565_SPI.h" 2
-
+# 9 "./drv_lcdST7565_SPI.h" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdarg.h" 1 3
 
 
@@ -62,8 +61,7 @@ typedef __uint24 uint24_t;
 
 extern void * __va_start(void);
 extern void * __va_arg(void *, ...);
-# 9 "./drv_lcdST7565_SPI.h" 2
-
+# 10 "./drv_lcdST7565_SPI.h" 2
 
 void SPI_init(void);
 uint8 SPI_ReadWriteByte(uint8);
@@ -76,8 +74,7 @@ void LCD_printSmb8x5(uint8, uint8, uint8);
 void LCD_Erase(void);
 uint8 LCD_printStr8x5(uint8*, uint8, uint8);
 void LCD_PrintClock(uint8, uint8, uint8);
-# 1 "drv_lcdST7565_SPI.c" 2
-
+# 2 "drv_lcdST7565_SPI.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5170,8 +5167,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 2 "drv_lcdST7565_SPI.c" 2
-
+# 3 "drv_lcdST7565_SPI.c" 2
 
 # 1 "./display_data.h" 1
 
@@ -5491,8 +5487,7 @@ const unsigned char bender[] =
     0x00, 0x00, 0x78, 0xC0, 0xFB, 0xF8, 0x00, 0x00, 0x70, 0xD5, 0x7F, 0xFD, 0x00, 0x00, 0xE0, 0x03, 0xE8, 0xFF, 0x00, 0x00, 0xC0, 0x57, 0xF5, 0xFF, 0x00, 0x00, 0x00, 0x0F, 0xFE, 0xFF,
     0x00, 0x00, 0x00, 0x5F, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xBC, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xF0, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xF0, 0xFF, 0xFF
 };
-# 4 "drv_lcdST7565_SPI.c" 2
-
+# 5 "drv_lcdST7565_SPI.c" 2
 
 
 

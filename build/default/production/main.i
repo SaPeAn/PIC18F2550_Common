@@ -5177,9 +5177,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 72 "./config.h" 2
-# 1 "main.c" 2
-
+# 73 "./config.h" 2
+# 2 "main.c" 2
 # 1 "./common.h" 1
 
 
@@ -5202,8 +5201,7 @@ uint8 getrand(uint8);
 void randinit(void);
 uint8 dig_to_smb(uint8);
 uint8* u8_to_str(uint8);
-# 2 "main.c" 2
-
+# 3 "main.c" 2
 
 
 # 1 "./init_periph.h" 1
@@ -5218,8 +5216,7 @@ uint8* u8_to_str(uint8);
 void Interrupt_init(void);
 void TMR0_init(void);
 void TMR1_init(void);
-# 5 "main.c" 2
-
+# 6 "main.c" 2
 
 # 1 "./drv_buttons.h" 1
 # 11 "./drv_buttons.h"
@@ -5239,8 +5236,7 @@ typedef struct{
 
 btn_t CreateBtn(volatile uint8*, volatile uint8*, volatile uint8*, const uint8, const uint8, const uint32*);
 void TestBtn(btn_t*);
-# 7 "main.c" 2
-
+# 8 "main.c" 2
 
 
 # 1 "./drv_lcdST7565_SPI.h" 1
@@ -5270,8 +5266,7 @@ typedef void * va_list[1];
 
 extern void * __va_start(void);
 extern void * __va_arg(void *, ...);
-# 9 "./drv_lcdST7565_SPI.h" 2
-
+# 10 "./drv_lcdST7565_SPI.h" 2
 
 void SPI_init(void);
 uint8 SPI_ReadWriteByte(uint8);
@@ -5284,8 +5279,7 @@ void LCD_printSmb8x5(uint8, uint8, uint8);
 void LCD_Erase(void);
 uint8 LCD_printStr8x5(uint8*, uint8, uint8);
 void LCD_PrintClock(uint8, uint8, uint8);
-# 10 "main.c" 2
-
+# 11 "main.c" 2
 
 
 
@@ -5352,6 +5346,11 @@ void main(void)
   randinit();
 
 
+  Delay_ms(100);
+  LCD_Init();
+
+
+
   btn_t B1 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 5, &timestamp);
   btn_t B2 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 5, &timestamp);
   btn_t B3 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 5, &timestamp);
@@ -5368,10 +5367,6 @@ void main(void)
   uint8 PG = 0;
   uint8 CL = 0;
   uint8 i = 0;
-
-
-  Delay_ms(100);
-  LCD_Init();
 
 
 
