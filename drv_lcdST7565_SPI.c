@@ -2,9 +2,55 @@
 #include <xc.h>
 #include "common.h"
 #include "display_data.h"
+#include <stdlib.h>
 
-#define   RS      PORTAbits.RA3
-#define   RSE     PORTAbits.RA4
+#define   RS      PORTAbits.RA3    // 1-data/0-cmd
+#define   RSE     PORTAbits.RA4    //Display reset
+
+#define  SW_SPI  // SPI type software(SW_SPI)/hardware(HW_SPI)
+
+//----------------------Software SPI-----------------------------------------
+#ifdef SW_SPI
+
+#define   SDO          PORTCbits.RC7
+#define   SCK          PORTBbits.RB1
+#define   CS           PORTCbits.RC6
+#define   SDO_tris     TRISCbits.RC7
+#define   SCL_tris     TRISBbits.RB1
+#define   CS_tris      TRISCbits.RC6
+#define   DELAY_CYCL   2
+   
+void delayspi(uint8 del)
+{
+  while(--del);
+}
+
+void SPI_init(void)
+{
+  SDO_tris = 0;
+  SCL_tris = 0;
+  CS_tris = 0;
+  CS = 1;
+  SCK = 1;
+}
+
+void SPI_WriteByte(uint8 bt)
+{
+  for(uint8 i = 8; i > 0; i--)
+  {
+    SCK = 0;
+    SDO = (bt >> (i-1)) & 0x01;
+    delayspi(DELAY_CYCL);
+    SCK = 1;    
+  }
+}
+#endif
+//---------------------------------------------------------------------------
+
+
+//----------------------Hardware SPI-----------------------------------------
+#ifdef   HW_SPI
+
 #define   CS      PORTCbits.RC6
 
 void SPI_init(void)
@@ -21,12 +67,15 @@ void SPI_init(void)
   SSPSTATbits.CKE = 0;
 }
 
-uint8 SPI_ReadWriteByte(uint8 Byte)
+void SPI_WriteByte(uint8 Byte)
 {
   SSPBUF = Byte; 
-  while(!SSPSTATbits.BF);
-  return SSPBUF;  
+  while(!SSPIF);
+  SSPIF = 0;;  
 }
+#endif
+//------------------------------------------------------------------------------
+
 
 void LCD_Init(void)
 {
@@ -117,7 +166,7 @@ void LCD_SendData(uint8* byte, uint8 N)
 {
   CS = 0;
   for(uint8 i = 0; i < N; i++) {
-  SPI_ReadWriteByte(byte[i]);
+  SPI_WriteByte(byte[i]);
   }
   CS = 1;
 }
@@ -129,7 +178,7 @@ void LCD_SendCommands(uint8 N, ...)
   va_list arg;
   va_start(arg, N);
   for(uint8 i = 0; i < N; i++) {
-  SPI_ReadWriteByte(va_arg(arg,uint8));
+  SPI_WriteByte(va_arg(arg,uint8));
   }
   va_end(arg);
   RS = 1;
@@ -139,7 +188,7 @@ void LCD_SendCommands(uint8 N, ...)
 void LCD_WriteByte(uint8 byte)
 {
   CS = 0;
-  SPI_ReadWriteByte(byte);
+  SPI_WriteByte(byte);
   CS = 1;
 }
 

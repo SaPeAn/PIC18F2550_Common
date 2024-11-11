@@ -167,7 +167,7 @@ void main(void)
     }
     
     if(B7.BtnON){B7.BtnON = 0; LCD_printStr8x5(NULL, PG, CL);}
-    if(B8.BtnON){B8.BtnON = 0;}
+    if(B8.Toggle){B8.BtnON = 0; LCD_WriteByte(170);}
     
     Counting(countPeriod, 1, countDirect, 359999);
     Time.hour = mainTimeCounter/3600;
