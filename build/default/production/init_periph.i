@@ -20,7 +20,8 @@
 void Interrupt_init(void);
 void TMR0_init(void);
 void TMR1_init(void);
-# 3 "init_periph.c" 2
+# 2 "init_periph.c" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5126,7 +5127,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 4 "init_periph.c" 2
+# 3 "init_periph.c" 2
+
 
 void Interrupt_init(void)
 {

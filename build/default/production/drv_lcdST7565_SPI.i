@@ -37,7 +37,8 @@ uint8 getrand(uint8);
 void randinit(void);
 uint8 dig_to_smb(uint8);
 uint8* u8_to_str(uint8);
-# 9 "./drv_lcdST7565_SPI.h" 2
+# 8 "./drv_lcdST7565_SPI.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdarg.h" 1 3
 
 
@@ -61,10 +62,11 @@ typedef __uint24 uint24_t;
 
 extern void * __va_start(void);
 extern void * __va_arg(void *, ...);
-# 10 "./drv_lcdST7565_SPI.h" 2
+# 9 "./drv_lcdST7565_SPI.h" 2
+
 
 void SPI_init(void);
-uint8 SPI_ReadWriteByte(uint8);
+void SPI_WriteByte(uint8);
 void LCD_Init(void);
 void LCD_WriteByte(uint8);
 void LCD_SendData(uint8*, uint8);
@@ -74,7 +76,8 @@ void LCD_printSmb8x5(uint8, uint8, uint8);
 void LCD_Erase(void);
 uint8 LCD_printStr8x5(uint8*, uint8, uint8);
 void LCD_PrintClock(uint8, uint8, uint8);
-# 2 "drv_lcdST7565_SPI.c" 2
+# 1 "drv_lcdST7565_SPI.c" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5167,7 +5170,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 3 "drv_lcdST7565_SPI.c" 2
+# 2 "drv_lcdST7565_SPI.c" 2
+
 
 # 1 "./display_data.h" 1
 
@@ -5487,33 +5491,33 @@ const unsigned char bender[] =
     0x00, 0x00, 0x78, 0xC0, 0xFB, 0xF8, 0x00, 0x00, 0x70, 0xD5, 0x7F, 0xFD, 0x00, 0x00, 0xE0, 0x03, 0xE8, 0xFF, 0x00, 0x00, 0xC0, 0x57, 0xF5, 0xFF, 0x00, 0x00, 0x00, 0x0F, 0xFE, 0xFF,
     0x00, 0x00, 0x00, 0x5F, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xBC, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xF0, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xF0, 0xFF, 0xFF
 };
-# 5 "drv_lcdST7565_SPI.c" 2
-
-
-
-
+# 4 "drv_lcdST7565_SPI.c" 2
+# 23 "drv_lcdST7565_SPI.c"
+void delayspi(uint8 del)
+{
+  while(--del);
+}
 
 void SPI_init(void)
 {
-  TRISBbits.RB1 = 0;
-  TRISBbits.RB0 = 1;
   TRISCbits.RC7 = 0;
+  TRISBbits.RB1 = 0;
   TRISCbits.RC6 = 0;
   PORTCbits.RC6 = 1;
-  SSPCON1 = 0b00110010;
-
-
-  SSPSTATbits.SMP = 1;
-  SSPSTATbits.CKE = 0;
+  PORTBbits.RB1 = 1;
 }
 
-uint8 SPI_ReadWriteByte(uint8 Byte)
+void SPI_WriteByte(uint8 bt)
 {
-  SSPBUF = Byte;
-  while(!SSPSTATbits.BF);
-  return SSPBUF;
+  for(uint8 i = 8; i > 0; i--)
+  {
+    PORTBbits.RB1 = 0;
+    PORTCbits.RC7 = (bt >> (i-1)) & 0x01;
+    delayspi(2);
+    PORTBbits.RB1 = 1;
+  }
 }
-
+# 80 "drv_lcdST7565_SPI.c"
 void LCD_Init(void)
 {
   SPI_init();
@@ -5603,7 +5607,7 @@ void LCD_SendData(uint8* byte, uint8 N)
 {
   PORTCbits.RC6 = 0;
   for(uint8 i = 0; i < N; i++) {
-  SPI_ReadWriteByte(byte[i]);
+  SPI_WriteByte(byte[i]);
   }
   PORTCbits.RC6 = 1;
 }
@@ -5615,7 +5619,7 @@ void LCD_SendCommands(uint8 N, ...)
   va_list arg;
   *arg = __va_start();
   for(uint8 i = 0; i < N; i++) {
-  SPI_ReadWriteByte((*(uint8 *)__va_arg(*(uint8 **)arg, (uint8)0)));
+  SPI_WriteByte((*(uint8 *)__va_arg(*(uint8 **)arg, (uint8)0)));
   }
   ((void)0);
   PORTAbits.RA3 = 1;
@@ -5625,6 +5629,6 @@ void LCD_SendCommands(uint8 N, ...)
 void LCD_WriteByte(uint8 byte)
 {
   PORTCbits.RC6 = 0;
-  SPI_ReadWriteByte(byte);
+  SPI_WriteByte(byte);
   PORTCbits.RC6 = 1;
 }

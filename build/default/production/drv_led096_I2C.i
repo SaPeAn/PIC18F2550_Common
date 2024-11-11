@@ -37,7 +37,8 @@ uint8 getrand(uint8);
 void randinit(void);
 uint8 dig_to_smb(uint8);
 uint8* u8_to_str(uint8);
-# 9 "./drv_led096_I2C.h" 2
+# 8 "./drv_led096_I2C.h" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\c99\\stdarg.h" 1 3
 
 
@@ -61,7 +62,8 @@ typedef __uint24 uint24_t;
 
 extern void * __va_start(void);
 extern void * __va_arg(void *, ...);
-# 10 "./drv_led096_I2C.h" 2
+# 9 "./drv_led096_I2C.h" 2
+
 
 void Led096Init(void);
 void Led096Set(uint8, ...);
@@ -72,7 +74,8 @@ void Led096PrintStr8x5(uint8*, uint8, uint8);
 void Led096PrintClock(uint8, uint8, uint8);
 void Led096PrintBat(uint8);
 void Led096PrintBender(void);
-# 2 "drv_led096_I2C.c" 2
+# 1 "drv_led096_I2C.c" 2
+
 # 1 "./display_data.h" 1
 
 
@@ -391,7 +394,8 @@ const unsigned char bender[] =
     0x00, 0x00, 0x78, 0xC0, 0xFB, 0xF8, 0x00, 0x00, 0x70, 0xD5, 0x7F, 0xFD, 0x00, 0x00, 0xE0, 0x03, 0xE8, 0xFF, 0x00, 0x00, 0xC0, 0x57, 0xF5, 0xFF, 0x00, 0x00, 0x00, 0x0F, 0xFE, 0xFF,
     0x00, 0x00, 0x00, 0x5F, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xBC, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xF0, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xF0, 0xFF, 0xFF
 };
-# 3 "drv_led096_I2C.c" 2
+# 2 "drv_led096_I2C.c" 2
+
 # 1 "./drv_I2C.h" 1
 
 
@@ -406,7 +410,8 @@ void I2C_Stop(void);
 unsigned char I2C_ReadByte(void);
 void I2C_NAck(void);
 void I2C_Ack(void);
-# 4 "drv_led096_I2C.c" 2
+# 3 "drv_led096_I2C.c" 2
+
 
 
 

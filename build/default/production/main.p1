@@ -70,6 +70,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "19
 [; ;./drv_lcdST7565_SPI.h: 19: void LCD_Erase(void);
 [v _LCD_Erase `(v ~T0 @X0 0 ef ]
+"14
+[; ;./drv_lcdST7565_SPI.h: 14: void LCD_WriteByte(uint8);
+[v _LCD_WriteByte `(v ~T0 @X0 0 ef1`uc ]
 "21
 [; ;./drv_lcdST7565_SPI.h: 21: void LCD_PrintClock(uint8, uint8, uint8);
 [v _LCD_PrintClock `(v ~T0 @X0 0 ef3`uc`uc`uc ]
@@ -1111,10 +1114,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 361 ]
 "170
-[; ;main.c: 170:     if(B8.BtnON){B8.BtnON = 0;}
-[e $ ! != -> . _B8 7 `i -> 0 `i 362  ]
+[; ;main.c: 170:     if(B8.Toggle){B8.BtnON = 0; LCD_WriteByte(170);}
+[e $ ! != -> . _B8 8 `i -> 0 `i 362  ]
 {
 [e = . _B8 7 -> -> 0 `i `uc ]
+[e ( _LCD_WriteByte (1 -> -> 170 `i `uc ]
 }
 [e :U 362 ]
 "172
