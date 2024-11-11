@@ -7,6 +7,8 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
+
+
 # 1 "./config.h" 1
 # 10 "./config.h"
 #pragma config PLLDIV = 5
@@ -5178,7 +5180,7 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
 # 73 "./config.h" 2
-# 2 "main.c" 2
+# 4 "main.c" 2
 # 1 "./common.h" 1
 
 
@@ -5201,9 +5203,7 @@ uint8 getrand(uint8);
 void randinit(void);
 uint8 dig_to_smb(uint8);
 uint8* u8_to_str(uint8);
-# 3 "main.c" 2
-
-
+# 5 "main.c" 2
 # 1 "./init_periph.h" 1
 
 
@@ -5283,6 +5283,7 @@ void LCD_PrintClock(uint8, uint8, uint8);
 
 
 
+
 uint32 mainTimeCounter = 0;
 uint32 dispCounter = 0;
 uint32 countTime = 0;
@@ -5290,13 +5291,15 @@ uint16 countPeriod = 1000;
 uint8 countDirect = 1;
 uint8 countOn = 0;
 uint8 Array[] = "Привет, Мир!!!! Hello, World!!!!";
-# 29 "main.c"
+# 30 "main.c"
 typedef struct{
   uint8 sec;
   uint8 min;
   uint8 hour;
 } systime;
 systime Time;
+
+
 
 uint16 GetPrd(void)
 {
@@ -5323,6 +5326,8 @@ void Counting(uint16 cPrd, uint8 cOn, uint8 cDirect, uint32 counterMax){
     if(mainTimeCounter > counterMax && !countDirect) mainTimeCounter = counterMax;
     }
 
+
+
 void __attribute__((picinterrupt(("")))) systemTime_int(void)
 {
   if (TMR1IE && TMR1IF)
@@ -5333,8 +5338,9 @@ void __attribute__((picinterrupt(("")))) systemTime_int(void)
     timestamp++;
     return;
   }
-# 81 "main.c"
+# 86 "main.c"
 }
+
 
 
 void main(void)
@@ -5362,12 +5368,12 @@ void main(void)
   btn_t B9 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 7, &timestamp);
 
 
+
   uint8 prntClk = 1;
   uint8 T = 0;
   uint8 PG = 0;
   uint8 CL = 0;
   uint8 i = 0;
-
 
 
 
