@@ -98,6 +98,7 @@ void main(void)
   //USART_init();
   Delay_ms(100);           // Задержка после включения (для led096))
   LCD_Init();
+  LCD_Erase();
   /*//Инициализация led096
   Led096Set(8, 0xD5, 0xF0, 0x8D, 0x14, 0xAF, 0xA4, 0x20, 0x01);
   Led096Clear();*/

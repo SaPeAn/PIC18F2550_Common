@@ -18,12 +18,6 @@
 #define   SDO_tris     TRISCbits.RC7
 #define   SCL_tris     TRISBbits.RB1
 #define   CS_tris      TRISCbits.RC6
-#define   DELAY_CYCL   2
-   
-void delayspi(uint8 del)
-{
-  while(--del);
-}
 
 void SPI_init(void)
 {
@@ -40,13 +34,11 @@ void SPI_WriteByte(uint8 bt)
   {
     SCK = 0;
     SDO = (bt >> (i-1)) & 0x01;
-    delayspi(DELAY_CYCL);
     SCK = 1;    
   }
 }
 #endif
 //---------------------------------------------------------------------------
-
 
 //----------------------Hardware SPI-----------------------------------------
 #ifdef   HW_SPI
@@ -76,7 +68,7 @@ void SPI_WriteByte(uint8 Byte)
 #endif
 //------------------------------------------------------------------------------
 
-
+//------------------------LCD FUNCTIONS-----------------------------------------
 void LCD_Init(void)
 {
   SPI_init();
