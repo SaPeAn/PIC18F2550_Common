@@ -34,7 +34,7 @@ void SPI_WriteByte(uint8 bt)
   {
     SCK = 0;
     SDO = (bt >> (i-1)) & 0x01;
-    SCK = 1;    
+    SCK = 1;
   }
 }
 #endif
@@ -63,7 +63,7 @@ void SPI_WriteByte(uint8 Byte)
 {
   SSPBUF = Byte; 
   while(!SSPIF);
-  SSPIF = 0;;  
+  SSPIF = 0; 
 }
 #endif
 //------------------------------------------------------------------------------
