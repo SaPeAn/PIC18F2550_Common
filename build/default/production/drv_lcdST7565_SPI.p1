@@ -3825,277 +3825,250 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 255 `i `uc
 ..
 ]
-"23 drv_lcdST7565_SPI.c
-[; ;drv_lcdST7565_SPI.c: 23: void delayspi(uint8 del)
-[v _delayspi `(v ~T0 @X0 1 ef1`uc ]
-"24
-[; ;drv_lcdST7565_SPI.c: 24: {
-{
-[e :U _delayspi ]
-"23
-[; ;drv_lcdST7565_SPI.c: 23: void delayspi(uint8 del)
-[v _del `uc ~T0 @X0 1 r1 ]
-"24
-[; ;drv_lcdST7565_SPI.c: 24: {
-[f ]
-"25
-[; ;drv_lcdST7565_SPI.c: 25:   while(--del);
-[e $U 328  ]
-[e :U 329 ]
-[e :U 328 ]
-[e $ != -> =- _del -> -> 1 `i `uc `i -> 0 `i 329  ]
-[e :U 330 ]
-"26
-[; ;drv_lcdST7565_SPI.c: 26: }
-[e :UE 327 ]
-}
-"28
-[; ;drv_lcdST7565_SPI.c: 28: void SPI_init(void)
+"22 drv_lcdST7565_SPI.c
+[; ;drv_lcdST7565_SPI.c: 22: void SPI_init(void)
 [v _SPI_init `(v ~T0 @X0 1 ef ]
-"29
-[; ;drv_lcdST7565_SPI.c: 29: {
+"23
+[; ;drv_lcdST7565_SPI.c: 23: {
 {
 [e :U _SPI_init ]
 [f ]
-"30
-[; ;drv_lcdST7565_SPI.c: 30:   TRISCbits.RC7 = 0;
+"24
+[; ;drv_lcdST7565_SPI.c: 24:   TRISCbits.RC7 = 0;
 [e = . . _TRISCbits 1 5 -> -> 0 `i `uc ]
-"31
-[; ;drv_lcdST7565_SPI.c: 31:   TRISBbits.RB1 = 0;
+"25
+[; ;drv_lcdST7565_SPI.c: 25:   TRISBbits.RB1 = 0;
 [e = . . _TRISBbits 1 1 -> -> 0 `i `uc ]
-"32
-[; ;drv_lcdST7565_SPI.c: 32:   TRISCbits.RC6 = 0;
+"26
+[; ;drv_lcdST7565_SPI.c: 26:   TRISCbits.RC6 = 0;
 [e = . . _TRISCbits 1 4 -> -> 0 `i `uc ]
-"33
-[; ;drv_lcdST7565_SPI.c: 33:   PORTCbits.RC6 = 1;
+"27
+[; ;drv_lcdST7565_SPI.c: 27:   PORTCbits.RC6 = 1;
 [e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-"34
-[; ;drv_lcdST7565_SPI.c: 34:   PORTBbits.RB1 = 1;
+"28
+[; ;drv_lcdST7565_SPI.c: 28:   PORTBbits.RB1 = 1;
 [e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-"35
-[; ;drv_lcdST7565_SPI.c: 35: }
-[e :UE 331 ]
+"29
+[; ;drv_lcdST7565_SPI.c: 29: }
+[e :UE 327 ]
 }
-"37
-[; ;drv_lcdST7565_SPI.c: 37: void SPI_WriteByte(uint8 bt)
+"31
+[; ;drv_lcdST7565_SPI.c: 31: void SPI_WriteByte(uint8 bt)
 [v _SPI_WriteByte `(v ~T0 @X0 1 ef1`uc ]
-"38
-[; ;drv_lcdST7565_SPI.c: 38: {
+"32
+[; ;drv_lcdST7565_SPI.c: 32: {
 {
 [e :U _SPI_WriteByte ]
-"37
-[; ;drv_lcdST7565_SPI.c: 37: void SPI_WriteByte(uint8 bt)
+"31
+[; ;drv_lcdST7565_SPI.c: 31: void SPI_WriteByte(uint8 bt)
 [v _bt `uc ~T0 @X0 1 r1 ]
-"38
-[; ;drv_lcdST7565_SPI.c: 38: {
+"32
+[; ;drv_lcdST7565_SPI.c: 32: {
 [f ]
-"39
-[; ;drv_lcdST7565_SPI.c: 39:   for(uint8 i = 8; i > 0; i--)
+"33
+[; ;drv_lcdST7565_SPI.c: 33:   for(uint8 i = 8; i > 0; i--)
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 8 `i `uc ]
-[e $ > -> _i `i -> 0 `i 333  ]
-[e $U 334  ]
-[e :U 333 ]
-"40
-[; ;drv_lcdST7565_SPI.c: 40:   {
+[e $ > -> _i `i -> 0 `i 329  ]
+[e $U 330  ]
+[e :U 329 ]
+"34
+[; ;drv_lcdST7565_SPI.c: 34:   {
 {
-"41
-[; ;drv_lcdST7565_SPI.c: 41:     PORTBbits.RB1 = 0;
+"35
+[; ;drv_lcdST7565_SPI.c: 35:     PORTBbits.RB1 = 0;
 [e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-"42
-[; ;drv_lcdST7565_SPI.c: 42:     PORTCbits.RC7 = (bt >> (i-1)) & 0x01;
+"36
+[; ;drv_lcdST7565_SPI.c: 36:     PORTCbits.RC7 = (bt >> (i-1)) & 0x01;
 [e = . . _PORTCbits 0 7 -> & >> -> _bt `i - -> _i `i -> 1 `i -> 1 `i `uc ]
-"43
-[; ;drv_lcdST7565_SPI.c: 43:     delayspi(2);
-[e ( _delayspi (1 -> -> 2 `i `uc ]
-"44
-[; ;drv_lcdST7565_SPI.c: 44:     PORTBbits.RB1 = 1;
+"37
+[; ;drv_lcdST7565_SPI.c: 37:     PORTBbits.RB1 = 1;
 [e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-"45
-[; ;drv_lcdST7565_SPI.c: 45:   }
+"38
+[; ;drv_lcdST7565_SPI.c: 38:   }
 }
 [e -- _i -> -> 1 `i `uc ]
-[e $ > -> _i `i -> 0 `i 333  ]
-[e :U 334 ]
+[e $ > -> _i `i -> 0 `i 329  ]
+[e :U 330 ]
 }
-"46
-[; ;drv_lcdST7565_SPI.c: 46: }
-[e :UE 332 ]
+"39
+[; ;drv_lcdST7565_SPI.c: 39: }
+[e :UE 328 ]
 }
-"80
-[; ;drv_lcdST7565_SPI.c: 80: void LCD_Init(void)
+"72
+[; ;drv_lcdST7565_SPI.c: 72: void LCD_Init(void)
 [v _LCD_Init `(v ~T0 @X0 1 ef ]
-"81
-[; ;drv_lcdST7565_SPI.c: 81: {
+"73
+[; ;drv_lcdST7565_SPI.c: 73: {
 {
 [e :U _LCD_Init ]
 [f ]
-"82
-[; ;drv_lcdST7565_SPI.c: 82:   SPI_init();
+"74
+[; ;drv_lcdST7565_SPI.c: 74:   SPI_init();
 [e ( _SPI_init ..  ]
-"83
-[; ;drv_lcdST7565_SPI.c: 83:   TRISAbits.RA3 = 0;
+"75
+[; ;drv_lcdST7565_SPI.c: 75:   TRISAbits.RA3 = 0;
 [e = . . _TRISAbits 1 3 -> -> 0 `i `uc ]
-"84
-[; ;drv_lcdST7565_SPI.c: 84:   TRISAbits.RA4 = 0;
+"76
+[; ;drv_lcdST7565_SPI.c: 76:   TRISAbits.RA4 = 0;
 [e = . . _TRISAbits 1 4 -> -> 0 `i `uc ]
-"85
-[; ;drv_lcdST7565_SPI.c: 85:   PORTAbits.RA4 = 1;
+"77
+[; ;drv_lcdST7565_SPI.c: 77:   PORTAbits.RA4 = 1;
 [e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
-"86
-[; ;drv_lcdST7565_SPI.c: 86:   PORTAbits.RA3 = 1;
+"78
+[; ;drv_lcdST7565_SPI.c: 78:   PORTAbits.RA3 = 1;
 [e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-"87
-[; ;drv_lcdST7565_SPI.c: 87:   PORTCbits.RC6 = 1;
+"79
+[; ;drv_lcdST7565_SPI.c: 79:   PORTCbits.RC6 = 1;
 [e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-"88
-[; ;drv_lcdST7565_SPI.c: 88:   Delay_ms(1);
+"80
+[; ;drv_lcdST7565_SPI.c: 80:   Delay_ms(1);
 [e ( _Delay_ms (1 -> -> -> 1 `i `l `ul ]
-"89
-[; ;drv_lcdST7565_SPI.c: 89:   PORTAbits.RA4 = 0;
+"81
+[; ;drv_lcdST7565_SPI.c: 81:   PORTAbits.RA4 = 0;
 [e = . . _PORTAbits 0 4 -> -> 0 `i `uc ]
-"90
-[; ;drv_lcdST7565_SPI.c: 90:   Delay_ms(1);
+"82
+[; ;drv_lcdST7565_SPI.c: 82:   Delay_ms(1);
 [e ( _Delay_ms (1 -> -> -> 1 `i `l `ul ]
-"91
-[; ;drv_lcdST7565_SPI.c: 91:   PORTAbits.RA4 = 1;
+"83
+[; ;drv_lcdST7565_SPI.c: 83:   PORTAbits.RA4 = 1;
 [e = . . _PORTAbits 0 4 -> -> 1 `i `uc ]
-"92
-[; ;drv_lcdST7565_SPI.c: 92:   PORTAbits.RA3 = 0;
+"84
+[; ;drv_lcdST7565_SPI.c: 84:   PORTAbits.RA3 = 0;
 [e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
-"93
-[; ;drv_lcdST7565_SPI.c: 93:   LCD_WriteByte(0xA2 | 0);
+"85
+[; ;drv_lcdST7565_SPI.c: 85:   LCD_WriteByte(0xA2 | 0);
 [e ( _LCD_WriteByte (1 -> | -> 162 `i -> 0 `i `uc ]
-"94
-[; ;drv_lcdST7565_SPI.c: 94:   LCD_WriteByte(0xA0 | 0);
+"86
+[; ;drv_lcdST7565_SPI.c: 86:   LCD_WriteByte(0xA0 | 0);
 [e ( _LCD_WriteByte (1 -> | -> 160 `i -> 0 `i `uc ]
-"95
-[; ;drv_lcdST7565_SPI.c: 95:   LCD_WriteByte(0xC0 | 8);
+"87
+[; ;drv_lcdST7565_SPI.c: 87:   LCD_WriteByte(0xC0 | 8);
 [e ( _LCD_WriteByte (1 -> | -> 192 `i -> 8 `i `uc ]
-"96
-[; ;drv_lcdST7565_SPI.c: 96:   LCD_WriteByte(0x20 | 0x5);
+"88
+[; ;drv_lcdST7565_SPI.c: 88:   LCD_WriteByte(0x20 | 0x5);
 [e ( _LCD_WriteByte (1 -> | -> 32 `i -> 5 `i `uc ]
-"97
-[; ;drv_lcdST7565_SPI.c: 97:   LCD_WriteByte(0x28 | 0b111);
+"89
+[; ;drv_lcdST7565_SPI.c: 89:   LCD_WriteByte(0x28 | 0b111);
 [e ( _LCD_WriteByte (1 -> | -> 40 `i -> 7 `i `uc ]
-"99
-[; ;drv_lcdST7565_SPI.c: 99:   LCD_WriteByte(0x81);
+"91
+[; ;drv_lcdST7565_SPI.c: 91:   LCD_WriteByte(0x81);
 [e ( _LCD_WriteByte (1 -> -> 129 `i `uc ]
-"100
-[; ;drv_lcdST7565_SPI.c: 100:   LCD_WriteByte(0x20);
+"92
+[; ;drv_lcdST7565_SPI.c: 92:   LCD_WriteByte(0x20);
 [e ( _LCD_WriteByte (1 -> -> 32 `i `uc ]
-"101
-[; ;drv_lcdST7565_SPI.c: 101:   LCD_WriteByte(0x40 | 0);
+"93
+[; ;drv_lcdST7565_SPI.c: 93:   LCD_WriteByte(0x40 | 0);
 [e ( _LCD_WriteByte (1 -> | -> 64 `i -> 0 `i `uc ]
-"102
-[; ;drv_lcdST7565_SPI.c: 102:   LCD_WriteByte(0xB0 | 0);
+"94
+[; ;drv_lcdST7565_SPI.c: 94:   LCD_WriteByte(0xB0 | 0);
 [e ( _LCD_WriteByte (1 -> | -> 176 `i -> 0 `i `uc ]
-"103
-[; ;drv_lcdST7565_SPI.c: 103:   LCD_WriteByte(0x10 | 0);
+"95
+[; ;drv_lcdST7565_SPI.c: 95:   LCD_WriteByte(0x10 | 0);
 [e ( _LCD_WriteByte (1 -> | -> 16 `i -> 0 `i `uc ]
-"104
-[; ;drv_lcdST7565_SPI.c: 104:   LCD_WriteByte(0x00 | 0);
+"96
+[; ;drv_lcdST7565_SPI.c: 96:   LCD_WriteByte(0x00 | 0);
 [e ( _LCD_WriteByte (1 -> | -> 0 `i -> 0 `i `uc ]
-"105
-[; ;drv_lcdST7565_SPI.c: 105:   LCD_WriteByte(0xAE | 1);
+"97
+[; ;drv_lcdST7565_SPI.c: 97:   LCD_WriteByte(0xAE | 1);
 [e ( _LCD_WriteByte (1 -> | -> 174 `i -> 1 `i `uc ]
-"106
-[; ;drv_lcdST7565_SPI.c: 106:   LCD_WriteByte(0xA6 | 0);
+"98
+[; ;drv_lcdST7565_SPI.c: 98:   LCD_WriteByte(0xA6 | 0);
 [e ( _LCD_WriteByte (1 -> | -> 166 `i -> 0 `i `uc ]
-"107
-[; ;drv_lcdST7565_SPI.c: 107:   PORTAbits.RA3 = 1;
+"99
+[; ;drv_lcdST7565_SPI.c: 99:   PORTAbits.RA3 = 1;
 [e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-"108
-[; ;drv_lcdST7565_SPI.c: 108: }
-[e :UE 336 ]
+"100
+[; ;drv_lcdST7565_SPI.c: 100: }
+[e :UE 332 ]
 }
-"110
-[; ;drv_lcdST7565_SPI.c: 110: void LCD_Set_PageColumn(uint8 page, uint8 col)
+"102
+[; ;drv_lcdST7565_SPI.c: 102: void LCD_Set_PageColumn(uint8 page, uint8 col)
 [v _LCD_Set_PageColumn `(v ~T0 @X0 1 ef2`uc`uc ]
-"111
-[; ;drv_lcdST7565_SPI.c: 111: {
+"103
+[; ;drv_lcdST7565_SPI.c: 103: {
 {
 [e :U _LCD_Set_PageColumn ]
-"110
-[; ;drv_lcdST7565_SPI.c: 110: void LCD_Set_PageColumn(uint8 page, uint8 col)
+"102
+[; ;drv_lcdST7565_SPI.c: 102: void LCD_Set_PageColumn(uint8 page, uint8 col)
 [v _page `uc ~T0 @X0 1 r1 ]
 [v _col `uc ~T0 @X0 1 r2 ]
-"111
-[; ;drv_lcdST7565_SPI.c: 111: {
+"103
+[; ;drv_lcdST7565_SPI.c: 103: {
 [f ]
-"112
-[; ;drv_lcdST7565_SPI.c: 112:   uint8 colL = col & 0x0F;
+"104
+[; ;drv_lcdST7565_SPI.c: 104:   uint8 colL = col & 0x0F;
 [v _colL `uc ~T0 @X0 1 a ]
 [e = _colL -> & -> _col `i -> 15 `i `uc ]
-"113
-[; ;drv_lcdST7565_SPI.c: 113:   uint8 colH = col >> 4;
+"105
+[; ;drv_lcdST7565_SPI.c: 105:   uint8 colH = col >> 4;
 [v _colH `uc ~T0 @X0 1 a ]
 [e = _colH -> >> -> _col `i -> 4 `i `uc ]
-"114
-[; ;drv_lcdST7565_SPI.c: 114:   LCD_SendCommands(3, (0xB0 | page), (0x10 | colH), (0x00 | colL));
+"106
+[; ;drv_lcdST7565_SPI.c: 106:   LCD_SendCommands(3, (0xB0 | page), (0x10 | colH), (0x00 | colL));
 [e ( _LCD_SendCommands , , , (. -> -> 3 `i `uc | -> 176 `i -> _page `i | -> 16 `i -> _colH `i | -> 0 `i -> _colL `i ]
+"107
+[; ;drv_lcdST7565_SPI.c: 107: }
+[e :UE 333 ]
+}
+"109
+[; ;drv_lcdST7565_SPI.c: 109: void LCD_printSmb8x5(uint8 ch, uint8 page, uint8 col)
+[v _LCD_printSmb8x5 `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+"110
+[; ;drv_lcdST7565_SPI.c: 110: {
+{
+[e :U _LCD_printSmb8x5 ]
+"109
+[; ;drv_lcdST7565_SPI.c: 109: void LCD_printSmb8x5(uint8 ch, uint8 page, uint8 col)
+[v _ch `uc ~T0 @X0 1 r1 ]
+[v _page `uc ~T0 @X0 1 r2 ]
+[v _col `uc ~T0 @X0 1 r3 ]
+"110
+[; ;drv_lcdST7565_SPI.c: 110: {
+[f ]
+"111
+[; ;drv_lcdST7565_SPI.c: 111:   LCD_Set_PageColumn(page, col);
+[e ( _LCD_Set_PageColumn (2 , _page _col ]
+"112
+[; ;drv_lcdST7565_SPI.c: 112:   LCD_SendData(char_8x5[ch], 5);
+[e ( _LCD_SendData (2 , -> &U *U + &U _char_8x5 * -> _ch `ux -> * -> # *U &U *U &U _char_8x5 `ui -> -> 5 `i `ui `ux `*uc -> -> 5 `i `uc ]
+"113
+[; ;drv_lcdST7565_SPI.c: 113:   LCD_Set_PageColumn(page, col+5);
+[e ( _LCD_Set_PageColumn (2 , _page -> + -> _col `i -> 5 `i `uc ]
+"114
+[; ;drv_lcdST7565_SPI.c: 114:   LCD_WriteByte(0x00);
+[e ( _LCD_WriteByte (1 -> -> 0 `i `uc ]
 "115
 [; ;drv_lcdST7565_SPI.c: 115: }
-[e :UE 337 ]
+[e :UE 334 ]
 }
 "117
-[; ;drv_lcdST7565_SPI.c: 117: void LCD_printSmb8x5(uint8 ch, uint8 page, uint8 col)
-[v _LCD_printSmb8x5 `(v ~T0 @X0 1 ef3`uc`uc`uc ]
+[; ;drv_lcdST7565_SPI.c: 117: uint8 LCD_printStr8x5(uint8 *str, uint8 page, uint8 col)
+[v _LCD_printStr8x5 `(uc ~T0 @X0 1 ef3`*uc`uc`uc ]
 "118
 [; ;drv_lcdST7565_SPI.c: 118: {
 {
-[e :U _LCD_printSmb8x5 ]
+[e :U _LCD_printStr8x5 ]
 "117
-[; ;drv_lcdST7565_SPI.c: 117: void LCD_printSmb8x5(uint8 ch, uint8 page, uint8 col)
-[v _ch `uc ~T0 @X0 1 r1 ]
+[; ;drv_lcdST7565_SPI.c: 117: uint8 LCD_printStr8x5(uint8 *str, uint8 page, uint8 col)
+[v _str `*uc ~T0 @X0 1 r1 ]
 [v _page `uc ~T0 @X0 1 r2 ]
 [v _col `uc ~T0 @X0 1 r3 ]
 "118
 [; ;drv_lcdST7565_SPI.c: 118: {
 [f ]
 "119
-[; ;drv_lcdST7565_SPI.c: 119:   LCD_Set_PageColumn(page, col);
-[e ( _LCD_Set_PageColumn (2 , _page _col ]
+[; ;drv_lcdST7565_SPI.c: 119:   if(str == ((void*)0))
+[e $ ! == _str -> -> -> 0 `i `*v `*uc 336  ]
 "120
-[; ;drv_lcdST7565_SPI.c: 120:   LCD_SendData(char_8x5[ch], 5);
-[e ( _LCD_SendData (2 , -> &U *U + &U _char_8x5 * -> _ch `ux -> * -> # *U &U *U &U _char_8x5 `ui -> -> 5 `i `ui `ux `*uc -> -> 5 `i `uc ]
-"121
-[; ;drv_lcdST7565_SPI.c: 121:   LCD_Set_PageColumn(page, col+5);
-[e ( _LCD_Set_PageColumn (2 , _page -> + -> _col `i -> 5 `i `uc ]
-"122
-[; ;drv_lcdST7565_SPI.c: 122:   LCD_WriteByte(0x00);
-[e ( _LCD_WriteByte (1 -> -> 0 `i `uc ]
-"123
-[; ;drv_lcdST7565_SPI.c: 123: }
-[e :UE 338 ]
-}
-"125
-[; ;drv_lcdST7565_SPI.c: 125: uint8 LCD_printStr8x5(uint8 *str, uint8 page, uint8 col)
-[v _LCD_printStr8x5 `(uc ~T0 @X0 1 ef3`*uc`uc`uc ]
-"126
-[; ;drv_lcdST7565_SPI.c: 126: {
+[; ;drv_lcdST7565_SPI.c: 120:   {
 {
-[e :U _LCD_printStr8x5 ]
-"125
-[; ;drv_lcdST7565_SPI.c: 125: uint8 LCD_printStr8x5(uint8 *str, uint8 page, uint8 col)
-[v _str `*uc ~T0 @X0 1 r1 ]
-[v _page `uc ~T0 @X0 1 r2 ]
-[v _col `uc ~T0 @X0 1 r3 ]
-"126
-[; ;drv_lcdST7565_SPI.c: 126: {
-[f ]
-"127
-[; ;drv_lcdST7565_SPI.c: 127:   if(str == ((void*)0))
-[e $ ! == _str -> -> -> 0 `i `*v `*uc 340  ]
-"128
-[; ;drv_lcdST7565_SPI.c: 128:   {
-{
-[v F2920 `uc ~T0 @X0 -> 5 `i s ]
-[i F2920
+[v F2918 `uc ~T0 @X0 -> 5 `i s ]
+[i F2918
 :U ..
-"129
-[; ;drv_lcdST7565_SPI.c: 129:     uint8 str1[] = "NULL";
+"121
+[; ;drv_lcdST7565_SPI.c: 121:     uint8 str1[] = "NULL";
 -> 78 `c
 -> 85 `c
 -> 76 `c
@@ -4104,105 +4077,105 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _str1 `uc ~T0 @X0 -> 5 `i a ]
-[e = _str1 F2920 ]
-"130
-[; ;drv_lcdST7565_SPI.c: 130:     str = str1;
+[e = _str1 F2918 ]
+"122
+[; ;drv_lcdST7565_SPI.c: 122:     str = str1;
 [e = _str &U _str1 ]
-"131
-[; ;drv_lcdST7565_SPI.c: 131:   }
+"123
+[; ;drv_lcdST7565_SPI.c: 123:   }
 }
-[e :U 340 ]
-"132
-[; ;drv_lcdST7565_SPI.c: 132:   uint8 i = 0;
+[e :U 336 ]
+"124
+[; ;drv_lcdST7565_SPI.c: 124:   uint8 i = 0;
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-"133
-[; ;drv_lcdST7565_SPI.c: 133:   while(str[i])
-[e $U 341  ]
-[e :U 342 ]
-"134
-[; ;drv_lcdST7565_SPI.c: 134:   {
+"125
+[; ;drv_lcdST7565_SPI.c: 125:   while(str[i])
+[e $U 337  ]
+[e :U 338 ]
+"126
+[; ;drv_lcdST7565_SPI.c: 126:   {
 {
-"135
-[; ;drv_lcdST7565_SPI.c: 135:     LCD_printSmb8x5(str[i], page, col);
+"127
+[; ;drv_lcdST7565_SPI.c: 127:     LCD_printSmb8x5(str[i], page, col);
 [e ( _LCD_printSmb8x5 (3 , , *U + _str * -> _i `ux -> -> # *U _str `ui `ux _page _col ]
-"136
-[; ;drv_lcdST7565_SPI.c: 136:     col += 6;
+"128
+[; ;drv_lcdST7565_SPI.c: 128:     col += 6;
 [e =+ _col -> -> 6 `i `uc ]
-"137
-[; ;drv_lcdST7565_SPI.c: 137:     if(col > 122) {page++; col = 0;}
-[e $ ! > -> _col `i -> 122 `i 344  ]
+"129
+[; ;drv_lcdST7565_SPI.c: 129:     if(col > 122) {page++; col = 0;}
+[e $ ! > -> _col `i -> 122 `i 340  ]
 {
 [e ++ _page -> -> 1 `i `uc ]
 [e = _col -> -> 0 `i `uc ]
 }
-[e :U 344 ]
-"138
-[; ;drv_lcdST7565_SPI.c: 138:     if(page > 7) return 0;
-[e $ ! > -> _page `i -> 7 `i 345  ]
+[e :U 340 ]
+"130
+[; ;drv_lcdST7565_SPI.c: 130:     if(page > 7) return 0;
+[e $ ! > -> _page `i -> 7 `i 341  ]
 [e ) -> -> 0 `i `uc ]
-[e $UE 339  ]
-[e :U 345 ]
-"139
-[; ;drv_lcdST7565_SPI.c: 139:     i++;
-[e ++ _i -> -> 1 `i `uc ]
-"140
-[; ;drv_lcdST7565_SPI.c: 140:   }
-}
+[e $UE 335  ]
 [e :U 341 ]
-"133
-[; ;drv_lcdST7565_SPI.c: 133:   while(str[i])
-[e $ != -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `i -> 0 `i 342  ]
-[e :U 343 ]
-"141
-[; ;drv_lcdST7565_SPI.c: 141:   return i;
-[e ) _i ]
-[e $UE 339  ]
-"142
-[; ;drv_lcdST7565_SPI.c: 142: }
-[e :UE 339 ]
+"131
+[; ;drv_lcdST7565_SPI.c: 131:     i++;
+[e ++ _i -> -> 1 `i `uc ]
+"132
+[; ;drv_lcdST7565_SPI.c: 132:   }
 }
-"144
-[; ;drv_lcdST7565_SPI.c: 144: void LCD_PrintClock(uint8 hour, uint8 min, uint8 sec)
+[e :U 337 ]
+"125
+[; ;drv_lcdST7565_SPI.c: 125:   while(str[i])
+[e $ != -> *U + _str * -> _i `ux -> -> # *U _str `ui `ux `i -> 0 `i 338  ]
+[e :U 339 ]
+"133
+[; ;drv_lcdST7565_SPI.c: 133:   return i;
+[e ) _i ]
+[e $UE 335  ]
+"134
+[; ;drv_lcdST7565_SPI.c: 134: }
+[e :UE 335 ]
+}
+"136
+[; ;drv_lcdST7565_SPI.c: 136: void LCD_PrintClock(uint8 hour, uint8 min, uint8 sec)
 [v _LCD_PrintClock `(v ~T0 @X0 1 ef3`uc`uc`uc ]
-"145
-[; ;drv_lcdST7565_SPI.c: 145: {
+"137
+[; ;drv_lcdST7565_SPI.c: 137: {
 {
 [e :U _LCD_PrintClock ]
-"144
-[; ;drv_lcdST7565_SPI.c: 144: void LCD_PrintClock(uint8 hour, uint8 min, uint8 sec)
+"136
+[; ;drv_lcdST7565_SPI.c: 136: void LCD_PrintClock(uint8 hour, uint8 min, uint8 sec)
 [v _hour `uc ~T0 @X0 1 r1 ]
 [v _min `uc ~T0 @X0 1 r2 ]
 [v _sec `uc ~T0 @X0 1 r3 ]
-"145
-[; ;drv_lcdST7565_SPI.c: 145: {
+"137
+[; ;drv_lcdST7565_SPI.c: 137: {
 [f ]
-"146
-[; ;drv_lcdST7565_SPI.c: 146:   uint8 secL = sec%10;
+"138
+[; ;drv_lcdST7565_SPI.c: 138:   uint8 secL = sec%10;
 [v _secL `uc ~T0 @X0 1 a ]
 [e = _secL -> % -> _sec `i -> 10 `i `uc ]
-"147
-[; ;drv_lcdST7565_SPI.c: 147:   uint8 minL = min%10;
+"139
+[; ;drv_lcdST7565_SPI.c: 139:   uint8 minL = min%10;
 [v _minL `uc ~T0 @X0 1 a ]
 [e = _minL -> % -> _min `i -> 10 `i `uc ]
-"148
-[; ;drv_lcdST7565_SPI.c: 148:   uint8 hourL = hour%10;
+"140
+[; ;drv_lcdST7565_SPI.c: 140:   uint8 hourL = hour%10;
 [v _hourL `uc ~T0 @X0 1 a ]
 [e = _hourL -> % -> _hour `i -> 10 `i `uc ]
-"149
-[; ;drv_lcdST7565_SPI.c: 149:   sec /= 10;
+"141
+[; ;drv_lcdST7565_SPI.c: 141:   sec /= 10;
 [e =/ _sec -> 10 `i ]
-"150
-[; ;drv_lcdST7565_SPI.c: 150:   min /= 10;
+"142
+[; ;drv_lcdST7565_SPI.c: 142:   min /= 10;
 [e =/ _min -> 10 `i ]
-"151
-[; ;drv_lcdST7565_SPI.c: 151:   hour /= 10;
+"143
+[; ;drv_lcdST7565_SPI.c: 143:   hour /= 10;
 [e =/ _hour -> 10 `i ]
-[v F2930 `uc ~T0 @X0 -> 9 `i s ]
-[i F2930
+[v F2928 `uc ~T0 @X0 -> 9 `i s ]
+[i F2928
 :U ..
-"152
-[; ;drv_lcdST7565_SPI.c: 152:   uint8 cl_digits[9] = {dig_to_smb(hour), dig_to_smb(hourL), ':', dig_to_smb(min), dig_to_smb(minL), ':', dig_to_smb(sec), dig_to_smb(secL), '\0'};
+"144
+[; ;drv_lcdST7565_SPI.c: 144:   uint8 cl_digits[9] = {dig_to_smb(hour), dig_to_smb(hourL), ':', dig_to_smb(min), dig_to_smb(minL), ':', dig_to_smb(sec), dig_to_smb(secL), '\0'};
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -4215,190 +4188,190 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _cl_digits `uc ~T0 @X0 -> 9 `i a ]
-[e = _cl_digits F2930 ]
+[e = _cl_digits F2928 ]
 [e ; = *U + &U _cl_digits * -> -> -> 0 `i `ui `ux -> -> # *U &U _cl_digits `ui `ux ( _dig_to_smb (1 _hour ; = *U + &U _cl_digits * -> -> -> 1 `i `ui `ux -> -> # *U &U _cl_digits `ui `ux ( _dig_to_smb (1 _hourL ; = *U + &U _cl_digits * -> -> -> 2 `i `ui `ux -> -> # *U &U _cl_digits `ui `ux -> -> 58 `ui `uc ; = *U + &U _cl_digits * -> -> -> 3 `i `ui `ux -> -> # *U &U _cl_digits `ui `ux ( _dig_to_smb (1 _min ; = *U + &U _cl_digits * -> -> -> 4 `i `ui `ux -> -> # *U &U _cl_digits `ui `ux ( _dig_to_smb (1 _minL ; = *U + &U _cl_digits * -> -> -> 5 `i `ui `ux -> -> # *U &U _cl_digits `ui `ux -> -> 58 `ui `uc ; = *U + &U _cl_digits * -> -> -> 6 `i `ui `ux -> -> # *U &U _cl_digits `ui `ux ( _dig_to_smb (1 _sec ; = *U + &U _cl_digits * -> -> -> 7 `i `ui `ux -> -> # *U &U _cl_digits `ui `ux ( _dig_to_smb (1 _secL = *U + &U _cl_digits * -> -> -> 8 `i `ui `ux -> -> # *U &U _cl_digits `ui `ux -> -> 0 `ui `uc ]
-"153
-[; ;drv_lcdST7565_SPI.c: 153:   LCD_printStr8x5(cl_digits, 7, 0);
+"145
+[; ;drv_lcdST7565_SPI.c: 145:   LCD_printStr8x5(cl_digits, 7, 0);
 [e ( _LCD_printStr8x5 (3 , , &U _cl_digits -> -> 7 `i `uc -> -> 0 `i `uc ]
-"154
-[; ;drv_lcdST7565_SPI.c: 154: }
-[e :UE 346 ]
+"146
+[; ;drv_lcdST7565_SPI.c: 146: }
+[e :UE 342 ]
 }
-"156
-[; ;drv_lcdST7565_SPI.c: 156: void LCD_Erase(void)
+"148
+[; ;drv_lcdST7565_SPI.c: 148: void LCD_Erase(void)
 [v _LCD_Erase `(v ~T0 @X0 1 ef ]
-"157
-[; ;drv_lcdST7565_SPI.c: 157: {
+"149
+[; ;drv_lcdST7565_SPI.c: 149: {
 {
 [e :U _LCD_Erase ]
 [f ]
-"158
-[; ;drv_lcdST7565_SPI.c: 158:   for(uint8 j = 0; j < 8; j++){
+"150
+[; ;drv_lcdST7565_SPI.c: 150:   for(uint8 j = 0; j < 8; j++){
 {
 [v _j `uc ~T0 @X0 1 a ]
 [e = _j -> -> 0 `i `uc ]
-[e $ < -> _j `i -> 8 `i 348  ]
-[e $U 349  ]
-[e :U 348 ]
+[e $ < -> _j `i -> 8 `i 344  ]
+[e $U 345  ]
+[e :U 344 ]
 {
-"159
-[; ;drv_lcdST7565_SPI.c: 159:     LCD_SendCommands(3, (0xB0 + j), 0x10, 0x00);
+"151
+[; ;drv_lcdST7565_SPI.c: 151:     LCD_SendCommands(3, (0xB0 + j), 0x10, 0x00);
 [e ( _LCD_SendCommands , , , (. -> -> 3 `i `uc + -> 176 `i -> _j `i -> 16 `i -> 0 `i ]
-"160
-[; ;drv_lcdST7565_SPI.c: 160:     if(j > 7) j = 0;
-[e $ ! > -> _j `i -> 7 `i 351  ]
+"152
+[; ;drv_lcdST7565_SPI.c: 152:     if(j > 7) j = 0;
+[e $ ! > -> _j `i -> 7 `i 347  ]
 [e = _j -> -> 0 `i `uc ]
-[e :U 351 ]
-"161
-[; ;drv_lcdST7565_SPI.c: 161:     for(uint8 i = 0; i<128; i++) LCD_WriteByte(0);
+[e :U 347 ]
+"153
+[; ;drv_lcdST7565_SPI.c: 153:     for(uint8 i = 0; i<128; i++) LCD_WriteByte(0);
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 128 `i 352  ]
-[e $U 353  ]
-[e :U 352 ]
+[e $ < -> _i `i -> 128 `i 348  ]
+[e $U 349  ]
+[e :U 348 ]
 [e ( _LCD_WriteByte (1 -> -> 0 `i `uc ]
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 128 `i 352  ]
-[e :U 353 ]
+[e $ < -> _i `i -> 128 `i 348  ]
+[e :U 349 ]
 }
+"154
+[; ;drv_lcdST7565_SPI.c: 154:   }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 8 `i 344  ]
+[e :U 345 ]
+}
+"155
+[; ;drv_lcdST7565_SPI.c: 155:   LCD_SendCommands(3, 0xB0, 0x10, 0x00);
+[e ( _LCD_SendCommands , , , (. -> -> 3 `i `uc -> 176 `i -> 16 `i -> 0 `i ]
+"156
+[; ;drv_lcdST7565_SPI.c: 156: }
+[e :UE 343 ]
+}
+"157
+[; ;drv_lcdST7565_SPI.c: 157: void LCD_SendData(uint8* byte, uint8 N)
+[v _LCD_SendData `(v ~T0 @X0 1 ef2`*uc`uc ]
+"158
+[; ;drv_lcdST7565_SPI.c: 158: {
+{
+[e :U _LCD_SendData ]
+"157
+[; ;drv_lcdST7565_SPI.c: 157: void LCD_SendData(uint8* byte, uint8 N)
+[v _byte `*uc ~T0 @X0 1 r1 ]
+[v _N `uc ~T0 @X0 1 r2 ]
+"158
+[; ;drv_lcdST7565_SPI.c: 158: {
+[f ]
+"159
+[; ;drv_lcdST7565_SPI.c: 159:   PORTCbits.RC6 = 0;
+[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
+"160
+[; ;drv_lcdST7565_SPI.c: 160:   for(uint8 i = 0; i < N; i++) {
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $U 355  ]
+[e :U 352 ]
+{
+"161
+[; ;drv_lcdST7565_SPI.c: 161:   SPI_WriteByte(byte[i]);
+[e ( _SPI_WriteByte (1 *U + _byte * -> _i `ux -> -> # *U _byte `ui `ux ]
 "162
 [; ;drv_lcdST7565_SPI.c: 162:   }
 }
-[e ++ _j -> -> 1 `i `uc ]
-[e $ < -> _j `i -> 8 `i 348  ]
-[e :U 349 ]
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 355 ]
+[e $ < -> _i `i -> _N `i 352  ]
+[e :U 353 ]
 }
 "163
-[; ;drv_lcdST7565_SPI.c: 163:   LCD_SendCommands(3, 0xB0, 0x10, 0x00);
-[e ( _LCD_SendCommands , , , (. -> -> 3 `i `uc -> 176 `i -> 16 `i -> 0 `i ]
+[; ;drv_lcdST7565_SPI.c: 163:   PORTCbits.RC6 = 1;
+[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
 "164
 [; ;drv_lcdST7565_SPI.c: 164: }
-[e :UE 347 ]
+[e :UE 351 ]
 }
-"165
-[; ;drv_lcdST7565_SPI.c: 165: void LCD_SendData(uint8* byte, uint8 N)
-[v _LCD_SendData `(v ~T0 @X0 1 ef2`*uc`uc ]
 "166
-[; ;drv_lcdST7565_SPI.c: 166: {
-{
-[e :U _LCD_SendData ]
-"165
-[; ;drv_lcdST7565_SPI.c: 165: void LCD_SendData(uint8* byte, uint8 N)
-[v _byte `*uc ~T0 @X0 1 r1 ]
-[v _N `uc ~T0 @X0 1 r2 ]
-"166
-[; ;drv_lcdST7565_SPI.c: 166: {
-[f ]
-"167
-[; ;drv_lcdST7565_SPI.c: 167:   PORTCbits.RC6 = 0;
-[e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-"168
-[; ;drv_lcdST7565_SPI.c: 168:   for(uint8 i = 0; i < N; i++) {
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $U 359  ]
-[e :U 356 ]
-{
-"169
-[; ;drv_lcdST7565_SPI.c: 169:   SPI_WriteByte(byte[i]);
-[e ( _SPI_WriteByte (1 *U + _byte * -> _i `ux -> -> # *U _byte `ui `ux ]
-"170
-[; ;drv_lcdST7565_SPI.c: 170:   }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e :U 359 ]
-[e $ < -> _i `i -> _N `i 356  ]
-[e :U 357 ]
-}
-"171
-[; ;drv_lcdST7565_SPI.c: 171:   PORTCbits.RC6 = 1;
-[e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-"172
-[; ;drv_lcdST7565_SPI.c: 172: }
-[e :UE 355 ]
-}
-"174
-[; ;drv_lcdST7565_SPI.c: 174: void LCD_SendCommands(uint8 N, ...)
+[; ;drv_lcdST7565_SPI.c: 166: void LCD_SendCommands(uint8 N, ...)
 [v _LCD_SendCommands `(v ~T0 @X0 1 ev`uc ]
-"175
-[; ;drv_lcdST7565_SPI.c: 175: {
+"167
+[; ;drv_lcdST7565_SPI.c: 167: {
 {
 [e :U _LCD_SendCommands ]
-"174
-[; ;drv_lcdST7565_SPI.c: 174: void LCD_SendCommands(uint8 N, ...)
+"166
+[; ;drv_lcdST7565_SPI.c: 166: void LCD_SendCommands(uint8 N, ...)
 [v _N `uc ~T0 @X0 1 r0 ]
-"175
-[; ;drv_lcdST7565_SPI.c: 175: {
+"167
+[; ;drv_lcdST7565_SPI.c: 167: {
 [f ]
-"176
-[; ;drv_lcdST7565_SPI.c: 176:   PORTAbits.RA3 = 0;
+"168
+[; ;drv_lcdST7565_SPI.c: 168:   PORTAbits.RA3 = 0;
 [e = . . _PORTAbits 0 3 -> -> 0 `i `uc ]
-"177
-[; ;drv_lcdST7565_SPI.c: 177:   PORTCbits.RC6 = 0;
+"169
+[; ;drv_lcdST7565_SPI.c: 169:   PORTCbits.RC6 = 0;
 [e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-"178
-[; ;drv_lcdST7565_SPI.c: 178:   va_list arg;
+"170
+[; ;drv_lcdST7565_SPI.c: 170:   va_list arg;
 [v _arg `*v ~T0 @X0 -> -> 1 `i `ux a ]
-"179
-[; ;drv_lcdST7565_SPI.c: 179:   *arg = __va_start();
+"171
+[; ;drv_lcdST7565_SPI.c: 171:   *arg = __va_start();
 [e = *U &U _arg ( ___va_start ..  ]
-"180
-[; ;drv_lcdST7565_SPI.c: 180:   for(uint8 i = 0; i < N; i++) {
+"172
+[; ;drv_lcdST7565_SPI.c: 172:   for(uint8 i = 0; i < N; i++) {
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $U 364  ]
-[e :U 361 ]
+[e $U 360  ]
+[e :U 357 ]
 {
-"181
-[; ;drv_lcdST7565_SPI.c: 181:   SPI_WriteByte((*(uint8 *)__va_arg(*(uint8 **)arg, (uint8)0)));
+"173
+[; ;drv_lcdST7565_SPI.c: 173:   SPI_WriteByte((*(uint8 *)__va_arg(*(uint8 **)arg, (uint8)0)));
 [e ( _SPI_WriteByte (1 *U -> ( ___va_arg , (. -> *U -> &U _arg `**uc `*v -> -> -> 0 `i `uc `i `*uc ]
-"182
-[; ;drv_lcdST7565_SPI.c: 182:   }
+"174
+[; ;drv_lcdST7565_SPI.c: 174:   }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e :U 364 ]
-[e $ < -> _i `i -> _N `i 361  ]
-[e :U 362 ]
+[e :U 360 ]
+[e $ < -> _i `i -> _N `i 357  ]
+[e :U 358 ]
 }
-"183
-[; ;drv_lcdST7565_SPI.c: 183:   ((void)0);
+"175
+[; ;drv_lcdST7565_SPI.c: 175:   ((void)0);
 [e -> 0 `i ]
-"184
-[; ;drv_lcdST7565_SPI.c: 184:   PORTAbits.RA3 = 1;
+"176
+[; ;drv_lcdST7565_SPI.c: 176:   PORTAbits.RA3 = 1;
 [e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-"185
-[; ;drv_lcdST7565_SPI.c: 185:   PORTCbits.RC6 = 1;
+"177
+[; ;drv_lcdST7565_SPI.c: 177:   PORTCbits.RC6 = 1;
 [e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-"186
-[; ;drv_lcdST7565_SPI.c: 186: }
-[e :UE 360 ]
+"178
+[; ;drv_lcdST7565_SPI.c: 178: }
+[e :UE 356 ]
 }
-"188
-[; ;drv_lcdST7565_SPI.c: 188: void LCD_WriteByte(uint8 byte)
+"180
+[; ;drv_lcdST7565_SPI.c: 180: void LCD_WriteByte(uint8 byte)
 [v _LCD_WriteByte `(v ~T0 @X0 1 ef1`uc ]
-"189
-[; ;drv_lcdST7565_SPI.c: 189: {
+"181
+[; ;drv_lcdST7565_SPI.c: 181: {
 {
 [e :U _LCD_WriteByte ]
-"188
-[; ;drv_lcdST7565_SPI.c: 188: void LCD_WriteByte(uint8 byte)
+"180
+[; ;drv_lcdST7565_SPI.c: 180: void LCD_WriteByte(uint8 byte)
 [v _byte `uc ~T0 @X0 1 r1 ]
-"189
-[; ;drv_lcdST7565_SPI.c: 189: {
+"181
+[; ;drv_lcdST7565_SPI.c: 181: {
 [f ]
-"190
-[; ;drv_lcdST7565_SPI.c: 190:   PORTCbits.RC6 = 0;
+"182
+[; ;drv_lcdST7565_SPI.c: 182:   PORTCbits.RC6 = 0;
 [e = . . _PORTCbits 0 6 -> -> 0 `i `uc ]
-"191
-[; ;drv_lcdST7565_SPI.c: 191:   SPI_WriteByte(byte);
+"183
+[; ;drv_lcdST7565_SPI.c: 183:   SPI_WriteByte(byte);
 [e ( _SPI_WriteByte (1 _byte ]
-"192
-[; ;drv_lcdST7565_SPI.c: 192:   PORTCbits.RC6 = 1;
+"184
+[; ;drv_lcdST7565_SPI.c: 184:   PORTCbits.RC6 = 1;
 [e = . . _PORTCbits 0 6 -> -> 1 `i `uc ]
-"193
-[; ;drv_lcdST7565_SPI.c: 193: }
-[e :UE 365 ]
+"185
+[; ;drv_lcdST7565_SPI.c: 185: }
+[e :UE 361 ]
 }

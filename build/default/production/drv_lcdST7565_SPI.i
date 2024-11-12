@@ -5492,12 +5492,7 @@ const unsigned char bender[] =
     0x00, 0x00, 0x00, 0x5F, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xBC, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xF0, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0xF0, 0xFF, 0xFF
 };
 # 4 "drv_lcdST7565_SPI.c" 2
-# 23 "drv_lcdST7565_SPI.c"
-void delayspi(uint8 del)
-{
-  while(--del);
-}
-
+# 22 "drv_lcdST7565_SPI.c"
 void SPI_init(void)
 {
   TRISCbits.RC7 = 0;
@@ -5513,11 +5508,10 @@ void SPI_WriteByte(uint8 bt)
   {
     PORTBbits.RB1 = 0;
     PORTCbits.RC7 = (bt >> (i-1)) & 0x01;
-    delayspi(2);
     PORTBbits.RB1 = 1;
   }
 }
-# 80 "drv_lcdST7565_SPI.c"
+# 72 "drv_lcdST7565_SPI.c"
 void LCD_Init(void)
 {
   SPI_init();

@@ -5360,6 +5360,7 @@ void main(void)
 
   Delay_ms(100);
   LCD_Init();
+  LCD_Erase();
 
 
 
