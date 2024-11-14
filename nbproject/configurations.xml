@@ -36,6 +36,7 @@
       <itemPath>drv_usart.c</itemPath>
       <itemPath>init_periph.c</itemPath>
       <itemPath>main.c</itemPath>
+      <itemPath>newAsmTemplate.asm</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

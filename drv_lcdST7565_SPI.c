@@ -11,6 +11,7 @@
 
 //----------------------Software SPI-----------------------------------------
 #ifdef SW_SPI
+extern void TxSpiSW(uint8);
 
 #define   SDO          PORTCbits.RC7
 #define   SCK          PORTBbits.RB1
@@ -28,7 +29,7 @@ void SPI_init(void)
   SCK = 1;
 }
 
-void SPI_WriteByte(uint8 bt)
+/*void SPI_WriteByte(uint8 bt)
 {
   for(uint8 i = 8; i > 0; i--)
   {
@@ -36,7 +37,7 @@ void SPI_WriteByte(uint8 bt)
     SDO = (bt >> (i-1)) & 0x01;
     SCK = 1;
   }
-}
+}*/
 #endif
 //---------------------------------------------------------------------------
 
@@ -158,7 +159,8 @@ void LCD_SendData(uint8* byte, uint8 N)
 {
   CS = 0;
   for(uint8 i = 0; i < N; i++) {
-  SPI_WriteByte(byte[i]);
+  //SPI_WriteByte(byte[i]);
+  TxSpiSW(byte[i]);
   }
   CS = 1;
 }
@@ -170,7 +172,7 @@ void LCD_SendCommands(uint8 N, ...)
   va_list arg;
   va_start(arg, N);
   for(uint8 i = 0; i < N; i++) {
-  SPI_WriteByte(va_arg(arg,uint8));
+  TxSpiSW(va_arg(arg,uint8));
   }
   va_end(arg);
   RS = 1;
@@ -180,7 +182,7 @@ void LCD_SendCommands(uint8 N, ...)
 void LCD_WriteByte(uint8 byte)
 {
   CS = 0;
-  SPI_WriteByte(byte);
+  TxSpiSW(byte);
   CS = 1;
 }
 
