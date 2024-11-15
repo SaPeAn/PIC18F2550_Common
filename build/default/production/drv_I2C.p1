@@ -811,78 +811,82 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 343 ]
 "69
-[; ;drv_I2C.c: 69: }
+[; ;drv_I2C.c: 69:    return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 341  ]
+"70
+[; ;drv_I2C.c: 70: }
 [e :UE 341 ]
 }
-"71
-[; ;drv_I2C.c: 71: unsigned char I2C_ReadByte(void)
-[v _I2C_ReadByte `(uc ~T0 @X0 1 ef ]
 "72
-[; ;drv_I2C.c: 72: {
+[; ;drv_I2C.c: 72: unsigned char I2C_ReadByte(void)
+[v _I2C_ReadByte `(uc ~T0 @X0 1 ef ]
+"73
+[; ;drv_I2C.c: 73: {
 {
 [e :U _I2C_ReadByte ]
 [f ]
-"73
-[; ;drv_I2C.c: 73:    if(((SSPCON1&0x0F)==0x08) || ((SSPCON1&0x0F)==0x0B))
-[e $ ! || == & -> _SSPCON1 `i -> 15 `i -> 8 `i == & -> _SSPCON1 `i -> 15 `i -> 11 `i 358  ]
 "74
-[; ;drv_I2C.c: 74:       SSPCON2bits.RCEN = 1;
+[; ;drv_I2C.c: 74:    if(((SSPCON1&0x0F)==0x08) || ((SSPCON1&0x0F)==0x0B))
+[e $ ! || == & -> _SSPCON1 `i -> 15 `i -> 8 `i == & -> _SSPCON1 `i -> 15 `i -> 11 `i 358  ]
+"75
+[; ;drv_I2C.c: 75:       SSPCON2bits.RCEN = 1;
 [e = . . _SSPCON2bits 0 3 -> -> 1 `i `uc ]
 [e :U 358 ]
-"76
-[; ;drv_I2C.c: 76:    while (!SSPSTATbits.BF);
+"77
+[; ;drv_I2C.c: 77:    while (!SSPSTATbits.BF);
 [e $U 359  ]
 [e :U 360 ]
 [e :U 359 ]
 [e $ ! != -> . . _SSPSTATbits 2 0 `i -> 0 `i 360  ]
 [e :U 361 ]
-"78
-[; ;drv_I2C.c: 78:    return (SSPBUF);
+"79
+[; ;drv_I2C.c: 79:    return (SSPBUF);
 [e ) _SSPBUF ]
 [e $UE 357  ]
-"79
-[; ;drv_I2C.c: 79: }
+"80
+[; ;drv_I2C.c: 80: }
 [e :UE 357 ]
 }
-"82
-[; ;drv_I2C.c: 82: void I2C_Ack(void)
-[v _I2C_Ack `(v ~T0 @X0 1 ef ]
 "83
-[; ;drv_I2C.c: 83: {
+[; ;drv_I2C.c: 83: void I2C_Ack(void)
+[v _I2C_Ack `(v ~T0 @X0 1 ef ]
+"84
+[; ;drv_I2C.c: 84: {
 {
 [e :U _I2C_Ack ]
 [f ]
-"84
-[; ;drv_I2C.c: 84:    SSPCON2bits.ACKDT = 0;
-[e = . . _SSPCON2bits 0 5 -> -> 0 `i `uc ]
 "85
-[; ;drv_I2C.c: 85:    SSPCON2bits.ACKEN = 1;
-[e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
+[; ;drv_I2C.c: 85:    SSPCON2bits.ACKDT = 0;
+[e = . . _SSPCON2bits 0 5 -> -> 0 `i `uc ]
 "86
-[; ;drv_I2C.c: 86:    I2C_Idle();
-[e ( _I2C_Idle ..  ]
+[; ;drv_I2C.c: 86:    SSPCON2bits.ACKEN = 1;
+[e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
 "87
-[; ;drv_I2C.c: 87: }
+[; ;drv_I2C.c: 87:    I2C_Idle();
+[e ( _I2C_Idle ..  ]
+"88
+[; ;drv_I2C.c: 88: }
 [e :UE 362 ]
 }
-"89
-[; ;drv_I2C.c: 89: void I2C_NAck(void)
-[v _I2C_NAck `(v ~T0 @X0 1 ef ]
 "90
-[; ;drv_I2C.c: 90: {
+[; ;drv_I2C.c: 90: void I2C_NAck(void)
+[v _I2C_NAck `(v ~T0 @X0 1 ef ]
+"91
+[; ;drv_I2C.c: 91: {
 {
 [e :U _I2C_NAck ]
 [f ]
-"91
-[; ;drv_I2C.c: 91:    SSPCON2bits.ACKDT = 1;
-[e = . . _SSPCON2bits 0 5 -> -> 1 `i `uc ]
 "92
-[; ;drv_I2C.c: 92:    SSPCON2bits.ACKEN = 1;
-[e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
+[; ;drv_I2C.c: 92:    SSPCON2bits.ACKDT = 1;
+[e = . . _SSPCON2bits 0 5 -> -> 1 `i `uc ]
 "93
-[; ;drv_I2C.c: 93:    I2C_Idle();
-[e ( _I2C_Idle ..  ]
+[; ;drv_I2C.c: 93:    SSPCON2bits.ACKEN = 1;
+[e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
 "94
-[; ;drv_I2C.c: 94: }
+[; ;drv_I2C.c: 94:    I2C_Idle();
+[e ( _I2C_Idle ..  ]
+"95
+[; ;drv_I2C.c: 95: }
 [e :UE 363 ]
 }

@@ -29,15 +29,11 @@ void SPI_init(void)
   SCK = 1;
 }
 
-/*void SPI_WriteByte(uint8 bt)
+void SPI_WriteByte(uint8 bt)
 {
-  for(uint8 i = 8; i > 0; i--)
-  {
-    SCK = 0;
-    SDO = (bt >> (i-1)) & 0x01;
-    SCK = 1;
-  }
-}*/
+  TxSpiSW(bt);
+}
+
 #endif
 //---------------------------------------------------------------------------
 
@@ -107,7 +103,7 @@ void LCD_Set_PageColumn(uint8 page, uint8 col)
   LCD_SendCommands(3, (0xB0 | page), (0x10 | colH), (0x00 | colL));  
 }
 
-void LCD_printSmb8x5(uint8 ch, uint8 page, uint8 col)
+void LCD_printSmb8x5(const uint8 ch, uint8 page, uint8 col)
 {
   LCD_Set_PageColumn(page, col);
   LCD_SendData(char_8x5[ch], 5);
@@ -155,12 +151,12 @@ void LCD_Erase(void)
   }
   LCD_SendCommands(3, 0xB0, 0x10, 0x00);
 }
-void LCD_SendData(uint8* byte, uint8 N)
+void LCD_SendData(const uint8* byte, uint8 N)
 {
   CS = 0;
   for(uint8 i = 0; i < N; i++) {
   //SPI_WriteByte(byte[i]);
-  TxSpiSW(byte[i]);
+  SPI_WriteByte(byte[i]);
   }
   CS = 1;
 }
@@ -172,7 +168,7 @@ void LCD_SendCommands(uint8 N, ...)
   va_list arg;
   va_start(arg, N);
   for(uint8 i = 0; i < N; i++) {
-  TxSpiSW(va_arg(arg,uint8));
+  SPI_WriteByte(va_arg(arg,uint8));
   }
   va_end(arg);
   RS = 1;
@@ -182,7 +178,7 @@ void LCD_SendCommands(uint8 N, ...)
 void LCD_WriteByte(uint8 byte)
 {
   CS = 0;
-  TxSpiSW(byte);
+  SPI_WriteByte(byte);
   CS = 1;
 }
 

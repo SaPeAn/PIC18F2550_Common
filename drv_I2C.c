@@ -66,6 +66,7 @@ unsigned char I2C_WriteByte(unsigned char data_out)
             return (0);           // Return ACK
       }
    }
+   return 0;
 }
 
 unsigned char I2C_ReadByte(void)

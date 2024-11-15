@@ -18,7 +18,7 @@ void Delay_ms(uint32);
 uint8 getrand(uint8);
 void randinit(void);
 uint8 dig_to_smb(uint8);
-uint8* u8_to_str(uint8);
+void  u8_to_str(uint8*, uint8);
 
 #ifdef	__cplusplus
 }

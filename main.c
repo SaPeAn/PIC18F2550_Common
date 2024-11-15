@@ -18,7 +18,7 @@ uint32 countTime = 0;
 uint16 countPeriod = 1000;
 uint8  countDirect = 1;
 uint8  countOn = 0;
-uint8 Array[] = "Привет, Мир!!!! Hello, World!!!!";
+uint8 Array[] = "Hello, World!!!!";
 
 /*typedef struct {
 uint8 USART_buf[100];
@@ -130,7 +130,9 @@ void main(void)
     if(B1.BtnON || B1.HoldON || B1.StuckON){ 
       B1.BtnON = 0;
       uint8 Number = getrand(255);
-      uint8 Nsmb = LCD_printStr8x5(u8_to_str(Number), PG, CL);
+      uint8 str1[4];
+      u8_to_str(str1, Number);
+      uint8 Nsmb = LCD_printStr8x5(str1, PG, CL);
       CL += 6*Nsmb;
       LCD_printSmb8x5(' ', PG, CL);
       CL += 6;
@@ -171,9 +173,9 @@ void main(void)
     if(B8.Toggle){B8.BtnON = 0; LCD_WriteByte(170);}
     
     Counting(countPeriod, 1, countDirect, 359999);
-    Time.hour = mainTimeCounter/3600;
-    Time.min = (mainTimeCounter%3600)/60;
-    Time.sec = mainTimeCounter%60;
+    Time.hour = (uint8)mainTimeCounter/3600;
+    Time.min = (uint8)(mainTimeCounter%3600)/60;
+    Time.sec = (uint8)mainTimeCounter%60;
     if(prntClk) LCD_PrintClock(Time.hour, Time.min, Time.sec);
   }
 /*----------------------------------------------------------------------------*/

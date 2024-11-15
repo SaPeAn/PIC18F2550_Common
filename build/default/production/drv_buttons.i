@@ -37,8 +37,9 @@ void Delay_ms(uint32);
 uint8 getrand(uint8);
 void randinit(void);
 uint8 dig_to_smb(uint8);
-uint8* u8_to_str(uint8);
-# 10 "./drv_buttons.h" 2
+void u8_to_str(uint8*, uint8);
+# 9 "./drv_buttons.h" 2
+
 
 typedef struct{
   volatile uint8* Port;
@@ -56,7 +57,8 @@ typedef struct{
 
 btn_t CreateBtn(volatile uint8*, volatile uint8*, volatile uint8*, const uint8, const uint8, const uint32*);
 void TestBtn(btn_t*);
-# 2 "drv_buttons.c" 2
+# 1 "drv_buttons.c" 2
+
 
 btn_t CreateBtn(volatile uint8* Tris, volatile uint8* Port, volatile uint8* Lat, const uint8 inputbit, const uint8 outputbit, const uint32* timecounter)
 {

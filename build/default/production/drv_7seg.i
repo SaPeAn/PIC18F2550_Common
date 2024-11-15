@@ -36,14 +36,16 @@ void Delay_ms(uint32);
 uint8 getrand(uint8);
 void randinit(void);
 uint8 dig_to_smb(uint8);
-uint8* u8_to_str(uint8);
-# 9 "./drv_7seg.h" 2
+void u8_to_str(uint8*, uint8);
+# 8 "./drv_7seg.h" 2
+
 
 
 
 void DigToSeg (uint8, uint8);
 void Display (uint16);
-# 2 "drv_7seg.c" 2
+# 1 "drv_7seg.c" 2
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5149,7 +5151,8 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 33 "C:\\Program Files\\Microchip\\xc8\\v2.50\\pic\\include\\xc.h" 2 3
-# 3 "drv_7seg.c" 2
+# 2 "drv_7seg.c" 2
+
 
 
 uint8 n_count;

@@ -11,7 +11,7 @@ void Delay_ms(uint32 ms)
 
 void randinit(void)
 {
-  srand(timestamp + TMR1H);
+  srand((uint8)timestamp);
 }
 
 uint8 getrand(uint8 N)
@@ -23,38 +23,42 @@ uint8 dig_to_smb(uint8 dig)
 {
   switch (dig)
   {
-    case 0: return 48; break;
-    case 1: return 49; break;
-    case 2: return 50; break;
-    case 3: return 51; break;
-    case 4: return 52; break;
-    case 5: return 53; break;
-    case 6: return 54; break;
-    case 7: return 55; break;
-    case 8: return 56; break;
-    case 9: return 57; break;
+    case 0: return 48;
+    case 1: return 49; 
+    case 2: return 50;
+    case 3: return 51; 
+    case 4: return 52;
+    case 5: return 53; 
+    case 6: return 54; 
+    case 7: return 55; 
+    case 8: return 56;
+    case 9: return 57;
   }
+  return 0;
 }
 
-uint8* u8_to_str(uint8 num)
-{
-  uint8 L = num%10;
-  uint8 M = (num%100)/10;
-  uint8 H = num/100;
-  if(num > 99 && num < 256)
-  {  
-    uint8 str1[] = {dig_to_smb(H), dig_to_smb(M), dig_to_smb(L), '\0'};
-    return str1;
-  }  
-  if(num > 9 && num < 100)
+void u8_to_str(uint8* str, uint8 num)
+{ 
+  str[0] = num%10;
+  str[1] = (num%100)/10;
+  str[2] = num/100;
+  if(num > 99)
   {
-    uint8 str2[] = {dig_to_smb(M), dig_to_smb(L), '\0'};
-    return str2;
+    for(uint8 i = 0; i < 3; i++) {
+    str[i] = dig_to_smb(str[i]);
+    }
+    str[3] = '\0';
   }
-  if(num >= 0 && num < 10)
+  if((num > 9) && (num < 100))
   {
-    uint8 str3[] = {dig_to_smb(L), '\0'};
-    return str3;
+    for(uint8 i = 0; i < 2; i++) {
+    str[i] = dig_to_smb(str[i]);
+    }
+    str[2] = '\0';
   }
-  return NULL;
-}           
+  if(num < 10)
+  {
+    str[0] = dig_to_smb(str[0]);
+    str[1] = '\0';
+  }
+}
