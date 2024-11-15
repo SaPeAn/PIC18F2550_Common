@@ -49,8 +49,8 @@ void SPI_init(void)
   TRISCbits.RC7 = 0; // RC7 - SDO
   TRISCbits.RC6 = 0; // RC6 - CS
   PORTCbits.RC6 = 1; // CS set
-  SSPCON1 = 0b00110010; // Enables serial port([5] - 1); Idle state for clock is a high level (CKP) ([4] - 1); 
-                        // SPI Master mode, clock = FOSC/64; ([3-0] - 0000(SPI Fosc/4); 0001 (SPI Fosc/16); 0010 (SPI Fosc/64))
+  SSPCON1 = 0b00110001; // Enables serial port([5] - 1); Idle state for clock is a high level (CKP) ([4] - 1); 
+                        // SPI Master mode, clock =  ([3-0] - 0000(SPI Fosc/4); 0001 (SPI Fosc/16); 0010 (SPI Fosc/64))
   
   SSPSTATbits.SMP = 1;
   SSPSTATbits.CKE = 0;
@@ -154,10 +154,7 @@ void LCD_Erase(void)
 void LCD_SendData(const uint8* byte, uint8 N)
 {
   CS = 0;
-  for(uint8 i = 0; i < N; i++) {
-  //SPI_WriteByte(byte[i]);
-  SPI_WriteByte(byte[i]);
-  }
+  for(uint8 i = 0; i < N; i++) SPI_WriteByte(byte[i]);
   CS = 1;
 }
 

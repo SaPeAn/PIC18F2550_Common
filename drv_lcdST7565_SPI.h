@@ -9,7 +9,7 @@ extern "C" {
 #include <stdarg.h>   
     
 void SPI_init(void);
-//void SPI_WriteByte(uint8);
+void SPI_WriteByte(uint8);
 void LCD_Init(void);
 void LCD_WriteByte(uint8);
 void LCD_SendData(const uint8*, uint8);

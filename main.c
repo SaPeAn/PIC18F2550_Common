@@ -124,6 +124,11 @@ void main(void)
 /*-----------------------------нямнбмни жхйк----------------------------------*/
   while(1)
   {
+    SPI_WriteByte(170);
+    SPI_WriteByte(170);
+    SPI_WriteByte(170);
+    SPI_WriteByte(170);
+      
     TestBtn(&B1); TestBtn(&B2); TestBtn(&B3); TestBtn(&B4); TestBtn(&B5); 
     TestBtn(&B6); TestBtn(&B7); TestBtn(&B8); TestBtn(&B9);
     
