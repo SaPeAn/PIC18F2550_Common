@@ -1,38 +1,37 @@
     #include <xc.inc>
-    global   _TxSpiSW
     
-    TxByte   equ    0x7E0
-    SPIcnt   equ    0x7E1
+    TxByte   equ    0x00
+    SPIcnt   equ    0x01
     SDOPort  equ    PORTC 
     SCLPort  equ    PORTB 
     SDOPin   equ    7
-    SCLPin   equ    1  
-  
- PSECT    code  
+    SCLPin   equ    1 
+   
+    PSECT TxSpiSW,class=CODE,reloc=2,optim=inline
+    
+    global   _TxSpiSW
+    
+    
 _TxSpiSW:
-    banksel  TxByte
-    movwf    TxByte
+    movwf    TxByte, 0
     movlw    8
-    movwf    SPIcnt
+    movwf    SPIcnt, 0
 _StartTx:    
-    dcfsnz   SPIcnt,1, 1
+    dcfsnz   SPIcnt,1, 0
     return
-    bcf      SCLPort, SCLPin, 1
-    btfsc    TxByte, 7, 1
+    bcf      SCLPort, SCLPin, 0
+    btfsc    TxByte, 7, 0
     goto     _SDOset
     goto     _SDOclr 
     
 _SDOset:
-    banksel  PORTC
-    bsf      SDOPort, SDOPin, 1
-    rlncf    TxByte, 1, 1
-    bsf      SCLPort, SCLPin, 1
+    bsf      SDOPort, SDOPin, 0
+    rlncf    TxByte, 1, 0
+    bsf      SCLPort, SCLPin, 0
     goto     _StartTx
 _SDOclr:    
-    banksel  PORTC
-    bcf      SDOPort, SDOPin, 1
-    rlncf    TxByte, 1, 1
-    bsf      SCLPort, SCLPin, 1
+    bcf      SDOPort, SDOPin, 0
+    rlncf    TxByte, 1, 0
+    bsf      SCLPort, SCLPin, 0
     goto     _StartTx
-    
 end
