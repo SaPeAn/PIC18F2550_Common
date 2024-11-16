@@ -129,51 +129,6 @@ void main(void)
     TestBtn(&B1); TestBtn(&B2); TestBtn(&B3); TestBtn(&B4); TestBtn(&B5); 
     TestBtn(&B6); TestBtn(&B7); TestBtn(&B8); TestBtn(&B9);
     
-    if(B1.BtnON || B1.HoldON || B1.StuckON){ 
-      B1.BtnON = 0;
-      uint8 Number = getrand(255);
-      uint8 str1[4];
-      u8_to_str(str1, Number);
-      uint8 Nsmb = LCD_printStr8x5(str1, PG, CL);
-      CL += 6*Nsmb;
-      LCD_printSmb8x5(' ', PG, CL);
-      CL += 6;
-      if(CL > 108) {PG++; CL = 0;}
-      if(PG > 7) {PG = 0; LCD_Erase();}
-    }
-    
-    if(B2.BtnON){ 
-      B2.BtnON = 0;
-      LCD_Erase();
-      PG = 0;
-      CL = 0;
-      randinit();
-    }
-    
-    if(B3.BtnON){ 
-      B3.BtnON = 0;
-      LCD_printStr8x5(Array, 0, 0);
-    }
-    
-    if(B4.BtnON) {
-        B4.BtnON = 0; 
-        if(B4.Toggle) prntClk = 0; 
-        else prntClk = 1;
-    }
-    
-    if(B5.BtnON) {
-        B5.BtnON = 0; 
-        countPeriod = GetPrd();
-    }
-    if(B6.BtnON) {
-        B6.BtnON = 0;
-        if(B6.Toggle)countDirect = 0;
-        else countDirect = 1;
-    }
-    
-    if(B7.BtnON){B7.BtnON = 0; LCD_printStr8x5(NULL, PG, CL);}
-    if(B8.Toggle){B8.BtnON = 0; LCD_WriteByte(170);}
-    
     Counting(countPeriod, 1, countDirect, 359999);
     Time.hour = (uint8)(mainTimeCounter/3600);
     Time.min = (uint8)((mainTimeCounter%3600)/60);

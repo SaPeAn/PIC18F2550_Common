@@ -13,7 +13,7 @@ void Led096Set(uint8, ...);
 void Led096Clear(void);
 void Led096Full(void);
 void Led096PrintSmb8x5(uint8, uint8, uint8);
-void Led096PrintStr8x5(uint8*, uint8, uint8);
+uint8 Led096PrintStr8x5(uint8*, uint8, uint8);
 void Led096PrintClock(uint8, uint8, uint8);
 void Led096PrintBat(uint8);
 void Led096PrintBender(void);

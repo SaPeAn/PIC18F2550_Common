@@ -13,7 +13,7 @@
     global   _SPI_TX
     global   _HW_SPI_TX
     
-    
+;----------------software SPI transmit-------------
 _SPI_TX:
     movwf    TXbyte, 0
     movlw    9
@@ -36,7 +36,9 @@ _SDOclr:
     rlncf    TXbyte, 1, 0
     bsf      SCLPort, SCLPin, 0
     goto     _StartTx
+;--------------------------------------------------
     
+;-------------hardware SPI transmit/receive--------    
 _HW_SPI_TX:
     movwf    SSPBUF, 0
 _START_HW_TX:   
@@ -44,5 +46,5 @@ _START_HW_TX:
     goto     _START_HW_TX
     movf     SSPBUF, 0, 0   
     return
-    
+;--------------------------------------------------    
 end

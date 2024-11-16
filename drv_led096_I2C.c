@@ -46,7 +46,7 @@ void Led096PrintSmb8x5(uint8 smb, uint8 StartPage, uint8 StartColumn)
   I2C_Stop();
 }
 
-void Led096PrintStr8x5(uint8* str, uint8 StartPage, uint8 StartColumn)
+uint8 Led096PrintStr8x5(uint8* str, uint8 StartPage, uint8 StartColumn)
 {
   uint8 i = 0;
   while(str[i])
@@ -66,6 +66,7 @@ void Led096PrintStr8x5(uint8* str, uint8 StartPage, uint8 StartColumn)
     if(StartPage > 7) break;
     i++;
   } 
+  return i;
 }
 
 void Led096PrintClock(uint8 hour, uint8 min, uint8 sec)
