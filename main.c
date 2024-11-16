@@ -129,6 +129,12 @@ void main(void)
     TestBtn(&B1); TestBtn(&B2); TestBtn(&B3); TestBtn(&B4); TestBtn(&B5); 
     TestBtn(&B6); TestBtn(&B7); TestBtn(&B8); TestBtn(&B9);
     
+    if(B2.BtnON){B2.BtnON = 0; PG--; if(PG == 255) PG = 0; LCD_Erase();}
+    if(B8.BtnON){B8.BtnON = 0; PG++; if(PG == 7) PG = 6; LCD_Erase();}
+    if(B4.BtnON){B4.BtnON = 0; CL += 8; if(CL > 100) CL = 100; LCD_Erase();}
+    if(B6.BtnON){B6.BtnON = 0; CL -= 8; if(CL > 100) CL = 0; LCD_Erase();}
+    print_tarelka(PG, CL);
+    
     Counting(countPeriod, 1, countDirect, 359999);
     Time.hour = (uint8)(mainTimeCounter/3600);
     Time.min = (uint8)((mainTimeCounter%3600)/60);
@@ -136,5 +142,5 @@ void main(void)
     if(prntClk) LCD_PrintClock(Time.hour, Time.min, Time.sec);
   }
 /*----------------------------------------------------------------------------*/
-  return;
+  //return;
 }

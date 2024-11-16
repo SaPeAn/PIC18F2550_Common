@@ -19,7 +19,7 @@ void LCD_printSmb8x5(const uint8, uint8, uint8);
 void LCD_Erase(void);
 uint8 LCD_printStr8x5(uint8*, uint8, uint8);
 void LCD_PrintClock(uint8, uint8, uint8);
-
+void print_tarelka(uint8, uint8);
 
 #ifdef	__cplusplus
 }

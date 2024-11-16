@@ -8,7 +8,7 @@
 #define   RSE     PORTAbits.RA4    //Display reset
 #define   CS      PORTCbits.RC6
 
-#define  SW_SPI  // SPI type software(SW_SPI)/hardware(HW_SPI) 
+#define  HW_SPI  // SPI type software(SW_SPI)/hardware(HW_SPI) 
 
 //----------------------Software SPI-----------------------------------------
 #ifdef SW_SPI
@@ -87,6 +87,18 @@ void LCD_Init(void)
   LCD_WriteByte(0xAE | 1);       // Display on(1) / Display off (0)
   LCD_WriteByte(0xA6 | 0);       // Display Normal(0) / Display Reverse(1)
   RS = 1;
+}
+
+
+void print_tarelka(uint8 page, uint8 col)
+{
+  LCD_Set_PageColumn(page, col);
+  CS = 0;
+  for(uint8 i = 0; i < 27; i++)  SPI_TRANSMIT_FUNC(tarelka[i]);
+  LCD_Set_PageColumn((page+1), col);
+  CS = 0;
+  for(uint8 i = 27; i < 54; i++)  SPI_TRANSMIT_FUNC(tarelka[i]);
+  CS = 1;
 }
 
 void LCD_Set_PageColumn(uint8 page, uint8 col)
