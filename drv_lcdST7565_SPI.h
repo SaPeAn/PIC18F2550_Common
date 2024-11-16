@@ -8,8 +8,8 @@ extern "C" {
 #include "common.h"
 #include <stdarg.h>   
     
-void SPI_init(void);
 void SPI_WriteByte(uint8);
+void SPI_init(void);
 void LCD_Init(void);
 void LCD_WriteByte(uint8);
 void LCD_SendData(const uint8*, uint8);
@@ -17,7 +17,7 @@ void LCD_SendCommands(uint8, ...);
 void LCD_Set_PageColumn(uint8, uint8);
 void LCD_printSmb8x5(const uint8, uint8, uint8);
 void LCD_Erase(void);
-uint8  LCD_printStr8x5(uint8*, uint8, uint8);
+uint8 LCD_printStr8x5(uint8*, uint8, uint8);
 void LCD_PrintClock(uint8, uint8, uint8);
 
 

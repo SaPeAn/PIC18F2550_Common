@@ -2,6 +2,7 @@
 /*------------------------œŒƒ Àﬁ◊¿≈Ã€≈ ‘¿…À€----------------------------------*/
 #include "config.h"
 #include "common.h"
+#include <stdlib.h>
 #include "init_periph.h"
 //#include "drv_7seg.h"
 #include "drv_buttons.h"
@@ -9,6 +10,7 @@
 //#include "drv_I2C.h"
 #include "drv_lcdST7565_SPI.h"
 //#include "drv_usart.h"
+
 /*----------------------------------------------------------------------------*/
 
 /*-----------------------√ÀŒ¡¿À‹Õ€≈ œ≈–≈Ã≈ÕÕ€≈--------------------------------*/
@@ -124,11 +126,6 @@ void main(void)
 /*-----------------------------Œ—ÕŒ¬ÕŒ… ÷» À----------------------------------*/
   while(1)
   {
-    SPI_WriteByte(170);
-    SPI_WriteByte(170);
-    SPI_WriteByte(170);
-    SPI_WriteByte(170);
-      
     TestBtn(&B1); TestBtn(&B2); TestBtn(&B3); TestBtn(&B4); TestBtn(&B5); 
     TestBtn(&B6); TestBtn(&B7); TestBtn(&B8); TestBtn(&B9);
     
@@ -178,9 +175,9 @@ void main(void)
     if(B8.Toggle){B8.BtnON = 0; LCD_WriteByte(170);}
     
     Counting(countPeriod, 1, countDirect, 359999);
-    Time.hour = (uint8)mainTimeCounter/3600;
-    Time.min = (uint8)(mainTimeCounter%3600)/60;
-    Time.sec = (uint8)mainTimeCounter%60;
+    Time.hour = (uint8)(mainTimeCounter/3600);
+    Time.min = (uint8)((mainTimeCounter%3600)/60);
+    Time.sec = (uint8)(mainTimeCounter%60);
     if(prntClk) LCD_PrintClock(Time.hour, Time.min, Time.sec);
   }
 /*----------------------------------------------------------------------------*/

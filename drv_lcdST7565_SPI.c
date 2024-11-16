@@ -6,12 +6,16 @@
 
 #define   RS      PORTAbits.RA3    // 1-data/0-cmd
 #define   RSE     PORTAbits.RA4    //Display reset
+#define   CS      PORTCbits.RC6
 
-#define  SW_SPI  // SPI type software(SW_SPI)/hardware(HW_SPI)
+#define  SW_SPI  // SPI type software(SW_SPI)/hardware(HW_SPI) 
 
 //----------------------Software SPI-----------------------------------------
 #ifdef SW_SPI
-extern void TxSpiSW(uint8);
+
+#define  SPI_TRANSMIT_FUNC      SPI_TX
+
+extern void SPI_TX(uint8);
 
 #define   SDO          PORTCbits.RC7
 #define   SCK          PORTBbits.RB1
@@ -28,19 +32,15 @@ void SPI_init(void)
   CS = 1;
   SCK = 1;
 }
-
-void SPI_WriteByte(uint8 bt)
-{
-  TxSpiSW(bt);
-}
-
 #endif
 //---------------------------------------------------------------------------
 
 //----------------------Hardware SPI-----------------------------------------
 #ifdef   HW_SPI
 
-#define   CS      PORTCbits.RC6
+extern uint8 HW_SPI_TX(uint8);
+
+#define  SPI_TRANSMIT_FUNC      HW_SPI_TX
 
 void SPI_init(void)
 {
@@ -49,18 +49,11 @@ void SPI_init(void)
   TRISCbits.RC7 = 0; // RC7 - SDO
   TRISCbits.RC6 = 0; // RC6 - CS
   PORTCbits.RC6 = 1; // CS set
-  SSPCON1 = 0b00110001; // Enables serial port([5] - 1); Idle state for clock is a high level (CKP) ([4] - 1); 
+  SSPCON1 = 0b00110010; // Enables serial port([5] - 1); Idle state for clock is a high level (CKP) ([4] - 1); 
                         // SPI Master mode, clock =  ([3-0] - 0000(SPI Fosc/4); 0001 (SPI Fosc/16); 0010 (SPI Fosc/64))
   
   SSPSTATbits.SMP = 1;
   SSPSTATbits.CKE = 0;
-}
-
-void SPI_WriteByte(uint8 Byte)
-{
-  SSPBUF = Byte; 
-  while(!SSPIF);
-  SSPIF = 0; 
 }
 #endif
 //------------------------------------------------------------------------------
@@ -113,11 +106,8 @@ void LCD_printSmb8x5(const uint8 ch, uint8 page, uint8 col)
 
 uint8 LCD_printStr8x5(uint8 *str, uint8 page, uint8 col)
 {
-  if(str == NULL) 
-  {
-    uint8 str1[] = "NULL";
-    str = str1;
-  }
+  static const uint8 str1[] = "NULL";
+  if(str == NULL) str = str1;
   uint8 i = 0;
   while(str[i])
   {
@@ -154,7 +144,7 @@ void LCD_Erase(void)
 void LCD_SendData(const uint8* byte, uint8 N)
 {
   CS = 0;
-  for(uint8 i = 0; i < N; i++) SPI_WriteByte(byte[i]);
+  for(uint8 i = 0; i < N; i++) SPI_TRANSMIT_FUNC(byte[i]);
   CS = 1;
 }
 
@@ -165,7 +155,7 @@ void LCD_SendCommands(uint8 N, ...)
   va_list arg;
   va_start(arg, N);
   for(uint8 i = 0; i < N; i++) {
-  SPI_WriteByte(va_arg(arg,uint8));
+  SPI_TRANSMIT_FUNC(va_arg(arg,uint8));
   }
   va_end(arg);
   RS = 1;
@@ -175,7 +165,7 @@ void LCD_SendCommands(uint8 N, ...)
 void LCD_WriteByte(uint8 byte)
 {
   CS = 0;
-  SPI_WriteByte(byte);
+  SPI_TRANSMIT_FUNC(byte);
   CS = 1;
 }
 
