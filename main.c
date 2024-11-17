@@ -149,19 +149,31 @@ void main(void)
   bullet_t Piu[PIU_MAX] = {0};
   comet_t Comet[COMET_MAX] = {0};
   
-  
+  uint8 HDig = 0;
+  uint8 MDig = 0;
+  uint8 LDig = 0;
   
 //---------------------------------------------------------
   
 /*-----------------------------Œ—ÕŒ¬ÕŒ… ÷» À----------------------------------*/
   while(1)
   {
+    
+    
     //----------COMET PRINT-------------------------------
     for(uint8 i = 0; i < COMET_MAX; i++) 
     {
       if(Comet[i].stat == 1) print_cometa(Comet[i].pg, Comet[i].cl);
       if(Comet[i].stat == 2) print_distr_cometa(Comet[i].pg, Comet[i].cl);
     }
+    
+    LDig = dispCounter%10;
+    MDig = dispCounter%100/10;
+    HDig = dispCounter/100;
+    uint8 cl_digits[4] = {dig_to_smb(HDig), dig_to_smb(MDig), dig_to_smb(LDig), '\0'};
+    uint8 Schet[] = "—˜ÂÚ:";
+    LCD_printStr8x5(Schet, 0, 37);
+    LCD_printStr8x5(cl_digits, 0, 65);
     
     if(Tar.en) print_ufo(Tar.pg, Tar.cl);
     
@@ -191,7 +203,7 @@ void main(void)
     if(B1.BtnON || B1.HoldON || B1.StuckON){ 
       B1.BtnON = 0; 
       for(uint8 i = 0; i < PIU_MAX; i++) {
-        if(!Piu[i].en) 
+        if(!Piu[i].en && Tar.en) 
         {
           Piu[i].en = 1; 
           Piu[i].pg = Tar.pg + 1; 
@@ -205,7 +217,7 @@ void main(void)
     
     for(uint8 i = 0; i < COMET_MAX; i++)
     {
-      if(Comet[i].stat == 0 && ((timestamp - mainTimeCounter) > 800))
+      if(Comet[i].stat == 0 && ((timestamp - mainTimeCounter) > 500))
       {
         mainTimeCounter = timestamp;
         Comet[i].stat = 1;
@@ -217,10 +229,10 @@ void main(void)
     //----------COMET MOV-------------------------------
     for(uint8 i = 0; i < COMET_MAX; i++)
     { 
-      if((timestamp - Comet[i].timer) > 100)
+      if((timestamp - Comet[i].timer) > 200)
       {
         Comet[i].timer = timestamp;
-        Comet[i].cl -= 4;
+        Comet[i].cl -= 12;
         if(Comet[i].cl > 100 || Comet[i].stat == 2) Comet[i].stat = 0;
       }
     }
@@ -234,13 +246,14 @@ void main(void)
         {
           Comet[i].stat = 2;
           Piu[j].en = 0;
+          dispCounter++;
         }
       }
     }
 
     for(uint8 i = 0; i < COMET_MAX; i++)
     {
-      if((Comet[i].cl <= (Tar.cl+26) && (Comet[i].pg == Tar.pg || (Comet[i].pg + 1) == Tar.pg)) && Comet[i].stat == 1 && Tar.en)
+      if(Comet[i].cl <= (Tar.cl+26) && (Comet[i].pg == Tar.pg || (Comet[i].pg + 1) == Tar.pg || Comet[i].pg == (Tar.pg + 1)) && Comet[i].stat == 1 && Tar.en)
       {
         Comet[i].stat = 2;
         Tar.en = 0;

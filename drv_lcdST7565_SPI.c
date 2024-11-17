@@ -37,8 +37,8 @@ void SPI_init(void)
 
 //----------------------Hardware SPI-----------------------------------------
 #ifdef   HW_SPI
-
-#define  SPI_TRANSMIT_FUNC      SPI_transmit
+extern uint8 HW_SPI_TX(uint8);
+#define  SPI_TRANSMIT_FUNC      HW_SPI_TX
 
 void SPI_init(void)
 {
