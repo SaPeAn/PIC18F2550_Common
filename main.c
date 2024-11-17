@@ -117,29 +117,134 @@ void main(void)
   
 /*--------------------------------œÂÂÏÂÌÌ˚Â----------------------------------*/
   uint8 prntClk = 1;
-  uint8 T = 0;
-  uint8 PG = 0;
-  uint8 CL = 0;
-  uint8 i = 0;
+  
+
 /*----------------------------------------------------------------------------*/
+//------------------------------Game stucts-----------------------
+  typedef struct {
+    uint8 en;
+    uint8 pg;
+    uint8 cl;
+  } ufo_t;
+  
+  typedef struct {
+    uint8 en;
+    uint8 pg;
+    uint8 cl;
+  } bullet_t;
+  
+  typedef struct{
+    uint8  stat;  // 0 - enemy disable; 1 - enemy enable; 2 - enemy distroed
+    uint8  pg;
+    uint8  cl;
+    uint32 timer;
+  }comet_t;
+
+//---------------------------------------------------------  
+//------------------------------Game vars-----------------------
+  ufo_t Tar = {1, 3, 0};
+  #define PIU_MAX   16
+  #define COMET_MAX 4
+  bullet_t Piu[PIU_MAX] = {0};
+  comet_t Comet[COMET_MAX] = {0};
+  
+  
+  
+  
+//---------------------------------------------------------
   
 /*-----------------------------Œ—ÕŒ¬ÕŒ… ÷» À----------------------------------*/
   while(1)
   {
-    TestBtn(&B1); TestBtn(&B2); TestBtn(&B3); TestBtn(&B4); TestBtn(&B5); 
-    TestBtn(&B6); TestBtn(&B7); TestBtn(&B8); TestBtn(&B9);
+    //----------COMET PRINT-------------------------------
+    for(uint8 i = 0; i < COMET_MAX; i++) 
+    {
+      if(Comet[i].stat == 1)print_cometa(Comet[i].pg, Comet[i].cl);
+      if(Comet[i].stat == 2)print_distr_cometa(Comet[i].pg, Comet[i].cl);
+    }
     
-    if(B2.BtnON){B2.BtnON = 0; PG--; if(PG == 255) PG = 0; LCD_Erase();}
-    if(B8.BtnON){B8.BtnON = 0; PG++; if(PG == 7) PG = 6; LCD_Erase();}
-    if(B4.BtnON){B4.BtnON = 0; CL += 8; if(CL > 100) CL = 100; LCD_Erase();}
-    if(B6.BtnON){B6.BtnON = 0; CL -= 8; if(CL > 100) CL = 0; LCD_Erase();}
-    print_tarelka(PG, CL);
+    print_ufo(Tar.pg, Tar.cl);
     
-    Counting(countPeriod, 1, countDirect, 359999);
+    //--------PRINT BULLET---------------
+    for(uint8 i = 0; i < PIU_MAX; i++)
+    {
+      if(Piu[i].en){
+        print_piu(Piu[i].pg, Piu[i].cl);
+        Piu[i].cl += 8;
+        if(Piu[i].cl > 127) {
+          Piu[i].en = 0;
+          Piu[i].cl = 0;
+        }
+      }
+    }
+    //-----------------------------------------
+    
+    TestBtn(&B1); TestBtn(&B2); TestBtn(&B3); TestBtn(&B4); 
+    TestBtn(&B5); TestBtn(&B6); TestBtn(&B7); TestBtn(&B8);
+    
+    if(B2.BtnON || B2.HoldON || B2.StuckON){B2.BtnON = 0; Tar.pg--; if(Tar.pg == 255) Tar.pg = 0;}
+    if(B8.BtnON || B8.HoldON || B8.StuckON){B8.BtnON = 0; Tar.pg++; if(Tar.pg == 7) Tar.pg = 6;}
+    if(B4.BtnON || B4.HoldON || B4.StuckON){B4.BtnON = 0; Tar.cl += 8; if(Tar.cl > 100) Tar.cl = 100;}
+    if(B6.BtnON || B6.HoldON || B6.StuckON){B6.BtnON = 0; Tar.cl -= 8; if(Tar.cl > 100) Tar.cl = 0;}
+    
+   
+    if(B1.BtnON || B1.HoldON || B1.StuckON){ 
+      B1.BtnON = 0; 
+      for(uint8 i = 0; i < PIU_MAX; i++) {
+        if(!Piu[i].en) 
+        {
+          Piu[i].en = 1; 
+          Piu[i].pg = Tar.pg + 1; 
+          Piu[i].cl = Tar.cl + 28;
+          break;
+        }
+      }
+    }
+    
+    //--------COMET GENERATOR-------------------------
+    
+    for(uint8 i = 0; i < COMET_MAX; i++)
+    {
+      if(Comet[i].stat == 0 && ((timestamp - mainTimeCounter) > 2000))
+      {
+        mainTimeCounter = timestamp;
+        Comet[i].stat = 1;
+        Comet[i].cl = 100;
+        Comet[i].pg = getrand(6);
+      }
+    }
+    //--------------------------------------------------
+    //----------COMET MOV-------------------------------
+    for(uint8 i = 0; i < COMET_MAX; i++)
+    { 
+      if((timestamp - Comet[i].timer) > 150)
+      {
+        Comet[i].timer = timestamp;
+        Comet[i].cl -= 4;
+        if(Comet[i].cl > 120) Comet[i].stat = 0;
+      }
+    }
+    
+    //------------COLLISION--------------
+    for(uint8 j = 0; j < PIU_MAX; j++)
+    {
+      for(uint8 i = 0; i < COMET_MAX; i++)
+      {
+        if(Comet[i].cl <= Piu[j].cl && (Comet[i].pg == Piu[j].pg || (Comet[i].pg + 1) == Piu[j].pg))
+        {
+          Comet[i].stat = 2;
+        }
+      }
+    }
+    
+    Delay_ms(50);
+    LCD_Erase();
+    
+    /*Counting(countPeriod, 1, countDirect, 359999);
     Time.hour = (uint8)(mainTimeCounter/3600);
     Time.min = (uint8)((mainTimeCounter%3600)/60);
     Time.sec = (uint8)(mainTimeCounter%60);
-    if(prntClk) LCD_PrintClock(Time.hour, Time.min, Time.sec);
+    if(prntClk) LCD_PrintClock(Time.hour, Time.min, Time.sec);*/
   }
 /*----------------------------------------------------------------------------*/
   //return;

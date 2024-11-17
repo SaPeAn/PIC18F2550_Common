@@ -38,9 +38,7 @@ void SPI_init(void)
 //----------------------Hardware SPI-----------------------------------------
 #ifdef   HW_SPI
 
-extern uint8 HW_SPI_TX(uint8);
-
-#define  SPI_TRANSMIT_FUNC      HW_SPI_TX
+#define  SPI_TRANSMIT_FUNC      SPI_transmit
 
 void SPI_init(void)
 {
@@ -55,6 +53,14 @@ void SPI_init(void)
   SSPSTATbits.SMP = 1;
   SSPSTATbits.CKE = 0;
 }
+
+uint8 SPI_transmit(uint8 bt)
+  {
+    SSPBUF = bt;
+    while(!SSPSTATbits.BF);
+    return SSPBUF;
+  }
+
 #endif
 //------------------------------------------------------------------------------
 
@@ -75,7 +81,7 @@ void LCD_Init(void)
   LCD_WriteByte(0xA2 | 0);       // LCD Bias Set -- x=0 : 1/9 (default); x=1 :  1/7
   LCD_WriteByte(0xA0 | 0);       // Segment Driver Direction Select 0->131(0);  Segment Driver Direction Select 131->0(1))
   LCD_WriteByte(0xC0 | 8);       // Common Output Mode Select 0->63(0)); Common Output Mode Select 63->0(8)  
-  LCD_WriteByte(0x20 | 0x5);     // V5 Voltage Regulator Internal Resistor Ratio Set 0:3.0; 1:3.5; 2:4; 3:4.5; 4:5.0(default); 5:5.5; 6:6; 7:6.4;
+  LCD_WriteByte(0x20 | 0x6);     // V5 Voltage Regulator Internal Resistor Ratio Set 0:3.0; 1:3.5; 2:4; 3:4.5; 4:5.0(default); 5:5.5; 6:6; 7:6.4;
   LCD_WriteByte(0x28 | 0b111);   // Power Controller Set a=1 :  Booster circuit on; b=1 :  Voltage regulator circuit on; c=1 :  
                                  // Voltage follower circuit on; default: 000, must be 111
   LCD_WriteByte(0x81);           // The Electronic Volume Mode Set (contrast) (default 0010 0000) - first byte (command id)
@@ -89,16 +95,34 @@ void LCD_Init(void)
   RS = 1;
 }
 
-
-void print_tarelka(uint8 page, uint8 col)
+void print_piu(uint8 page, uint8 col)
 {
   LCD_Set_PageColumn(page, col);
-  CS = 0;
-  for(uint8 i = 0; i < 27; i++)  SPI_TRANSMIT_FUNC(tarelka[i]);
+  LCD_SendData(tar_bullet, 8);
+}
+
+void print_ufo(uint8 page, uint8 col)
+{
+  LCD_Set_PageColumn(page, col);
+  LCD_SendData(tarelka[0], 27);
   LCD_Set_PageColumn((page+1), col);
-  CS = 0;
-  for(uint8 i = 27; i < 54; i++)  SPI_TRANSMIT_FUNC(tarelka[i]);
-  CS = 1;
+  LCD_SendData(tarelka[1], 27);
+}
+
+void print_cometa(uint8 page, uint8 col)
+{
+  LCD_Set_PageColumn(page, col);
+  LCD_SendData(cometa[0], 28);
+  LCD_Set_PageColumn((page+1), col);
+  LCD_SendData(cometa[1], 28);
+}
+
+void print_distr_cometa(uint8 page, uint8 col)
+{
+  LCD_Set_PageColumn(page, col);
+  LCD_SendData(distr_cometa[0], 28);
+  LCD_Set_PageColumn((page+1), col);
+  LCD_SendData(distr_cometa[1], 28);
 }
 
 void LCD_Set_PageColumn(uint8 page, uint8 col)
@@ -141,7 +165,7 @@ void LCD_PrintClock(uint8 hour, uint8 min, uint8 sec)
   min /= 10;
   hour /= 10;
   uint8 cl_digits[9] = {dig_to_smb(hour), dig_to_smb(hourL), ':', dig_to_smb(min), dig_to_smb(minL), ':', dig_to_smb(sec), dig_to_smb(secL), '\0'};
-  LCD_printStr8x5(cl_digits, 7, 0);
+  LCD_printStr8x5(cl_digits, 0, 41);
 }
 
 void LCD_Erase(void)
@@ -153,6 +177,7 @@ void LCD_Erase(void)
   }
   LCD_SendCommands(3, 0xB0, 0x10, 0x00);
 }
+
 void LCD_SendData(const uint8* byte, uint8 N)
 {
   CS = 0;
