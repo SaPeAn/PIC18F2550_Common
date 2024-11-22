@@ -1,4 +1,3 @@
-#include <xc.h>
 #include "common.h"
 #include <stdlib.h>
 
