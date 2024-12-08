@@ -14,6 +14,7 @@
       <itemPath>drv_led096_I2C.h</itemPath>
       <itemPath>drv_usart.h</itemPath>
       <itemPath>init_periph.h</itemPath>
+      <itemPath>drv_led130_I2C.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -36,7 +37,8 @@
       <itemPath>drv_usart.c</itemPath>
       <itemPath>init_periph.c</itemPath>
       <itemPath>main.c</itemPath>
-      <itemPath>newAsmTemplate.asm</itemPath>
+      <itemPath>drv_led130_I2C.c</itemPath>
+      <itemPath>AsmSPI_Tx_Rx.asm</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -705,6 +707,7 @@
         <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>

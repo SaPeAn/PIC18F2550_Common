@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=common.c drv_7seg.c drv_I2C.c drv_buttons.c drv_lcdST7565_SPI.c drv_led096_I2C.c drv_usart.c init_periph.c main.c newAsmTemplate.asm
+SOURCEFILES_QUOTED_IF_SPACED=common.c drv_7seg.c drv_I2C.c drv_buttons.c drv_lcdST7565_SPI.c drv_led096_I2C.c drv_usart.c init_periph.c main.c drv_led130_I2C.c AsmSPI_Tx_Rx.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/common.p1 ${OBJECTDIR}/drv_7seg.p1 ${OBJECTDIR}/drv_I2C.p1 ${OBJECTDIR}/drv_buttons.p1 ${OBJECTDIR}/drv_lcdST7565_SPI.p1 ${OBJECTDIR}/drv_led096_I2C.p1 ${OBJECTDIR}/drv_usart.p1 ${OBJECTDIR}/init_periph.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/newAsmTemplate.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/common.p1.d ${OBJECTDIR}/drv_7seg.p1.d ${OBJECTDIR}/drv_I2C.p1.d ${OBJECTDIR}/drv_buttons.p1.d ${OBJECTDIR}/drv_lcdST7565_SPI.p1.d ${OBJECTDIR}/drv_led096_I2C.p1.d ${OBJECTDIR}/drv_usart.p1.d ${OBJECTDIR}/init_periph.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/newAsmTemplate.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/common.p1 ${OBJECTDIR}/drv_7seg.p1 ${OBJECTDIR}/drv_I2C.p1 ${OBJECTDIR}/drv_buttons.p1 ${OBJECTDIR}/drv_lcdST7565_SPI.p1 ${OBJECTDIR}/drv_led096_I2C.p1 ${OBJECTDIR}/drv_usart.p1 ${OBJECTDIR}/init_periph.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/drv_led130_I2C.p1 ${OBJECTDIR}/AsmSPI_Tx_Rx.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/common.p1.d ${OBJECTDIR}/drv_7seg.p1.d ${OBJECTDIR}/drv_I2C.p1.d ${OBJECTDIR}/drv_buttons.p1.d ${OBJECTDIR}/drv_lcdST7565_SPI.p1.d ${OBJECTDIR}/drv_led096_I2C.p1.d ${OBJECTDIR}/drv_usart.p1.d ${OBJECTDIR}/init_periph.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/drv_led130_I2C.p1.d ${OBJECTDIR}/AsmSPI_Tx_Rx.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/common.p1 ${OBJECTDIR}/drv_7seg.p1 ${OBJECTDIR}/drv_I2C.p1 ${OBJECTDIR}/drv_buttons.p1 ${OBJECTDIR}/drv_lcdST7565_SPI.p1 ${OBJECTDIR}/drv_led096_I2C.p1 ${OBJECTDIR}/drv_usart.p1 ${OBJECTDIR}/init_periph.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/newAsmTemplate.o
+OBJECTFILES=${OBJECTDIR}/common.p1 ${OBJECTDIR}/drv_7seg.p1 ${OBJECTDIR}/drv_I2C.p1 ${OBJECTDIR}/drv_buttons.p1 ${OBJECTDIR}/drv_lcdST7565_SPI.p1 ${OBJECTDIR}/drv_led096_I2C.p1 ${OBJECTDIR}/drv_usart.p1 ${OBJECTDIR}/init_periph.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/drv_led130_I2C.p1 ${OBJECTDIR}/AsmSPI_Tx_Rx.o
 
 # Source Files
-SOURCEFILES=common.c drv_7seg.c drv_I2C.c drv_buttons.c drv_lcdST7565_SPI.c drv_led096_I2C.c drv_usart.c init_periph.c main.c newAsmTemplate.asm
+SOURCEFILES=common.c drv_7seg.c drv_I2C.c drv_buttons.c drv_lcdST7565_SPI.c drv_led096_I2C.c drv_usart.c init_periph.c main.c drv_led130_I2C.c AsmSPI_Tx_Rx.asm
 
 
 
@@ -160,6 +160,14 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/drv_led130_I2C.p1: drv_led130_I2C.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/drv_led130_I2C.p1.d 
+	@${RM} ${OBJECTDIR}/drv_led130_I2C.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=require -mchp-stack-usage -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/drv_led130_I2C.p1 drv_led130_I2C.c 
+	@-${MV} ${OBJECTDIR}/drv_led130_I2C.d ${OBJECTDIR}/drv_led130_I2C.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/drv_led130_I2C.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/common.p1: common.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -233,27 +241,35 @@ ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/main.d ${OBJECTDIR}/main.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/drv_led130_I2C.p1: drv_led130_I2C.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/drv_led130_I2C.p1.d 
+	@${RM} ${OBJECTDIR}/drv_led130_I2C.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=require -mchp-stack-usage -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/drv_led130_I2C.p1 drv_led130_I2C.c 
+	@-${MV} ${OBJECTDIR}/drv_led130_I2C.d ${OBJECTDIR}/drv_led130_I2C.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/drv_led130_I2C.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 endif
 
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/newAsmTemplate.o: newAsmTemplate.asm  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/AsmSPI_Tx_Rx.o: AsmSPI_Tx_Rx.asm  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/newAsmTemplate.o.d 
-	@${RM} ${OBJECTDIR}/newAsmTemplate.o 
-	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=require -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/newAsmTemplate.o  newAsmTemplate.asm 
-	@-${MV} ${OBJECTDIR}/newAsmTemplate.d ${OBJECTDIR}/newAsmTemplate.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/newAsmTemplate.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/AsmSPI_Tx_Rx.o.d 
+	@${RM} ${OBJECTDIR}/AsmSPI_Tx_Rx.o 
+	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=require -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/AsmSPI_Tx_Rx.o  AsmSPI_Tx_Rx.asm 
+	@-${MV} ${OBJECTDIR}/AsmSPI_Tx_Rx.d ${OBJECTDIR}/AsmSPI_Tx_Rx.o.d 
+	@${FIXDEPS} ${OBJECTDIR}/AsmSPI_Tx_Rx.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
-${OBJECTDIR}/newAsmTemplate.o: newAsmTemplate.asm  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/AsmSPI_Tx_Rx.o: AsmSPI_Tx_Rx.asm  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/newAsmTemplate.o.d 
-	@${RM} ${OBJECTDIR}/newAsmTemplate.o 
-	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=require -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/newAsmTemplate.o  newAsmTemplate.asm 
-	@-${MV} ${OBJECTDIR}/newAsmTemplate.d ${OBJECTDIR}/newAsmTemplate.o.d 
-	@${FIXDEPS} ${OBJECTDIR}/newAsmTemplate.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/AsmSPI_Tx_Rx.o.d 
+	@${RM} ${OBJECTDIR}/AsmSPI_Tx_Rx.o 
+	${MP_CC} -c $(MP_EXTRA_AS_PRE) -mcpu=$(MP_PROCESSOR_OPTION)   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=require -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto   -o ${OBJECTDIR}/AsmSPI_Tx_Rx.o  AsmSPI_Tx_Rx.asm 
+	@-${MV} ${OBJECTDIR}/AsmSPI_Tx_Rx.d ${OBJECTDIR}/AsmSPI_Tx_Rx.o.d 
+	@${FIXDEPS} ${OBJECTDIR}/AsmSPI_Tx_Rx.o.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

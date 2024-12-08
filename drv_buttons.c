@@ -1,5 +1,8 @@
 #include "drv_buttons.h"
 
+#define  HOLD_ON_DEL    100
+#define  STUCK_ON_DEL   2000
+ 
 btn_t CreateBtn(volatile uint8* Tris, volatile uint8* Port, volatile uint8* Lat, const uint8 inputbit, const uint8 outputbit, const uint32* timecounter)
 {
   btn_t BTN;
@@ -58,12 +61,12 @@ void TestBtn(btn_t* btn)
     btn->StuckON = 0;
     btn->btnTimer = *(btn->timecounter);
   }
-  if (!(*(btn->Port) & btn->inputmask) && btn->BtnFl && ((*(btn->timecounter) - btn->btnTimer) > 100) && ((*(btn->timecounter) - btn->btnTimer) <= 2000)) {
+  if (!(*(btn->Port) & btn->inputmask) && btn->BtnFl && ((*(btn->timecounter) - btn->btnTimer) > HOLD_ON_DEL) && ((*(btn->timecounter) - btn->btnTimer) <= STUCK_ON_DEL)) {
     btn->HoldON = 1;
     if(btn->Toggle) btn->Toggle = 0; 
     else btn->Toggle = 1;
   }
-  if (!(*(btn->Port) & btn->inputmask) && btn->BtnFl && ((*(btn->timecounter) - btn->btnTimer) > 2000)) {
+  if (!(*(btn->Port) & btn->inputmask) && btn->BtnFl && ((*(btn->timecounter) - btn->btnTimer) > STUCK_ON_DEL)) {
     btn->HoldON = 0;
     btn->StuckON = 1;
     if(btn->Toggle) btn->Toggle = 0; 

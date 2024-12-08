@@ -1,8 +1,24 @@
+/******************************************************************************/
+//      
+//    OLED display 0.96 inches
+//    Controller - SSD1306
+//    I2C interface
+//
+/******************************************************************************/
+
 #include "drv_led096_I2C.h"
 #include "display_data.h"
 #include "drv_I2C.h"
 
 #define DEV_ADDR       0x78
+
+
+void Led096Init(void)
+{
+  I2C_init();
+  Led096Set(8, 0xD5, 0xF0, 0x8D, 0x14, 0xAF, 0xA4, 0x20, 0x01);
+  Led096Clear();
+}
 
 void Led096Set(uint8 N, ...)
 {
