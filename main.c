@@ -103,6 +103,7 @@ void main(void)
   LCD_Erase();
   //Led096Init();
   //Led130Init();
+  //Led130Full();
   btn_t B1 = CreateBtn(&TRISB, &PORTB, &LATB, 2, 5, &timestamp);
   btn_t B2 = CreateBtn(&TRISB, &PORTB, &LATB, 3, 5, &timestamp);
   btn_t B3 = CreateBtn(&TRISB, &PORTB, &LATB, 4, 5, &timestamp);
@@ -158,6 +159,10 @@ void main(void)
 /*-----------------------------ОСНОВНОЙ Ц�?КЛ----------------------------------*/
   while(1)
   {
+    
+    
+    
+#if 1
     while(!StartFl)
     {
       Tar.en = 1;
@@ -187,9 +192,9 @@ void main(void)
       MDig = dispCounter%100/10;
       HDig = (uint8)dispCounter/100;
       uint8 cl_digits[4] = {dig_to_smb(HDig), dig_to_smb(MDig), dig_to_smb(LDig), '\0'};
-      uint8 Schet[] = "Счет:";
+      uint8 Schet[] = "SCORE: ";
       LCD_printStr8x5(Schet, 0, 37);
-      LCD_printStr8x5(cl_digits, 0, 68);
+      LCD_printStr8x5(cl_digits, 0, 73);
       
       switch(dispCounter)
       {
@@ -287,6 +292,8 @@ void main(void)
       Delay_ms(50);
       LCD_Erase();
     }
+#endif
+    
 #if 0 // print clock
     Counting(countPeriod, 1, countDirect, 359999);
     Time.hour = (uint8)(mainTimeCounter/3600);
